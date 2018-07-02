@@ -5,54 +5,82 @@ Eventful account API: Pn3g5RvNgRnxzTxp
 
 http://api.eventful.com/json/events/search?...&location=Phoenix&app_key=Pn3g5RvNgRnxzTxp
 
+Sample: 
+
+"events": {
+"event": [
+{
+"watching_count": null,
+"olson_path": "America/Phoenix",
+"calendar_count": null,
+"comment_count": null,
+"region_abbr": "AZ",
+"postal_code": "85201",
+"going_count": null,
+"all_day": "0",
+"latitude": "33.4139504",
+"groups": null,
+"url": "http://phoenix.eventful.com/events/salt-river-brass-holiday-pops-/E0-001-114056891-2?utm_source=apis&utm_medium=apim&utm_campaign=apic",
+"id": "E0-001-114056891-2",
+"privacy": "1",
+"city_name": "Mesa",
+"link_count": null,
+"longitude": "-111.8304022",
+"country_name": "United States",
+"country_abbr": "USA",
+"region_name": "Arizona",
+"start_time": "2018-12-09 15:00:00",
+"tz_id": null,
+"description": null,
+"modified": "2018-05-16 08:19:40",
+"venue_display": "1",
+"tz_country": null,
+"performers": null,
+"title": "Salt River Brass: Holiday Pops",
+"venue_address": "1 East Main Street",
+"geocode_type": "EVDB Geocoder",
+"tz_olson_path": null,
+"recur_string": null,
+"calendars": null,
+"owner": "evdb",
+"going": null,
+"country_abbr2": "US",
+"image": null,
+"created": "2018-04-30 16:19:43",
+"venue_id": "V0-001-000516405-6",
+"tz_city": null,
+"stop_time": null,
+"venue_name": "Mesa Arts Center",
+"venue_url": "http://phoenix.eventful.com/venues/mesa-arts-center-/V0-001-000516405-6?utm_source=apis&utm_medium=apim&utm_campaign=apic"
+
 API call for category:
 http://api.eventful.com/json/categories/list?app_key=Pn3g5RvNgRnxzTxp
 
+TicketMaster API
+login info:
+Gmail Account: buddyUpApp18@gmail.com
+Password: Q1W2e3r4t5!
 
-other parameters
+Consumer Key	FrP8y4A2ukyhP5v7Kcaq6HaXUORDlW8k
+Consumer Secret	9TcSiA2euZKSbBqL
+Key Issued	Mon, 07/02/2018 - 00:00
+Key Expires	Never
 
-API Method /events/search
-This function handles event search. It performs the requested search, returning the results as an XML file. See the search box at http://eventful.com/events for an example interface.
+https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=FrP8y4A2ukyhP5v7Kcaq6HaXUORDlW8k
 
-Arguments
-authentication
-This method controls access via authentication. Oauth is NOT needed but an application key (app_key query string parameter) is required.
-keywords string
-The search keywords. (optional)
-location string
-A location name to use in filtering the search results. Locations in the form "San Diego", "San Diego, TX", "London, United Kingdom", and "Calgary, Alberta, Canada" are accepted, as are postal codes ("92122") and venue IDs ("V0-001-000268633-5"). Common geocoordinate formats ("32.746682, -117.162741") are also accepted, but the "within" parameter is required in order to set a search radius. (optional)
-date string
-Limit this list of results to a date range, specified by label or exact range. Currently supported labels include: "All", "Future", "Past", "Today", "Last Week", "This Week", "Next week", and months by name, e.g. "October". Exact ranges can be specified the form 'YYYYMMDD00-YYYYMMDD00', for example '2012042500-2012042700'; the last two digits of each date in this format are ignored. (optional)
-category string
-Limit the search results to this category ID. A list of categories may be specified separated by commas. See /categories/list for a list of categories and their IDs. (optional)
-ex_category string
-Exclude search results from including this category ID. A list of categories may be specified separated by commas. See /categories/list for a list of categories and their IDs. (optional)
-within integer
-If within is set and the "location" parameter resolves to a specific geolocation, the search will be restricted to the specified radius. If the "location" parameter does not resolve to a specific location, this parameter is ignored. (optional)
-units string
-One of "mi" or "km", the units of the "within" parameter. Defaults to "mi".(optional)
-count_only boolean
-If count_only is set, an abbreviated version of the output will be returned. Only total_items and search_time elements are included in the result. (optional)
-sort_order string
-One of 'popularity', 'date', or 'relevance'. Default is 'relevance'. (optional)
-sort_direction string
-One of 'ascending' or 'descending'. Default varies by sort_order. (optional)
-page_size integer
-The desired number of results per page. (optional)
-page_number integer
-The desired page number. (optional)
-image_sizes string
-A comma separted list of image_sizes desired. See Faq for list of possible image sizes. (optional)
-languages integer
-Return our guess of each event language. ("Undetermined" is a possibility) (optional)
-mature string
-Sets the level of filtering for events marked as "mature" due to keywords in the title or description. One of 'all' (no filtering), 'normal', or 'safe'. 'Normal' mature filtering consists of words that are clearly profanities and inappropriate for younger audiences. 'Safe' mature filtering consists of all normal mature filtered words, as well as other terms that may be used as inappropriate innuendo. A 'safe' filter may eliminate events that are benign in nature, but contain questionable content based on keywords. Defaults to 'all'. (optional)
-include string
-Indicates that optional sections should be included in the result XML. Multiple section names can be indicated, separated by commas (e.g. 'categories,links'). Sections include 'categories', 'subcategories', 'popularity', 'tickets', 'price', and 'links'. (optional)
-change_multi_day_start boolean
-If set changes the start_date of long duration events (lasting multiple days) to the beginning of the search date range. It will also give the next occurence of a recurring event after the start range. This will prevent an event from appearing to be outside the date range requested . (optional)
-Example Request 1 - Any event in San Diego with the title books in it.
-http://api.eventful.com/rest/events/search?...&keywords=books&location=San+Diego&date=Future
+documentations: https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2 
 
-Example Request 2 - Any event withing 25 miles of a specific Lat / Long value in San Diego
-http://api.eventful.com/rest/events/search?...&where=32.746682,-117.162741&within=25
+$.ajax({
+  type:"GET",
+  url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=FrP8y4A2ukyhP5v7Kcaq6HaXUORDlW8k",
+  async:true,
+  dataType: "json",
+  success: function(json) {
+              console.log(json);
+              // Parse the response.
+              // Do other things.
+           },
+  error: function(xhr, status, err) {
+              // This time, we do not end up here!
+           }
+});
