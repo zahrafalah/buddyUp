@@ -11,3 +11,29 @@ import { AccountsTemplates } from 'meteor/useraccounts:core';
 import '../../ui/accounts/accounts-templates.js';
 
 // Below here are the route definitions
+// Import React Essentials
+import React from 'react';
+import { render } from 'react-dom';
+import { Route, IndexRoute } from 'react-router';
+
+// Import Pages and/or Components
+import AppLayout from '../../ui/layouts/AppLayout.js';
+import HomePage from '../../ui/pages/HomepageLayout.js';
+
+
+// Release the meeeettteeeoooor!
+Meteor.startup( () => {
+  
+    render(
+        
+        <Route path="/" component={ AppLayout } >
+  
+          {/* Home Page */}
+          <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
+
+        // </Route>,
+
+      
+document.getElementById( 'render-target' )
+);
+});
