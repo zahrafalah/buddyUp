@@ -13,11 +13,11 @@ Register = React.createClass({
 			};
 			Accounts.createUser(accountInfo, function(err) {
 				if(err) {
-					throw err('There was an error creating your account :(');
+					Meteor.Error('There was an error creating your account :(');
 				} else {
 					Meteor.loginWithPassword(email, password, function(err) {
 						if(err) {
-							throw err('Could not login.');
+							Meteor.Error('Could not login.');
 						} else {
 							//Redirect
 							FlowRouter.go('/');
@@ -26,7 +26,7 @@ Register = React.createClass({
 				}
 			});
 		} else {
-			throw err('Passwords must match!');
+			Meteor.Error('Passwords must match!');
 		}
 	},
 	render() {
