@@ -26,12 +26,12 @@ Meteor.startup( () => {
   
     render(
         
-        <Route path="/" component={ AppLayout } >
+        <Route path="/hello-world" component={ AppLayout } >
   
           {/* Home Page */}
           <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
 
-        // </Route>,
+         </Route>,
 
       
 document.getElementById( 'render-target' )

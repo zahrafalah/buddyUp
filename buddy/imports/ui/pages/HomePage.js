@@ -70,6 +70,7 @@ class DesktopContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyComputer}>
+      <div>Hello world</div>
         <Visibility
           once={false}
           onBottomPassed={this.showFixedMenu}

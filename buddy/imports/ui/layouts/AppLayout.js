@@ -44,4 +44,4 @@ class AppLayout extends React.Component {
   
   }
   
-  module.exports = AppLayout;
+export default AppLayout;

@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
-import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react';
+import HomePage from './pages/HomePage'
 
 import { Random1 } from "./pages/welcomepage";
 
@@ -17,12 +18,10 @@ export default class App extends Component {
 	
 	render() {
 	  return (
-		<Button> Click Here </Button>,
 
-		<div style={styles}>				
-			<Random1 />   
-    </div>
+		<HomePage  />
 
 	  );
 	}
-  }
+	}
+
