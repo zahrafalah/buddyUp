@@ -3,9 +3,10 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
 
-const Container = () => (
+const GridExampleContainer = () => (
   <Container fluid textAlign='center'>
+
   </Container>
 )
 
-export default Container
+export default GridExampleContainer
