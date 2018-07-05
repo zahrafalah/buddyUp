@@ -1,8 +1,7 @@
 import { Mongo } from 'meteor/mongo';
  
-export const Profiles = new Mongo.Collection('profiles');
 import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
+
 import SimpleSchema from 'simpl-schema';
 import { check } from 'meteor/check';
 
@@ -108,3 +107,4 @@ Profiles.attachSchema(Schemas.Profile);
 //     Tasks.update(taskId, { $set: { private: setToPrivate } });
 //   },
 // });
+
