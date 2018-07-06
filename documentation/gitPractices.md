@@ -11,6 +11,11 @@
 	4. `git checkout yourBranch`(whatever branch you are trying to push up).
 	
 	5. `git rebase -i master`: This will compare the base of your current branch with the current state of master and then make the current base of your current branch equivalent with master. If there are any merge conflicts, they will show up. Your terminal will tell you how to resolve (it's exactly the same as any other merge conflict, open up VS Code and it'll show you where the confict it). Your terminal will tell you how to continue (usually git rebase --continue). Work through all merge conflicts. When you get a rebase success message, you are rebased. This will make comparing code and looking at our workflow history really clean and simple. 
+		- Your terminal will open an environment called vi, which will list the commits that are being
+			rebased on top of master next to the word 'Pick'. This is normal. If they are the right commits,
+			do: :q or :wq to quit and rebase. If not, then you have a different version of master. Delete
+			any commits that are also referenced on master since it means you have different stuff on your
+			branch's base, then do: :wq. :wq means "write & quit".
 	
 	6. `git push origin yourBranch`: This will push your code changes to  remote repository. 
 
