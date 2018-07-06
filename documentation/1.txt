@@ -5,6 +5,7 @@ Eventful account API: Pn3g5RvNgRnxzTxp
 
 http://api.eventful.com/json/events/search?...&location=Phoenix&app_key=Pn3g5RvNgRnxzTxp
 
+<<<<<<< HEAD
 API call for category:
 http://api.eventful.com/json/categories/list?app_key=Pn3g5RvNgRnxzTxp
 
@@ -56,3 +57,84 @@ http://api.eventful.com/rest/events/search?...&keywords=books&location=San+Diego
 
 Example Request 2 - Any event withing 25 miles of a specific Lat / Long value in San Diego
 http://api.eventful.com/rest/events/search?...&where=32.746682,-117.162741&within=25
+=======
+Sample: 
+
+"events": {
+"event": [
+{
+"watching_count": null,
+"olson_path": "America/Phoenix",
+"calendar_count": null,
+"comment_count": null,
+"region_abbr": "AZ",
+"postal_code": "85201",
+"going_count": null,
+"all_day": "0",
+"latitude": "33.4139504",
+"groups": null,
+"url": "http://phoenix.eventful.com/events/salt-river-brass-holiday-pops-/E0-001-114056891-2?utm_source=apis&utm_medium=apim&utm_campaign=apic",
+"id": "E0-001-114056891-2",
+"privacy": "1",
+"city_name": "Mesa",
+"link_count": null,
+"longitude": "-111.8304022",
+"country_name": "United States",
+"country_abbr": "USA",
+"region_name": "Arizona",
+"start_time": "2018-12-09 15:00:00",
+"tz_id": null,
+"description": null,
+"modified": "2018-05-16 08:19:40",
+"venue_display": "1",
+"tz_country": null,
+"performers": null,
+"title": "Salt River Brass: Holiday Pops",
+"venue_address": "1 East Main Street",
+"geocode_type": "EVDB Geocoder",
+"tz_olson_path": null,
+"recur_string": null,
+"calendars": null,
+"owner": "evdb",
+"going": null,
+"country_abbr2": "US",
+"image": null,
+"created": "2018-04-30 16:19:43",
+"venue_id": "V0-001-000516405-6",
+"tz_city": null,
+"stop_time": null,
+"venue_name": "Mesa Arts Center",
+"venue_url": "http://phoenix.eventful.com/venues/mesa-arts-center-/V0-001-000516405-6?utm_source=apis&utm_medium=apim&utm_campaign=apic"
+
+API call for category:
+http://api.eventful.com/json/categories/list?app_key=Pn3g5RvNgRnxzTxp
+
+TicketMaster API
+login info:
+Gmail Account: buddyUpApp18@gmail.com
+Password: Q1W2e3r4t5!
+
+Consumer Key	FrP8y4A2ukyhP5v7Kcaq6HaXUORDlW8k
+Consumer Secret	9TcSiA2euZKSbBqL
+Key Issued	Mon, 07/02/2018 - 00:00
+Key Expires	Never
+
+https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=FrP8y4A2ukyhP5v7Kcaq6HaXUORDlW8k
+
+documentations: https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2 
+
+$.ajax({
+  type:"GET",
+  url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=FrP8y4A2ukyhP5v7Kcaq6HaXUORDlW8k",
+  async:true,
+  dataType: "json",
+  success: function(json) {
+              console.log(json);
+              // Parse the response.
+              // Do other things.
+           },
+  error: function(xhr, status, err) {
+              // This time, we do not end up here!
+           }
+});
+>>>>>>> ad59972d17369ffecf325c69c39a83637d34302e
