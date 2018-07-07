@@ -19,6 +19,7 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 import BackgroundImage from '../components/BackgroundImage';
+import AccountsUIWrapper from '../AccountsUIWrapper.js';
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -76,7 +77,7 @@ class DesktopContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyComputer}>
-      <div>Hello world</div>
+      
         <Visibility
           once={false}
           onBottomPassed={this.showFixedMenu}
@@ -107,8 +108,10 @@ class DesktopContainer extends Component {
                     Log in
                   </Button>
                   <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
+                    <AccountsUIWrapper />        
+                  
                   </Button>
+                  
                 </Menu.Item>
               </Container>
             </Menu>
@@ -329,5 +332,7 @@ const HomepageLayout = () => (
       </Container>
     </Segment>
   </ResponsiveContainer>
+
+  
 )
 export default HomepageLayout

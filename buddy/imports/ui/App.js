@@ -7,7 +7,6 @@ import HomePage from './pages/HomePage'
 import { Random1 } from "./pages/welcomepage";
 
 
-
 const styles = {
   fontFamily: "sans-serif",
 	textAlign: "center",
