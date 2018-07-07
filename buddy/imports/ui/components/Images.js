@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import PropTypes from "prop-types";
 import React from "react";
@@ -63,31 +62,21 @@ class Images extends React.Component {
         );
     };
 
-    
-    };
+   
 
 
   
 
 
-    isShowInfo = () => this.props.columns == 1;
+    isShowInfo = () => this.props.columns == 10;
     getPercentWidth = () => 100 / this.props.columns - 1;
     getNextPhotoIndex = currentIndex => this.props.photos.length > currentIndex + 1 ? currentIndex + 1  : 0;
     getPreviousPhotoIndex = currentIndex => currentIndex - 1 >= 0 ? currentIndex - 1  : this.props.photos.length - 1;
     getPhoto = index => this.props.photos.length > index ? this.props.photos[index] : null;
-}
+ 
+};
 
 
 
-=======
-import React from "react";
-import { Grid, Image } from 'semantic-ui-react'
-
-const Images = props => (
-
-<img class="ui tiny image" src="props.image" id="props.id"/>
-
-);
->>>>>>> cbb4b21adca3559156bf63c584b9d320b35694f2
 
 export default Images;

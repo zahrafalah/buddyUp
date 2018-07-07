@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-
+import Container from '../../ui/components/Container'
 
 import {
   Button,
@@ -22,7 +22,7 @@ import {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
+  <Container>
     <Header
       as='h1'
       content='Imagine-a-Company'
