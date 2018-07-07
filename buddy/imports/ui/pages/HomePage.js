@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import Container from '../../ui/components/Container'
+//import Container from '../components/Container'
+
 
 import {
   Button,
