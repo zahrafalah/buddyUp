@@ -2,18 +2,18 @@ import {Profiles} from './profiles.js';
 
 Meteor.methods ({
 
-	'profiles.update'({ info, newText }) {
-	  
+	'profiles.update'({ newText }) {
+		check(newText, String);
   
-	  const user = Profiles.findOne(userId);
+	  const user = Profiles.findOne(this.userId);
   
 	  if (!this.userId) {
 		throw new Meteor.Error('profiles.update.notAuthorized',
 		  'Cannot edit a profile that is not yours');
 	  }
   
-	  Todos.update(todoId, {
-		$set: { text: newText }
+	  Profiles.update(user, {
+		$set: { bio: newText }
 	  });
 	}
  
