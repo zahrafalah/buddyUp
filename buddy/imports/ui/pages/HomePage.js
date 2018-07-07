@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+<<<<<<< HEAD
 //import Container from '../components/Container'
 
+=======
+import Container from '../../ui/components/Container'
+>>>>>>> d0753254cbc03b9293aa1e118623779f0e608a35
 
 import {
   Button,
@@ -26,7 +30,10 @@ import BackgroundImage from '../components/BackgroundImage';
  */
 const HomepageHeading = ({ mobile }) => (
   <Container>
+<<<<<<< HEAD
     <BackgroundImage>
+=======
+>>>>>>> d0753254cbc03b9293aa1e118623779f0e608a35
     <Header
       as='h1'
       content='Imagine-a-Company'
