@@ -1,24 +1,35 @@
 import React from "react";
-import { Grid, Image } from 'semantic-ui-react';
 import Images from "./Images.js";
 import mosaic from "../../../imports/mosaic.json";
-import "../../../client/style.css";
+import ReactDOM from "react-dom";
+
+state = {
+    mosaic} 
 
 
+scramble= (array) => {
+  
+    //shuffle algorithm is the Fisher-Yates
+         var i = array.length;
+         if ( i === 0 ) return false;
+         while ( --i ) {
+            var j = Math.floor( Math.random() * ( i + 1 ) );
+            var tempi = array[i];
+            var tempj = array[j];
+            array[i] = tempj;
+            array[j] = tempi;
+          }
 
-const ImageMosaic = props => (
+          newArray =array.slice(1,48);
+       return newArray;
+     }
+   
 
 
-    {this.state.mosaic.map(mosaic => (
+ReactDOM.render(
+	<div>
+		<Images columns={8} photos={this.scramble(this.state.mosaic)} />
+	</div>,
 
-      <Images
-        id={mosaic.id}
-        src={mosaic.image}
-    
+);
 
-
-      />
-    ))}
-
-
-export default ImageMosaic;
