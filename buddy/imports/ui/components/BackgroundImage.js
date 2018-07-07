@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {StyleSheet} from 'react-native';
 import PhotoGrid from "react-photo-feed";
 import "react-photo-feed/library/style.css";
 import mosaic from '../../../imports/mosaic.json'
@@ -16,7 +15,7 @@ class BackgroundImage extends Component {
         var len = array.length;
         var newArray = [];
 
-        for (var i = 0; i <= 50; i++) {
+        for (var i = 0; i < 45; i++) {
             var picked = Math.floor(Math.random() * len);
             newArray[i] = array[picked];
 
@@ -31,18 +30,11 @@ class BackgroundImage extends Component {
     };
 
     render() {
-        return ( <PhotoGrid style={styles.backgroundImage} columns = {10} photos = {this.scramble(this.state.mosaic)}/>);
+        return ( <PhotoGrid columns = {9} photos = {this.scramble(this.state.mosaic)}/>);
         }
 
     };
 
-    const styles = StyleSheet.create({
-        backgroundImage: {
-            flex: 1,
-            width: null,
-            height: null,
-            resizeMode: 'cover'
-        }
-    });
+   
 
     export default BackgroundImage
