@@ -4,6 +4,7 @@ import Images from "./Images.js";
 import mosaic from "../../../imports/mosaic.json";
 import "../../../client/style.css";
 
+<<<<<<< HEAD
 let n=50;
 const imageArr =  Array.from({length: n}, (v, k) => Math.floor(Math.random()*104));
 
@@ -27,3 +28,23 @@ ReactDOM.render(
 
 
 
+=======
+
+
+const ImageMosaic = props => (
+
+
+    {this.state.mosaic.map(mosaic => (
+
+      <Images
+        id={mosaic.id}
+        src={mosaic.image}
+    
+
+
+      />
+    ))}
+
+
+export default ImageMosaic;
+>>>>>>> cbb4b21adca3559156bf63c584b9d320b35694f2

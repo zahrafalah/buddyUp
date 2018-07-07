@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import PropTypes from "prop-types";
 import React from "react";
@@ -78,5 +79,15 @@ class Images extends React.Component {
 
 
 
+=======
+import React from "react";
+import { Grid, Image } from 'semantic-ui-react'
+
+const Images = props => (
+
+<img class="ui tiny image" src="props.image" id="props.id"/>
+
+);
+>>>>>>> cbb4b21adca3559156bf63c584b9d320b35694f2
 
 export default Images;
