@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+//import Container from '../components/Container'
 
 
 import {
   Button,
   Divider,
   Grid,
+  Container,
   Header,
   Icon,
   Image,
@@ -16,13 +18,15 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+import BackgroundImage from '../components/BackgroundImage';
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
+  <Container>
+    <BackgroundImage>
     <Header
       as='h1'
       content='Imagine-a-Company'
@@ -48,6 +52,7 @@ const HomepageHeading = ({ mobile }) => (
       Get Started
       <Icon name='right arrow' />
     </Button>
+    </BackgroundImage>
   </Container>
 )
 
