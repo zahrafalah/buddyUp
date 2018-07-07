@@ -1,5 +1,5 @@
 import {Profiles} from './profiles.js';
-
+import {Collection2} from 'meteor/aldeed:collection2'
 Meteor.methods ({
 	'profiles.insert'(firstName, lastName, bio) {
 		check(firstName, String);
@@ -20,14 +20,15 @@ Meteor.methods ({
 				throw new Meteor.Error('insert-failed');
 			}
 			else {
-				
+				// success
+				console.log("inserted" + result);
 			}
 		})
   },
   'profiles.remove'(_id) {
     
  
-    Tasks.remove(_id);
+    Profiles.remove(_id);
   },
 	'profiles.update'({ newText }) {
 		check(newText, String);
