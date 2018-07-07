@@ -14,24 +14,31 @@ import '../../ui/accounts/accounts-templates.js';
 // Import React Essentials
 import React from 'react';
 import { render } from 'react-dom';
-import { Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute , browserHistory } from 'react-router';
 
 // Import Pages and/or Components
 import AppLayout from '../../ui/layouts/AppLayout.js';
 import HomePage from '../../ui/pages/HomepageLayout.js';
-
+import logIn from '../../ui/layouts/LoginLayout.js';
 
 // Release the meeeettteeeoooor!
 Meteor.startup( () => {
   
     render(
-        
-        <Route path="/hello-world" component={ AppLayout } >
-  
-          {/* Home Page */}
-          <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
+        <Router history={browserHistory}>
+          <Route path="/hello-world" component={ AppLayout } > 
+    
+            {/* Home Page */}
+            <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
 
-         </Route>,
+            {/* Signup & Login Routes */}       
+            <Route path="users" onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } >
+                    <Route path="login" component={ LogIn } />
+                    {/* <Route path="signup" component={ SignUpPage } /> */}          
+            </Route>
+
+          </Route>
+        </Router>,
 
       
 document.getElementById( 'render-target' )
