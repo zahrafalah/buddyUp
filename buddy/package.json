@@ -23,6 +23,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.51",
     "meteor-node-stubs": "^0.4.1",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-animated-text": "^0.1.3",
     "react-dom": "^16.4.1",

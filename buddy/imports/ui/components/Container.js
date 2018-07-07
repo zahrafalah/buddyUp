@@ -4,21 +4,26 @@ import Images from "./Images.js";
 import mosaic from "../../../imports/mosaic.json";
 import "../../../client/style.css";
 
+let n=50;
+const imageArr =  Array.from({length: n}, (v, k) => Math.floor(Math.random()*104));
+
+const photosObj = JSON.parse(mosaic);
 
 
-const ImageMosaic = props => (
+const photos = [
+    [
+        {
+            id : photosObj.id[imageArr[1]], 
+            src :photosObj.src[imageArr[1]],
+                  },
+       
+]
 
 
-    {this.state.mosaic.map(mosaic => (
-
-      <Images
-        id={mosaic.id}
-        src={mosaic.image}
-    
+ReactDOM.render(
+	<div>
+		<Images columns={8} photos={mosaic} />
+	</div>,
 
 
-      />
-    ))}
 
-
-export default ImageMosaic;
