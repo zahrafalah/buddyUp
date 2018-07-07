@@ -15,7 +15,14 @@ Meteor.methods ({
       firstName: firstName,
       lastName: lastName,
       bio: bio
-    });
+    }, (error, result) => {
+			if (error){
+				throw new Meteor.Error('insert-failed');
+			}
+			else {
+				
+			}
+		})
   },
   'profiles.remove'(_id) {
     
