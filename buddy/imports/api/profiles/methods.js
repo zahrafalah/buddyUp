@@ -1,7 +1,27 @@
 import {Profiles} from './profiles.js';
 
 Meteor.methods ({
-
+	'profiles.insert'(firstName, lastName, bio) {
+		check(firstName, String);
+		check(lastName, String);
+		check(bio, String);
+ 
+    // Make sure the user is logged in before inserting a task
+    if (! this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+ 
+    Profiles.insert({
+      firstName: firstName,
+      lastName: lastName,
+      bio: bio
+    });
+  },
+  'profiles.remove'(_id) {
+    
+ 
+    Tasks.remove(_id);
+  },
 	'profiles.update'({ newText }) {
 		check(newText, String);
   
@@ -16,5 +36,6 @@ Meteor.methods ({
 		$set: { bio: newText }
 	  });
 	}
+	
  
 });
