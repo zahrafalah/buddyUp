@@ -5,11 +5,14 @@ import { Wave, Random } from "react-animated-text";
 
 const exampleStyle = {
     display: "inline-block",
-    border: "1px solid #ccc",
+    textAlign:"center",
+    backgroundColor:"yellow",
+   
     marginBottom: "1em",
-    padding: "2em 1em 1em 1em",
-    width: "80%",
-    fontSize: "5rem"
+    padding: "3em 1em 3em 1em",
+    width: "90%",
+    fontSize: "8rem",
+    
   };
 
 //   const codeStyle = {
