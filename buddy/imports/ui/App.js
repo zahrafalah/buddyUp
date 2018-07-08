@@ -17,7 +17,7 @@ export default class App extends Component {
 	
 	render() {
 	  return (
-		<Button> Click Here </Button>,
+	
 
 		<div style={styles}>				
 			<Random1 />   

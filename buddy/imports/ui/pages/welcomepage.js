@@ -6,26 +6,21 @@ import { Wave, Random } from "react-animated-text";
 const exampleStyle = {
     display: "inline-block",
     textAlign:"center",
-    backgroundColor:"yellow",
-   
-    marginBottom: "1em",
-    padding: "3em 1em 3em 1em",
-    width: "90%",
+    backgroundColor:"yellow",   
+    margin: "0 auto",
+    paddingTop:"2.7em",    
+    width:"100%",
+    position:"fixed",
+    height:"100%",
+    top:"0px",
+    left:"0px",
+    zindex:"1000",
     fontSize: "8rem",
-    
+    // fontWeigh:700    
   };
-
-//   const codeStyle = {
-//     textAlign: "left"
-//   };
-  
-//   const codeDivStyle = {
-//     backgroundColor: "#eee",
-//     marginTop: "2em",
-//     padding: "1px 1em",
-//     overflow: "scroll",
-//     fontSize: "1rem"
-//   };
+const skipStyle = {
+  fontSize: "1rem",
+}
 
 export const Random1 = () => (
     <div style={exampleStyle}>
@@ -35,16 +30,10 @@ export const Random1 = () => (
         effectChange={2.0}
         effectDuration={0.3}
       />
-  
-      {/* <div style={codeDivStyle}>
-        <pre style={codeStyle}>
-          &lt;Random<br />
-          &nbsp;&nbsp;text="Jumping Beans!"<br />
-          &nbsp;&nbsp;effect="jump"<br />
-          &nbsp;&nbsp;effectChange=&#123;2.0}<br />
-          &nbsp;&nbsp;effectDuration=&#123;0.3}<br />
-          />
-        </pre>
-      </div> */}
+    
+    </div>,
+
+    <div style={skipStyle}>
+       <h1>Skip</h1>
     </div>
   );
