@@ -9,14 +9,23 @@ import HomePage from './pages/HomePage';
 import { Random1 } from "./pages/welcomepage";
 
 import { withTracker } from 'meteor/react-meteor-data'; 
-import { Tasks } from '../api/tasks.js';
+import { Tasks ,UserProfile} from '../api/tasks.js';
 import  Task  from './tasks.js';
 
 const styles = {
   fontFamily: "sans-serif",
 	textAlign: "center",
-
 };
+
+ console.log(" This is our user:" , Meteor.userId());
+ console.log("This is the user:", Meteor);
+console.log(UserProfile);
+
+UserProfile.insert({
+	userId: Meteor.userId(),           // _id of logged in user
+	username:Meteor.UserProfile().username,     // username of logged in user
+	// password:Meteor.user().password() //pass
+});
 
 class App extends Component {
 
@@ -55,6 +64,7 @@ class App extends Component {
 	export default withTracker(() => {
 		return {
 			tasks: Tasks.find({}).fetch(),
+			currentUser: Meteor.user(),
 		};
 	})(App);
 

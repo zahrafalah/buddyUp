@@ -72,7 +72,7 @@ class DesktopContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyComputer}>
-      
+
         <Visibility
           once={false}
           onBottomPassed={this.showFixedMenu}
@@ -103,10 +103,19 @@ class DesktopContainer extends Component {
                     Log in
                   </Button>
                   <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    <AccountsUIWrapper />        
-                  
+                    <AccountsUIWrapper />
+                    {this.props.currentUser ?
+                      <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+                        <input
+                          type="text"
+                          ref="textInput"
+                          placeholder="Type to add new tasks"
+                        />
+                      </form> : ''
+                    }
+
                   </Button>
-                  
+
                 </Menu.Item>
               </Container>
             </Menu>
@@ -328,7 +337,7 @@ const HomepageLayout = () => (
     </Segment>
   </ResponsiveContainer>
 
-  
+
 )
 export default HomepageLayout
 
