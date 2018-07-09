@@ -28,8 +28,8 @@ Meteor.startup( () => {
         
         <Route path="/hello-world" component={ AppLayout } >
   
-          {/* Home Page */}
-          <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
+            {/* Home Page */}
+            <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
 
          </Route>,
 
