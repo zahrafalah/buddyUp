@@ -24,5 +24,9 @@ less
 jquery
 meteortesting:mocha
 aldeed:collection2@3.0.0
+<<<<<<< HEAD
 accounts-ui
 accounts-password
+=======
+check
+>>>>>>> 17dbffd... Add check package for methods
