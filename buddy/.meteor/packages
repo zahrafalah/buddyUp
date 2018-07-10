@@ -28,4 +28,5 @@ accounts-ui
 accounts-password
 simple:rest
 http
+simple:rest
 
