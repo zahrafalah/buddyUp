@@ -29,8 +29,9 @@ describe('Profile methods', function(){
 		console.log(userId, "userId generated");
         // mock the Meteor.user() function, so that it
         // always returns our new created user
-        Meteor.User = function () {
-			const users = Meteor.users.find({_id: userId}).fetch();
+        Meteor.user = function () {
+            console.log("finding user id");
+			const users = Meteor.users.find({_id: userId}).read('secondary').fetch();
 			console.log("creating user");
             if (!users || users.length > 1)
                 throw new Error("Meteor.user() mock cannot find user by userId.");
