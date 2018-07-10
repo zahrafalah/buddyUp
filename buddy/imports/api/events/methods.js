@@ -50,12 +50,12 @@ Events.update({eventfulID: event.eventfulID}, {$set: event},{upsert: true}, (err
 
 
 Meteor.methods({
-  'geoJsonForIp': function (ip) {
-    // avoid blocking other method calls from the same client
-    this.unblock();
-    var apiUrl = 'http://api.eventful.com/json/events/search?...x&app_key=Pn3g5RvNgRnxzTxp' + ip;
-    // asynchronous call to the dedicated API calling function
-    var response = Meteor.wrapAsync(apiCall)(apiUrl);
-    return response;
-  }
-});
+    'geoJsonForIp': function (query) {
+      // avoid blocking other method calls from the same client
+      this.unblock();
+      var apiUrl = 'http://api.eventful.com/json/events/search?...&app_key=Pn3g5RvNgRnxzTxp' + query;
+      // asynchronous call to the dedicated API calling function
+      var response = Meteor.wrapAsync(apiCall)(apiUrl);
+      return response;
+    }
+  });
