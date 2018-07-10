@@ -3,6 +3,26 @@ body {
   font-family: sans-serif;
 }
 
+.ui.primary.button {
+
+  background-color: #229396;
+}
+
+
+
+.ui.primary.button:hover{
+  background-color: #BFBFBF;
+}
+
+#mosaicScramble{
+
+  width: 90%;
+ 
+
+}
+
 .PhotoGrid__imageGridItem___hFxCm{
-  height: auto;
+  width: 90%;
+  height: 60%;
+  
 }
