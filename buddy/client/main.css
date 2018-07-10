@@ -8,9 +8,8 @@ body {
   background-color: #229396;
 }
 
-.categorieSearch{
-  color: inverted;
-}
+
+
 .ui.primary.button:hover{
   background-color: #BFBFBF;
 }
@@ -26,8 +25,4 @@ body {
   width: 90%;
   height: 60%;
   
-}
-
-.checkboxes{
-  color:white;
 }

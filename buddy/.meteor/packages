@@ -35,3 +35,7 @@ johanbrook:publication-collector
 simple:rest
 http
 mdg:validated-method
+
+accounts-ui
+accounts-password
+
