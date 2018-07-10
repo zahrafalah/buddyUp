@@ -312,9 +312,9 @@ const ProfilePageLayout = () => (
                 </div>
               </div>
 
-              <div className="card">
+              {/* <div className="card">
                 <div className="content">
-                  <i className="right floated like icon"></i>
+                  <i className="floated like icon"></i>
                   <div className="header">Category</div>
                   <img src="./images/Categories/Arts.jpg" />
                 </div>
@@ -322,7 +322,7 @@ const ProfilePageLayout = () => (
 
               <div className="card">
                 <div className="content">
-                  <i className="right floated like icon"></i>
+                  <i className="floated like icon"></i>
                   <div className="header">Category</div>
                   <img src="./images/Categories/Arts.jpg" />
                 </div>
@@ -330,7 +330,7 @@ const ProfilePageLayout = () => (
 
               <div className="card">
                 <div className="content">
-                  <i className="right floated like icon"></i>
+                  <i className="floated like icon"></i>
                   <div className="header">Category</div>
                   <img src="./images/Categories/Arts.jpg" />
                 </div>
@@ -338,11 +338,11 @@ const ProfilePageLayout = () => (
 
               <div className="card">
                 <div className="content">
-                  <i className="right floated like icon"></i>
+                  <i className=" floated like icon"></i>
                   <div className="header">Category</div>
                   <img src="./images/Categories/Arts.jpg" />
                 </div>
-              </div>
+              </div> */}
 
             </div>
 
