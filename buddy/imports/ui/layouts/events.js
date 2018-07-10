@@ -14,6 +14,7 @@ import {
   Icon,
   Image,
   List,
+
   Responsive,
   Segment,
   Sidebar,
@@ -22,7 +23,6 @@ import {
 
 class event extends React.Component {
 
-<<<<<<< HEAD
     state = {
         result: {},
         search: []
@@ -119,59 +119,7 @@ class event extends React.Component {
             </Segment>
         )
     }
-=======
-
-state = {
-    result: {},
-    search: 
-    };
-
-
-
-searchEvents = query => {
-     Meteor.call('geoJsonForIp', query, function (err, res) {
-      // The method call sets the Session variable to the callback value
-      if (err) { 
-        Session.set('search', {error: err});
-      } else {
-        Session.set('search', res);
-        return res;
-      }
-    });
-  }
-
-  handleInputChange = event => {
-    const q = $(.)
-    const name = event.target.name;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchEvents(this.state.search);
-  };
-
-
-
-  render() {
-    return;
-    <Segment>
-      <Container>
-        <Menu />
-      </Container>
-      <Container>
-        <div class="four wide column">
-          <VerticalMenu />
-        </div>
-        <div class="12 wide column">
-         <Event/>
-        </div>
-      </Container>
-    </Segment>;
-  }
->>>>>>> d6207fe... update eventful api setup
 }
 
 export default event;
+
