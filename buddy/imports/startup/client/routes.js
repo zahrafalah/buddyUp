@@ -19,6 +19,7 @@ import { Route, IndexRoute } from 'react-router';
 // Import Pages and/or Components
 import AppLayout from '../../ui/layouts/AppLayout.js';
 import HomePage from '../../ui/pages/HomepageLayout.js';
+import EventPage from '../../ui/pages/ProfilePage.js';
 
 
 // Release the meeeettteeeoooor!
@@ -26,12 +27,20 @@ Meteor.startup( () => {
   
     render(
         
-        <Route path="/hello-world" component={ AppLayout } >
-  
-          {/* Home Page */}
-          <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
+    <Router history={ browserHistory } >
 
-         </Route>,
+        <Route path="/" component={ AppLayout } >
+
+            {/* Home Page */}
+            <IndexRoute component={ HomePage }  onChange={ redirectIfSignedIn } onEnter={ redirectIfSignedIn } />
+
+            {/* Profile Page */}
+            <Route path="/profile" component={ ProfilePage } onEnter={ redirectUnlessSignedIn } onChange={ redirectUnlessSignedIn } />
+
+         </Route>
+
+    </Router>,
+
 
       
 document.getElementById( 'render-target' )
