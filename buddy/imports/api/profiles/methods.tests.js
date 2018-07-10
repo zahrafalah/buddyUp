@@ -3,8 +3,11 @@ import { AssertionError, doesNotReject } from 'assert';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import{assert} from 'chai';
 import { Random } from 'meteor/random'
-// import {addProfile} from './methods.js';
-import './methods.js';
+import {addProfile} from './methods.js';
+// import './methods.js';
+//this file attempts to test methods by passing in a user context in a beforeEach hook, then deleting the created user in an afterEach hook after running the test. Validated-method package was added because it allows a user context to be passed in using the _execute method. something is going really wrong here, though. 
+//Use TEST_WATCH=1 meteor test --driver-package meteortesting:mocha
+//to run tests and see the outcomes. 
 describe('Profile methods', function(){
 	describe('Profile insert method', ()=> {
 		let userId = null;
@@ -27,7 +30,8 @@ describe('Profile methods', function(){
 
         // Generate a real user, otherwise it is hard to test roles
         userId = Accounts.createUser({username: Random.id(5)});
-        isDefined(userId);
+		isDefined(userId);
+		
 		console.log(userId, "userId generated");
         // mock the Meteor.user() function, so that it
         // always returns our new created user
@@ -39,7 +43,8 @@ describe('Profile methods', function(){
         //         throw new Error("Meteor.user() mock cannot find user by userId.");
         //     return users[0];
 		// };
-		const context = {userId}
+		const context = userId;
+		console.log("context " + context);
 	});
     //------------------------------------------//
 
@@ -54,20 +59,22 @@ describe('Profile methods', function(){
     });
 
 		it('inserts given data', function() {
-			// try {
-			// 	console.log("try block");
-			// 	// Meteor.call('profiles.addProfile',
-			// 	// 	'Briana', 'Johnson', 'A busy person'), (err, res)=>{console.log(res)};
-			// 	// }
-			// 	addProfile._execute(context, userId, 'Briana', 'Johnson');
-			// catch(err){
-			// 	throw new Error(err);
-			// }
-			//  done(); 
-			const args = ['10', 'Briana'];
-			assert.doesNotThrow(() => {
-				Profiles.addProfile._execute(context, args);
-			  }, Error);
+			try {
+				console.log("try block");
+				console.log(context + "context for execution");
+				addProfile._execute(context, 
+					('Briana', 'Johnson', 'A busy person'), (err, res)=>{console.log(res)});
+				
+				
+			}
+			catch(err){
+				throw new Error(err);
+			}
+			 done(); 
+			// const args = ['10', 'Briana'];
+			// assert.doesNotThrow(() => {
+			// 	addProfile._execute(context, args);
+			//   }, Error);
 			
 		});
 	});
