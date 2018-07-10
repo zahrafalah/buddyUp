@@ -5,6 +5,9 @@ import{assert} from 'chai';
 import { Random } from 'meteor/random'
 // import {addProfile} from './methods.js';
 import './methods.js';
+//this file attempts to test methods by passing in a user context in a beforeEach hook, then deleting the created user in an afterEach hook after running the test. Validated-method package was added because it allows a user context to be passed in using the _execute method. something is going really wrong here, though. 
+//Use TEST_WATCH=1 meteor test --driver-package meteortesting:mocha
+//to run tests and see the outcomes. 
 describe('Profile methods', function(){
 	describe('Profile insert method', ()=> {
 		let userId = null;

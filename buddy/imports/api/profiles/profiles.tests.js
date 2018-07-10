@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 // import SimpleSchema from 'meteor/aldeed:collection2'
 import {Profiles} from './profiles.js';
 import { AssertionError } from 'assert';
+//this is currently working -- it just tests the schema is up
 describe('Profiles', () => {
 	describe('invalid insert', () => {
 		it('denies invalid inserts into a validated schema', () => {
