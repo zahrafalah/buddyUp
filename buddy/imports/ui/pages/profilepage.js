@@ -225,7 +225,7 @@ const ProfilePageLayout = () => (
           </Grid.Column>
 
           <Grid.Column floated='right' width={6}>
-            <Image bordered circular size='medium' src='/images/Activities.png' />
+            <Image bordered circular size='medium' src='./images/Categories/coffee.jpg' />
           </Grid.Column>
         </Grid.Row>
 
@@ -240,109 +240,125 @@ const ProfilePageLayout = () => (
             <div className="ui four stackable link cards">
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Art</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/Arts.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Coffee</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/coffee.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Food</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/food.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Reading</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/reading.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Sport</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/Sports.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Science</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/Science.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Concert</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/concerts.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Pet</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/Pets.jpg" />
                 </div>
               </div>
 
               <div className="card">
-                <div className="image">
-                  <img src="./images/Categories/Pets.jpg" />
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Festival</div>
                 </div>
-              </div>
-
-              <div className="card">
                 <div className="image">
                   <img src="./images/Categories/festivals.jpg" />
                 </div>
               </div>
 
-              <div className="card right floated like icon header">
-              Category
+              <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Happy-hour</div>
+                </div>
+
                 <div className="image">
                   <img src="./images/Categories/happy-hour.jpg" />
                 </div>
               </div>
 
               <div className="card">
+                <div className="content">
+                  <i className="right floated like icon"></i>
+                  <div className="header">Volunteer</div>
+                </div>
                 <div className="image">
                   <img src="./images/Categories/volunteer.jpg" />
                 </div>
               </div>
 
-              {/* <div className="card">
-                <div className="content">
-                  <i className="floated like icon"></i>
-                  <div className="header">Category</div>
-                  <img src="./images/Categories/Arts.jpg" />
-                </div>
-              </div>
-
               <div className="card">
                 <div className="content">
-                  <i className="floated like icon"></i>
-                  <div className="header">Category</div>
-                  <img src="./images/Categories/Arts.jpg" />
+                  <i className="right floated like icon"></i>
+                  <div className="header">Holiday</div>
+                </div>
+                <div className="image">
+                  <img src="./images/Categories/holidays.jpg" />
                 </div>
               </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="floated like icon"></i>
-                  <div className="header">Category</div>
-                  <img src="./images/Categories/Arts.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className=" floated like icon"></i>
-                  <div className="header">Category</div>
-                  <img src="./images/Categories/Arts.jpg" />
-                </div>
-              </div> */}
 
             </div>
 
