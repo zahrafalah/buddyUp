@@ -16,6 +16,7 @@ import {
   Icon,
   Image,
   List,
+
   Responsive,
   Segment,
   Sidebar,
@@ -24,7 +25,6 @@ import {
 
 class event extends React.Component {
 
-<<<<<<< HEAD
     state = {
         result: {},
         search: {}
