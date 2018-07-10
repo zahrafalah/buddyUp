@@ -1,13 +1,22 @@
 import {Profiles} from './profiles.js';
 import {Collection2} from 'meteor/aldeed:collection2'
 import {check} from 'meteor/check';
-Meteor.methods ({
-	'profiles.addProfile'(firstName, lastName, bio) {
-		check(firstName, String);
-		check(lastName, String);
-		check(bio, String);
- 
-    // Make sure the user is logged in before inserting a task
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+
+export const addProfile = new ValidatedMethod({
+	name: 'profiles.addProfile',
+	validate(firstName, lastName, bio) {
+			check(firstName, LastName, bio, {
+				firstName: String,
+				lastName: String,
+				bio: String
+			});
+		},
+	applyOptions: {
+			returnStubValue: true,
+		},
+	run(firstName, lastName, bio){
+    // Make sure the user is logged in before inserting a profile
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -25,15 +34,48 @@ Meteor.methods ({
 				console.log("inserted" + result);
 			}
 		})
-  },
-  'profiles.remove'(_id) {
-    
- 
-    Profiles.remove(_id);
-  },
-	'profiles.update'({ newText }) {
-		check(newText, String);
-  
+	}
+	});
+	
+export const removeProfile = new ValidatedMethod({
+	name: 'profiles.removeProfile',
+	validate(_id){
+		check(_id,{
+			_id: String
+		});
+	},
+	applyOptions: {
+		returnStubValue: true
+	},
+	run(_id){
+		if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+		}
+		Profiles.remove(_id);
+	}
+ });
+ // export const insert = new ValidatedMethod({
+//   name: 'lists.insert',
+//   validate: new SimpleSchema({
+//     language: {
+//       type: String,
+//     },
+//   }).validator(),
+//   run({ language }) {
+//     return Lists.insert({}, null, language);
+//   },
+// });
+export const updateProfile = new ValidatedMethod({
+	name: 'profiles.updateProfile',
+	validate(newBio){
+		check(newBio,{
+			newBio: String
+		});
+	},
+	applyOptions: {
+			returnStubValue: true
+		},
+  run(newBio){
 	  const user = Profiles.findOne(this.userId);
   
 	  if (!this.userId) {
@@ -42,9 +84,9 @@ Meteor.methods ({
 	  }
   
 	  Profiles.update(user, {
-		$set: { bio: newText }
+		$set: { bio: newBio }
 	  });
 	}
-	
+})
  
-});
+
