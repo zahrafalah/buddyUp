@@ -24,9 +24,6 @@ less
 jquery
 meteortesting:mocha
 aldeed:collection2@3.0.0
-<<<<<<< HEAD
 accounts-ui
 accounts-password
-=======
 simple:rest
->>>>>>> 8ea45be... update api
