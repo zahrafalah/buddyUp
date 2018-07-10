@@ -5,7 +5,6 @@ import React, {Component} from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
 import Event from "../components/Event";
-<<<<<<< HEAD
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
     Button,
@@ -26,9 +25,6 @@ import {
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 //import Container from '../components/Container'
-
-=======
->>>>>>> d6207fe... update eventful api setup
 
 import {
   Button,
