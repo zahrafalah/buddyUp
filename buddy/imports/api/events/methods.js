@@ -48,6 +48,7 @@ Events.update({eventfulID: event.eventfulID}, {$set: event},{upsert: true}, (err
 
 
 
+
 Meteor.methods({
   'geoJsonForIp': function (ip) {
     // avoid blocking other method calls from the same client
