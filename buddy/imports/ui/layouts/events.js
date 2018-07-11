@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 // top level layout: will include things like navbar, button placement, areas of text
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
 import Event from "../components/Event";
+=======
+// top level layout: will include things like navbar, button placement, areas of text 
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import Menu from '../components/Menu'
+import VerticalMenu from '../components/VerticalMenu';
+>>>>>>> 4d84344d6d08d82cb884e095471483373327b3f6
 
 import {
   Button,
