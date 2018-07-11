@@ -3,12 +3,12 @@ import React, {Component} from "react";
 export const VerticalMenu = props => (render() {
     return (
 
-        <div class="ui vertical menu categorieSearch">
+        <div className="ui vertical menu categorieSearch">
             <div>
-                <button onClick={props.handleFormSubmit} class="ui basic button" name='refresh'>Refresh</button>
+                <button onClick={props.handleFormSubmit} className="ui basic button" name='refresh'>Refresh</button>
             </div>
-            <div class="item">
-                <div class="ui input">
+            <div className="item">
+                <div className="ui input">
                     <label>Search
                     </label>
                     <input
@@ -18,14 +18,14 @@ export const VerticalMenu = props => (render() {
                         placeholder="Search for Anything..."
                         name="search"
                         type="text"
-                        className="form-control"/>
+                        classNameName="form-control"/>
 
                 </div>
 
-                <div class="item">
+                <div className="item">
                     Categories
 
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -33,7 +33,7 @@ export const VerticalMenu = props => (render() {
                             name="art"/>
                         <label>Arts</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -41,7 +41,7 @@ export const VerticalMenu = props => (render() {
                             name="coffee"/>
                         <label>Coffee</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             type="checkbox"
                             name="food"
@@ -49,7 +49,7 @@ export const VerticalMenu = props => (render() {
                             onChange={this.handleInputChange}/>
                         <label>Food</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -57,7 +57,7 @@ export const VerticalMenu = props => (render() {
                             name="reading"/>
                         <label>Reading & Books</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -65,7 +65,7 @@ export const VerticalMenu = props => (render() {
                             name="sports"/>
                         <label>Sports</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             type="checkbox"
                             name="science"
@@ -73,7 +73,7 @@ export const VerticalMenu = props => (render() {
                             onChange={this.handleInputChange}/>
                         <label>Science</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -81,7 +81,7 @@ export const VerticalMenu = props => (render() {
                             name="concert"/>
                         <label>Concerts</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -89,7 +89,7 @@ export const VerticalMenu = props => (render() {
                             name="pets"/>
                         <label>Pets</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -97,7 +97,7 @@ export const VerticalMenu = props => (render() {
                             name="festivals"/>
                         <label>festivals</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -105,7 +105,7 @@ export const VerticalMenu = props => (render() {
                             name="happyHour"/>
                         <label>Happy Hour</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -113,7 +113,7 @@ export const VerticalMenu = props => (render() {
                             name="volunteer"/>
                         <label>Volunteering</label>
                     </div>
-                    <div class="ui checkbox">
+                    <div className="ui checkbox">
                         <input
                             checked={this.state.checked}
                             onChange={this.handleInputChange}
@@ -122,9 +122,9 @@ export const VerticalMenu = props => (render() {
                         <label>Holiday</label>
                     </div>
                 </div>
-                <div class="item">
+                <div className="item">
                     Other:
-                    <div class="ui input">
+                    <div className="ui input">
                         <label>Zip Code</label>
                         <input
                             onChange={props.handleInputChange}
@@ -133,26 +133,26 @@ export const VerticalMenu = props => (render() {
                             placeholder="Search for Anything..."
                             name="zipCode"
                             type="text"
-                            className="form-control"/>
-                        <div class="ui selection dropdown">
+                            classNameName="form-control"/>
+                        <div className="ui selection dropdown">
                             <input
                                 type="hidden"
                                 name="distance"
                                 onChange={props.handleInputChange}
                                 value={this.props.value}/>
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Distance</div>
-                            <div class="menu">
-                                <div class="item" data-value="5">5 miles</div>
-                                <div class="item" data-value="10">10 miles</div>
-                                <div class="item" data-value="25">25 miles</div>
-                                <div class="item" data-value="50">50 miles</div>
-                                <div class="item" data-value="100">100 miles</div>
+                            <i className="dropdown icon"></i>
+                            <div className="default text">Distance</div>
+                            <div className="menu">
+                                <div className="item" data-value="5">5 miles</div>
+                                <div className="item" data-value="10">10 miles</div>
+                                <div className="item" data-value="25">25 miles</div>
+                                <div className="item" data-value="50">50 miles</div>
+                                <div className="item" data-value="100">100 miles</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    );
+    );)}
 
