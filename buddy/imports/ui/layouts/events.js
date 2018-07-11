@@ -1,7 +1,12 @@
 // top level layout: will include things like navbar, button placement, areas of text 
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+<<<<<<< HEAD
 //import Container from '../components/Container'
+=======
+import Menu from '../components/Menu'
+import VerticalMenu from '../components/VerticalMenu';
+>>>>>>> 4d84344... update event api setup
 
 import {
   Button,
