@@ -15,7 +15,7 @@ describe('Profiles', () => {
 	});
 	describe('valid insert', () => {
 		it ('validates correct inputs into a schema', () => {
-			ret = Profiles.simpleSchema().namedContext().validate({userId: "123456", firstName: "Joe", lastName: "Schmoe"}, {modifier: false});
+			ret = Profiles.simpleSchema().namedContext().validate({firstName: "Joe", lastName: "Schmoe", art: false, coffee: true, food: true, reading: false, sport: false, science: true, concert: false, pet: true, festival: true, happyhour: false, volunteer: true, holiday: false}, {modifier: false});
 			if(ret === false)
 				throw new Error("Failed: valid schema denied as invalid");
 		})
