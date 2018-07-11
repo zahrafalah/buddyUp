@@ -5,7 +5,6 @@ Eventful account API: Pn3g5RvNgRnxzTxp
 
 http://api.eventful.com/json/events/search?...&location=Phoenix&app_key=Pn3g5RvNgRnxzTxp
 
-<<<<<<< HEAD
 API call for category:
 http://api.eventful.com/json/categories/list?app_key=Pn3g5RvNgRnxzTxp
 
@@ -57,7 +56,6 @@ http://api.eventful.com/rest/events/search?...&keywords=books&location=San+Diego
 
 Example Request 2 - Any event withing 25 miles of a specific Lat / Long value in San Diego
 http://api.eventful.com/rest/events/search?...&where=32.746682,-117.162741&within=25
-=======
 Sample: 
 
 "events": {
@@ -137,4 +135,3 @@ $.ajax({
               // This time, we do not end up here!
            }
 });
->>>>>>> ad59972d17369ffecf325c69c39a83637d34302e
