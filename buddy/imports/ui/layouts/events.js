@@ -7,12 +7,12 @@ import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
-=======
+
 // top level layout: will include things like navbar, button placement, areas of text
-=======
+
 // top level layout: will include things like navbar, button placement, areas of
 // text
->>>>>>> 60d5257... API pre-set up with constructors for testing
+
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
