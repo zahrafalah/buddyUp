@@ -179,18 +179,6 @@ export default class Events extends React.Component {
                     </div>
                 </Container >
             </Segment>
-<<<<<<< HEAD
         );
     };
-
-=======
-        )
-    }
 }
->>>>>>> 0a93b50... update eventful api setup
-
-<<<<<<< HEAD
-=======
-export default event;
-
->>>>>>> b6230f6... update rebase
