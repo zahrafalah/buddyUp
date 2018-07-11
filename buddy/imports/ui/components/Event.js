@@ -1,4 +1,4 @@
-import React from ‘react’ — /*you always need to import react*/
+import React from React
 /*here is where we can import other child components or mongo collections (database)*/
 export default class Event  extends React.Component {
 
