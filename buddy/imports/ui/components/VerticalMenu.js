@@ -5,7 +5,10 @@ export const VerticalMenu = props => (render() {
 
         <div className="ui vertical menu categorieSearch">
             <div>
-                <button onClick={props.handleFormSubmit} className="ui basic button" name='refresh'>Refresh</button>
+                <button
+                    onClick={props.handleFormSubmit}
+                    className="ui basic button"
+                    name='refresh'>Refresh</button>
             </div>
             <div className="item">
                 <div className="ui input">
@@ -154,5 +157,5 @@ export const VerticalMenu = props => (render() {
                 </div>
             </div>
         </div>
-    );)}
-
+    );)
+}

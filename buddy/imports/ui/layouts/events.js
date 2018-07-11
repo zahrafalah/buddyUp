@@ -22,21 +22,6 @@ import {
 } from "semantic-ui-react";
 import {EventList} from "../components/EventList";
 
-  Button,
-  Divider,
-  Grid,
-  Container,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility
-} from "semantic-ui-react";
-
 
 export default class Events extends React.Component {
 
