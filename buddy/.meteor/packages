@@ -24,17 +24,8 @@ less
 jquery
 meteortesting:mocha
 aldeed:collection2@3.0.0
-<<<<<<< HEAD
 check
 accounts-ui
 accounts-password
 mdg:validated-method
 
-accounts-ui
-accounts-password
-
-=======
-accounts-ui
-accounts-password
-simple:rest
->>>>>>> 314be47... update packages
