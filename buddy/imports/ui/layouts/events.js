@@ -43,7 +43,6 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 
-
 class event extends React.Component {
 
     state = {
@@ -129,6 +128,8 @@ handleFormSubmit = event => {
     event.preventDefault();
     this.searchEvents(queryURL);
 };
+=======
+export default event;
 
 render() {
     return (
@@ -150,4 +151,3 @@ render() {
 };
 
 export default event;
-
