@@ -40,8 +40,8 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility,
-} from 'semantic-ui-react'
+  Visibility
+} from "semantic-ui-react";
 
 class event extends React.Component {
 
@@ -128,26 +128,4 @@ handleFormSubmit = event => {
     event.preventDefault();
     this.searchEvents(queryURL);
 };
-=======
-export default event;
-
-render() {
-    return (
-        <Segment >
-            <Container>
-                <Menu/>
-            </Container>
-            < Container >
-                <div class="four wide column">
-                    <VerticalMenu/>
-                </div>
-                < div class="12 wide column">
-                    <Event/>{children}</div>
-            </Container >
-        </Segment>
-    );
-};
-
-};
-
 export default event;
