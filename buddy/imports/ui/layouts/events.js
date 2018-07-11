@@ -37,12 +37,12 @@ import {
   Icon,
   Image,
   List,
+  Menu,
   Responsive,
   Segment,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-
 
 class event extends React.Component {
 
@@ -145,10 +145,3 @@ class event extends React.Component {
 }
 
 export default event;
-
-import Navbar from '../components/Navbar.js';
-
-<Navbar/>
-
-
->>>>>>> 8ea45be... update api
