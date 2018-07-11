@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
+import Event from "../components/Event";
 
 import {
   Button,
@@ -20,6 +21,42 @@ import {
 } from "semantic-ui-react";
 
 class event extends React.Component {
+
+
+state = {
+    result: {},
+    search: 
+    };
+
+
+
+searchEvents = query => {
+     Meteor.call('geoJsonForIp', query, function (err, res) {
+      // The method call sets the Session variable to the callback value
+      if (err) { 
+        Session.set('search', {error: err});
+      } else {
+        Session.set('search', res);
+        return res;
+      }
+    });
+  }
+
+  handleInputChange = event => {
+    const q = $(.)
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.searchEvents(this.state.search);
+  };
+
+
+
   render() {
     return;
     <Segment>
@@ -31,25 +68,7 @@ class event extends React.Component {
           <VerticalMenu />
         </div>
         <div class="12 wide column">
-          <div class="card">
-            <div class="image">
-              <img src="/images/avatar2/large/matthew.png" />
-            </div>
-            <div class="content">
-              <div class="event">#</div>
-              <div class="meta">
-                <a>Category</a>
-              </div>
-            </div>
-            <div class="description">SSSSSSSSSSSSSSSSSSSSSSSSSss</div>
-          </div>
-          <div class="extra content">
-            <span class="right floated">date</span>
-            <span>
-              <i class="user icon" />
-              # bodies going to
-            </span>
-          </div>
+         <Event/>
         </div>
       </Container>
     </Segment>;
