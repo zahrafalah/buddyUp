@@ -24,6 +24,31 @@ import EventPage from '../../ui/pages/ProfilePage.js';
 
 // Release the meeeettteeeoooor!
 Meteor.startup( () => {
+
+    Store.subscribe(refresh);
+    function refresh() {
+      console.log("REFRESH");
+      browserHistory.replace(location);
+    }
+  
+    function redirectIfSignedIn(){
+      if(Meteor.userId() != null){
+        
+        console.log("Redirecting Signed In User");
+        browserHistory.replace('/dashboard');
+      } else {
+        console.log("User is NOT there");
+      }
+    }
+  
+    function redirectUnlessSignedIn(){
+      if(Meteor.userId() === null){
+        console.log("Redirecting Visitor");
+        browserHistory.replace('/users/login');
+      } else {
+        console.log("User is there");
+      }
+    }
   
     render(
         

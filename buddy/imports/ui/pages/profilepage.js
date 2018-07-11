@@ -195,7 +195,7 @@ const ResponsiveContainer = ({ children }) => (
     <DesktopContainer>{children}</DesktopContainer>
     <MobileContainer>{children}</MobileContainer>
   </div>
-)
+)   
 
 ResponsiveContainer.propTypes = {
   children: PropTypes.node,
