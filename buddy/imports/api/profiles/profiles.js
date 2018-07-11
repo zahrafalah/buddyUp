@@ -24,7 +24,55 @@ Schemas.Profile = new SimpleSchema({
     bio: {
         type: String,
         optional: true
-	} 
+    }, 
+    art: {
+        type: Boolean,
+        optional: false
+    },
+    coffee: {
+        type: Boolean, 
+        optional: false
+    }, 
+    food: {
+        type: Boolean,
+        optional: false
+    },
+    reading: {
+        type: Boolean,
+        optional: false
+    }, 
+    sport: {
+        type: Boolean,
+        optional: false
+    }, 
+    science: {
+        type: Boolean,
+        optional: false
+    },
+    concert: {
+        type: Boolean,
+        optional: false
+    },
+    pet: {
+        type: Boolean,
+        optional: false
+    },
+    festival: {
+        type: Boolean,
+        optional: false
+    },
+    happyhour: {
+        type: Boolean,
+        optional: false
+    },
+    volunteer: {
+        type: Boolean,
+        optional: false
+    },
+    holiday: {
+        type: Boolean,
+        optional: false
+    } 
 });
 
 Profiles.attachSchema(Schemas.Profile);
