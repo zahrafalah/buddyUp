@@ -19,6 +19,7 @@ import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
 
+class event extends React.Component {
 
 import {
     Button,
@@ -66,13 +67,10 @@ export default class Events extends React.Component {
         this.handleChange = this
             .handleChange
             .bind(this);
+
     };
-  }
 
-  var query = '&q=' + this.search.search + 
-   
-
-    handleChange = event => {
+    handleChange(event) {
         this
             .search
             .setState({
