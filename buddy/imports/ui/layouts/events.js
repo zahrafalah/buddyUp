@@ -34,8 +34,8 @@ import {EventList} from "../components/EventList";
   Responsive,
   Segment,
   Sidebar,
-  Visibility,
-} from 'semantic-ui-react'
+  Visibility
+} from "semantic-ui-react";
 
 
 export default class Events extends React.Component {
