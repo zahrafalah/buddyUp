@@ -20,7 +20,7 @@ import {
     Sidebar,
     Visibility
 } from "semantic-ui-react";
-=======
+
 // top level layout: will include things like navbar, button placement, areas of text 
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
@@ -36,12 +36,12 @@ import {
   Icon,
   Image,
   List,
+  Menu,
   Responsive,
   Segment,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-
 
 class event extends React.Component {
 
@@ -87,6 +87,8 @@ handleChange(event) {
 };
 
 searchEvents = query => {
+
+export default event;
 
     Meteor
         .call('geoJsonForIp', query, function (err, res) {
