@@ -1,4 +1,11 @@
 
+// top level layout: will include things like navbar, button placement, areas of text 
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import Menu from '../components/Menu'
+import VerticalMenu from '../components/VerticalMenu';
+
+
 /*// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
@@ -22,6 +29,45 @@ import {
     Visibility
 } from "semantic-ui-react";
 import {EventList} from "../components/EventList";
+
+  Button,
+  Divider,
+  Grid,
+  Container,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Responsive,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
+<<<<<<< HEAD
+
+class event extends React.Component {
+
+  render(){
+    return
+    <Segment>
+      <Container>
+        <Menu/>
+      </Container>
+      <Container>
+        <div class="four wide column">
+          <VerticalMenu/>
+        </div>
+        <div class="12 wide column">
+        
+        </div>
+
+      </Container>
+
+
+    </Segment>
+  };
+>>>>>>> af05ebc... update rebase
 
 export default class Events extends React.Component {
 
@@ -199,3 +245,4 @@ render() {
         );
     };
 }
+
