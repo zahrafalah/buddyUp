@@ -45,61 +45,57 @@ import {
 
 class event extends React.Component {
 
-    state = {
-        result: {},
-        search: []
+
+state = {
+    result: {},
+    search: 
     };
 
-    constructor(props) {
 
-        super(props);
-        this.state.search = {
-            search: '',
-            animals: '',
-            art: '',
-            books: '',
-            festivals_parades: '',
-            food: '',
-            fundraisers: '',
-            holiday: '',
-            music: '',
-            outdoors_recreation: '',
-            science: '',
-            singles_social: '',
-            sports: '',
-            location: '',
-            distance: ''
-        };
-
-        this.handleChange = this
-            .handleChange
-            .bind(this);
-
-    };
-}
-
-handleChange(event) {
-    this
-        .search
-        .setState({
-            [event.target.name]: event.target.value
-        });
-};
 
 searchEvents = query => {
+     Meteor.call('geoJsonForIp', query, function (err, res) {
+      // The method call sets the Session variable to the callback value
+      if (err) { 
+        Session.set('search', {error: err});
+      } else {
+        Session.set('search', res);
+        return res;
+      }
+    });
+  }
 
-export default event;
+  handleInputChange = event => {
+    const q = $(.)
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
+  };
 
-    Meteor
-        .call('geoJsonForIp', query, function (err, res) {
-            // The method call sets the Session variable to the callback value
-            if (err) {
-                Session.set(this.state.result, {error: err});
-            } else {
-                Session.set(this.state.result, res);
-                return res;
-            }
-        });
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.searchEvents(this.state.search);
+  };
+
+
+
+  render() {
+    return;
+    <Segment>
+      <Container>
+        <Menu />
+      </Container>
+      <Container>
+        <div class="four wide column">
+          <VerticalMenu />
+        </div>
+        <div class="12 wide column">
+         <Event/>
+        </div>
+      </Container>
+    </Segment>;
+  }
 }
 
 handleFormSubmit = event => {
