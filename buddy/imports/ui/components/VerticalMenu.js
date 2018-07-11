@@ -1,207 +1,87 @@
 import React, {Component} from "react";
-import {
-    Button,
-    Divider,
-    Grid,
-    Container,
-    Header,
-    Icon,
-    Image,
-    List,
-    Responsive,
-    Segment,
-    Sidebar,
-    Visibility,
-    Checkbox,
-    Dropdown
-} from "semantic-ui-react";
+import AccountsUIWrapper from AccountsUIWrapper;
 
 
-export const VerticalMenu = props => (
+class VerticalMenu extends Component {
 
-    <div className="ui vertical menu large categorieSearch">
-        <div className='item'>
-            <button
-                onClick={props.handleFormSubmit}
-                className="ui basic button item olive"
-                name='refresh'>AnyBuddyUp?</button>
-        </div>
-        <div className="item ">
-            <div className="ui input item">
-                <label>Search
-                </label>
-                <input
-                    onChange={props.handleInputChange}
-                    value={props.value}
-                    type="text"
-                    placeholder="Search for an Event..."
-                    name="search"
-                    type="text"
-                    className="form-control "/>
-
+    render(){
+        return
+        <div class="ui vertical menu">
+            <div class="item">
+                <div class="ui input"><input type="text" placeholder="Anything..."/>Search Something
             </div>
-        </div>
-
-        <div className="item checkboxes">
-            Categories
-            <div className="menu">
-                <div className="ui checkbox item ">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="art"
-                        value="art"/>
-                    <label className=''>Art Galleries & Exhibits</label>
+            
+            <div class="item">
+                Categories
                 </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="outdoors_recreation"
-                        value="outdoors-recreation"/>
-                    <label>Outdoors & Recreation</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        type="checkbox"
-                        name="food"
-                        value="food"
-                        checked={props.checked}
-                        onChange={props.handleInputChange}/>
-                    <label>Food & Wine</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="books"
-                        value="books"/>
-                    <label>Reading & Books</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="sports"
-                        value="sports"/>
-                    <label>Sports</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        type="checkbox"
-                        name="science"
-                        value="science"
-                        checked={props.checked}
-                        onChange={props.handleInputChange}/>
-                    <label>Science</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="music"
-                        value="music"/>
-                    <label>Concerts & Tour Dates</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="animals"
-                        value="animals"/>
-                    <label>Pets</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="festivals_parades"
-                        value="festivals_parades"/>
-                    <label>Festivals</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="singles_social"
-                        value="singles_social"/>
-                    <label>Nightlife</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="fundraisers"
-                        value="fundraisers"/>
-                    <label>Volunteering</label>
-                </div>
-                <div className="ui checkbox item">
-                    <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
-                        type="checkbox"
-                        name="holiday"
-                        value="holiday"/>
-                    <label>Holiday</label>
-                </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Music</label>
             </div>
-        </div>
-        <div className="item">
-            Other:
-            <div className="ui input item">
-                <label>Zip Code</label>
-                <input
-                    onChange={props.handleInputChange}
-                    value={props.value}
-                    type="text"
-                    placeholder="Search for Anything..."
-                    name="zipCode"
-                    type="text"
-                    className="form-control"/>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Outdoor Activities</label>
             </div>
-            <div className="ui selection item dropdown">
-                <input
-                    type="hidden"
-                    name="within"
-                    onChange={props.handleInputChange}
-                    value={props.value}/>
-                <i className="dropdown icon"></i>
-                <div className="default text item">Distance</div>
-                <select className="menu">
-                    <option className="item" data-value="5">5 miles</option>
-                    <option className="item" data-value="10">10 miles</option>
-                    <option className="item" data-value="25">25 miles</option>
-                    <option className="item" data-value="50">50 miles</option>
-                    <option className="item" data-value="100">100 miles</option>
-                </select>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Arts</label>
             </div>
-            <div className="ui selection item dropdown">
-                <input
-                    type="hidden"
-                    name="date"
-                    onChange={props.handleInputChange}
-                    value={props.value}/>
-                <i className="dropdown icon"></i>
-                <div className="default text">When</div>
-                <div className="menu">
-                    <div className="item" data-value="today">Today</div>
-                    <div className="item" data-value="This Week">This Week</div>
-                    <div className="item" data-value="Next Week">Last Week</div>
-                    <div className="item" data-value="All">See All</div>
-
-                </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Boardgames & Gambling</label>
             </div>
-
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Coffee</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Concerts</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Gaming</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Food</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Drinks and Happy Hours</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Holiday Theme Activities</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Health & Wellness</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Pets</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Books & Related</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Science & Related</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Sports</label>
+            </div>
+            <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label>Volunteer</label>
         </div>
     </div>
+  </div>
+    };
+    
+};
 
-)
+export default VerticalMenu
