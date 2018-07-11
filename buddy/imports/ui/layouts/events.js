@@ -1,13 +1,8 @@
-// top level layout: will include things like navbar, button placement, areas of text 
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-<<<<<<< HEAD
-import Menu from '../components/Menu'
-import VerticalMenu from '../components/VerticalMenu';
-=======
-//import Container from '../components/Container'
-
->>>>>>> 8ea45be... update api
+// top level layout: will include things like navbar, button placement, areas of text
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Menu from "../components/Menu";
+import VerticalMenu from "../components/VerticalMenu";
 
 import {
   Button,
@@ -18,51 +13,47 @@ import {
   Icon,
   Image,
   List,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  Menu,
->>>>>>> 8ea45be... update api
-=======
->>>>>>> c36e161... update events
   Responsive,
   Segment,
   Sidebar,
-  Visibility,
-} from 'semantic-ui-react'
+  Visibility
+} from "semantic-ui-react";
 
 class event extends React.Component {
-
-  render(){
-    return
+  render() {
+    return;
     <Segment>
       <Container>
-        <Menu/>
+        <Menu />
       </Container>
       <Container>
         <div class="four wide column">
-          <VerticalMenu/>
+          <VerticalMenu />
         </div>
         <div class="12 wide column">
-        
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar2/large/matthew.png" />
+            </div>
+            <div class="content">
+              <div class="event">#</div>
+              <div class="meta">
+                <a>Category</a>
+              </div>
+            </div>
+            <div class="description">SSSSSSSSSSSSSSSSSSSSSSSSSss</div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">date</span>
+            <span>
+              <i class="user icon" />
+              # bodies going to
+            </span>
+          </div>
         </div>
-
       </Container>
-
-
-    </Segment>
-  };
-
-};
+    </Segment>;
+  }
+}
 
 export default event;
-<<<<<<< HEAD
-=======
-import Navbar from '../components/Navbar.js';
-
-<Navbar/>
-
-
->>>>>>> 8ea45be... update api
-=======
->>>>>>> c36e161... update events
