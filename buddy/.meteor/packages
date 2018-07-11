@@ -29,7 +29,4 @@ accounts-password
 simple:rest
 http
 mdg:validated-method
-accounts-ui
-accounts-password
-simple:rest
 
