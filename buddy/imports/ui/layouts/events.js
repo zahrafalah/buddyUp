@@ -1,62 +1,62 @@
-/*// top level layout: will include things like navbar, button placement, areas of
+// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
-import {Event} from "../components/Event";
-import {EventList} from "../components/EventList"
+import Event from "../components/Event";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
-  Button,
-  Divider,
-  Grid,
-  Container,
-  Header,
-  Icon,
-  Image,
-  List,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility
+    Button,
+    Divider,
+    Grid,
+    Container,
+    Header,
+    Icon,
+    Image,
+    List,
+    Responsive,
+    Segment,
+    Sidebar,
+    Visibility
 } from "semantic-ui-react";
-import {EventList} from "../components/EventList";
 
-export default class Events extends React.Component {
+class event extends React.Component {
 
     state = {
         result: {},
-        search: {}
-    }
-    constructor() {
-        super();
+        search: []
+    };
+
+    constructor(props) {
+
+        super(props);
+
         this.state.search = {
             search: '',
-            arts: '',
-            coffee: '',
+            animals: '',
+            art: '',
+            books: '',
+            festivals_parades: '',
             food: '',
-            reading: '',
-            sports: '',
-            science: '',
-            concert: '',
-            pets: '',
-            festivals: '',
-            happyHour: '',
-            volunteer: '',
+            fundraisers: '',
             holiday: '',
-            zipCode: '',
-            distance: '' || 50,
-            date: ''
+            music: '',
+            outdoors_recreation: '',
+            science: '',
+            singles_social: '',
+            sports: '',
+            location: '',
+            distance: ''
         };
 
         this.handleChange = this
             .handleChange
             .bind(this);
-    };
-}
 
-    handleChange = event => {
+    };
+
+    handleChange(event) {
         this
             .search
             .setState({
@@ -70,9 +70,9 @@ export default class Events extends React.Component {
             .call('geoJsonForIp', query, function (err, res) {
                 // The method call sets the Session variable to the callback value
                 if (err) {
-                    Session.set(this.state.result, {error: err});
+                    Session.set('search', {error: err});
                 } else {
-                    Session.set(this.state.result, res);
+                    Session.set('search', res);
                     return res;
                 }
             });
@@ -96,14 +96,10 @@ export default class Events extends React.Component {
             distance: {
                 type: UrlQueryParamTypes.string,
                 queryParam: this.state.search.distance
-            },
-            category: {
-                type: UrlQueryParamTypes.string,
-                queryParam: join(Object.value(this.state.search))
             }
         };
-
         event.preventDefault();
+
         this.searchEvents(queryURL);
     };
 
@@ -118,39 +114,11 @@ export default class Events extends React.Component {
                         <VerticalMenu/>
                     </div>
                     < div class="12 wide column">
-                        {this
-                            .state
-                            .result
-                            .events
-                            .event
-                            .map(events => (
-                                <EventList>
-                                    <Event>
-                                        <div class="image">
-                                            <img src={event.image.medium.url}/>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="header">{events.title}</h3>
-                                            <div class="meta">
-                                                <span class="date">{events.start_date}</span>
-                                                <span class="location">{events.city_name}, {events.region_name}</span>
-                                            </div>
-                                            <div class="description">
-                                                <p>{events.description}</p>
-                                            </div>
-                                            <div class="extra">
-                                                <a href={events.url} target="_blank">Additional Details</a>
-                                                <div class="ui label category">Pending</div>
-                                            </div>
-                                        </div>
-                                    </Event>
-                                </EventList>
-                            ))}
-                    </div>
+                        <Event/>{children}</div>
                 </Container >
             </Segment>
+        )
+    }
+}
 
-        );
-    };
-
-};*/
+export default event;
