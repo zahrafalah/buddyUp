@@ -16,14 +16,14 @@ import {
   Icon,
   Image,
   List,
+  Menu,
   Responsive,
   Segment,
   Sidebar,
-  Visibility
-} from "semantic-ui-react";
-import {EventList} from "../components/EventList";
+  Visibility,
+} from 'semantic-ui-react'
 
-export default class Events extends React.Component {
+class event extends React.Component {
 
     state = {
         result: {},
