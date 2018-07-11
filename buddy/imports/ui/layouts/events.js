@@ -67,7 +67,6 @@ export default class Events extends React.Component {
             .handleChange
             .bind(this);
     };
-}
 
     handleChange = event => {
         this
