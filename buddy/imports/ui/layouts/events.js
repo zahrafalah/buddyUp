@@ -1,8 +1,8 @@
 // top level layout: will include things like navbar, button placement, areas of text 
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-//import Container from '../components/Container'
-
+import Menu from '../components/Menu'
+import VerticalMenu from '../components/VerticalMenu';
 
 import {
   Button,
@@ -13,14 +13,34 @@ import {
   Icon,
   Image,
   List,
-  Menu,
   Responsive,
   Segment,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-import Navbar from '../components/Navbar.js';
 
-<Navbar/>
+class event extends React.Component {
+
+  render(){
+    return
+    <Segment>
+      <Container>
+        <Menu/>
+      </Container>
+      <Container>
+        <div class="four wide column">
+          <VerticalMenu/>
+        </div>
+        <div class="12 wide column">
+        
+        </div>
+
+      </Container>
 
 
+    </Segment>
+  };
+
+};
+
+export default event;
