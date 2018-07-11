@@ -3,7 +3,7 @@ import {Profiles} from './profiles.js';
 import {Collection2} from 'meteor/aldeed:collection2'
 import {check} from 'meteor/check';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
-
+//methods check that there is a user context before making any changes to the database. This is one of Meteor's ways of doing security. They keys for validated method are: name, validate, run. 
 export const addProfile = new ValidatedMethod({
 	name: 'profiles.addProfile',
 	validate(firstName, lastName, bio) {
@@ -16,16 +16,31 @@ export const addProfile = new ValidatedMethod({
 	applyOptions: {
 			returnStubValue: true,
 		},
-	run(firstName, lastName, bio){
+	run(firstName, lastName, bio, art, coffee, food, reading, sport, science, concert, pet, festival, happyhour, volunteer, holiday){
     // Make sure the user is logged in before inserting a profile
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
-    }
- 
-    Profiles.insert({
+	}
+	const user = Profiles.findOne(this.userId);
+	if(user === null){
+
+		Profiles.insert({
+			userId: this.userId,
 			firstName: firstName,
 			lastName: lastName,
-			bio: bio
+			bio: bio,
+			art: art,
+			coffee: coffee,
+			food: food,
+			reading: reading,
+			sport: sport,
+			science: science,
+			concert: concert,
+			pet: pet,
+			festival: festival,
+			happyhour: happyhour,
+			volunteer: volunteer,
+			holiday: holiday
     }, (error, result) => {
 			if (error){
 				throw new Meteor.Error('insert-failed');
@@ -35,6 +50,11 @@ export const addProfile = new ValidatedMethod({
 				console.log("inserted" + result);
 			}
 		})
+
+	}
+	else {
+		throw new Meteor.Error('insert-not-allowed');
+	}
 	}
 	});
 	
@@ -66,8 +86,8 @@ export const removeProfile = new ValidatedMethod({
 //     return Lists.insert({}, null, language);
 //   },
 // });
-export const updateProfile = new ValidatedMethod({
-	name: 'profiles.updateProfile',
+export const updateBio = new ValidatedMethod({
+	name: 'profiles.updateBio',
 	validate(newBio){
 		check(newBio,{
 			newBio: String
@@ -86,6 +106,30 @@ export const updateProfile = new ValidatedMethod({
   
 	  Profiles.update(user, {
 		$set: { bio: newBio }
+	  });
+	}
+})
+
+export const updateCategory = new ValidatedMethod({
+	name: 'profiles.updateCategory',
+	validate(category){
+		check(category,{
+			category: Object
+		});
+	},
+	applyOptions: {
+			returnStubValue: true
+		},
+  run(category){
+	  const user = Profiles.findOne(this.userId);
+  
+	  if (!this.userId) {
+		throw new Meteor.Error('profiles.update.notAuthorized',
+		  'Cannot edit a profile that is not yours');
+	  }
+  
+	  Profiles.update(user, {
+		$set: { category }
 	  });
 	}
 })
