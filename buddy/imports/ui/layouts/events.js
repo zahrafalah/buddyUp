@@ -18,16 +18,11 @@ import {
   Icon,
   Image,
   List,
-<<<<<<< HEAD
-=======
-  Menu,
->>>>>>> 8ea45be9b3c64f1dfd6c22fc3b2eedbc094b510c
   Responsive,
   Segment,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-<<<<<<< HEAD
 
 class event extends React.Component {
 
@@ -54,10 +49,3 @@ class event extends React.Component {
 };
 
 export default event;
-=======
-import Navbar from '../components/Navbar.js';
-
-<Navbar/>
-
-
->>>>>>> 8ea45be9b3c64f1dfd6c22fc3b2eedbc094b510c
