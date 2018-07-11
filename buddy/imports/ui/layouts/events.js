@@ -24,6 +24,7 @@ import {
 
 class event extends React.Component {
 
+<<<<<<< HEAD
     state = {
         result: {},
         search: {}
@@ -147,8 +148,10 @@ class event extends React.Component {
                     </div>
                 </Container >
             </Segment>
+
         );
     };
 
 };*/
 
+   
