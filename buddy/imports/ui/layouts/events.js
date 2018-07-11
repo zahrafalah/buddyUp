@@ -35,7 +35,6 @@ import {
   Icon,
   Image,
   List,
-  Menu,
   Responsive,
   Segment,
   Sidebar,
