@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
@@ -6,6 +7,14 @@ import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
+=======
+// top level layout: will include things like navbar, button placement, areas of text
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Menu from "../components/Menu";
+import VerticalMenu from "../components/VerticalMenu";
+
+>>>>>>> 2dbd4c2... update rebase
 import {
   Button,
   Divider,
@@ -15,7 +24,6 @@ import {
   Icon,
   Image,
   List,
-  Menu,
   Responsive,
   Segment,
   Sidebar,
