@@ -1,13 +1,8 @@
 // top level layout: will include things like navbar, button placement, areas of text 
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-<<<<<<< HEAD
 import Menu from '../components/Menu'
 import VerticalMenu from '../components/VerticalMenu';
-=======
-//import Container from '../components/Container'
-
->>>>>>> 8ea45be9b3c64f1dfd6c22fc3b2eedbc094b510c
 
 import {
   Button,
@@ -38,10 +33,35 @@ class event extends React.Component {
         </div>
         <div class="12 wide column">
         
+      <div class="card">
+        <div class="image">
+          <img src="/images/avatar2/large/matthew.png"/>
         </div>
+       <div class="content">
+          <div class="event">#
+          </div>
+          <div class="meta">
+              <a>Category</a>
+            </div>
+        </div>
+      <div class="description">
+       SSSSSSSSSSSSSSSSSSSSSSSSSss
+      </div>
+      </div>
+          <div class="extra content">
+          <span class="right floated">
+            date
+          </span>
+          <span>
+          <i class="user icon"></i>
+           # bodies going to
+          </span>
+        </div>
+  </div>
+  
+  
 
       </Container>
-
 
     </Segment>
   };
