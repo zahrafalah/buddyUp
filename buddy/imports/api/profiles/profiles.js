@@ -27,51 +27,63 @@ Schemas.Profile = new SimpleSchema({
     }, 
     art: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     coffee: {
         type: Boolean, 
-        optional: false
+        optional: false,
+        defaultValue: false
     }, 
     food: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     reading: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     }, 
     sport: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     }, 
     science: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     concert: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     pet: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     festival: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     happyhour: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     volunteer: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     },
     holiday: {
         type: Boolean,
-        optional: false
+        optional: false,
+        defaultValue: false
     } 
 });
 
