@@ -15,6 +15,7 @@ import {
   Icon,
   Image,
   List,
+  Menu,
   Responsive,
   Segment,
   Sidebar,
@@ -124,4 +125,3 @@ export default class Events extends React.Component {
 }
 
 export default event;
-
