@@ -1,11 +1,3 @@
-
-// top level layout: will include things like navbar, button placement, areas of text 
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import Menu from '../components/Menu'
-import VerticalMenu from '../components/VerticalMenu';
-
-
 /*// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
@@ -44,30 +36,7 @@ import {EventList} from "../components/EventList";
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-<<<<<<< HEAD
 
-class event extends React.Component {
-
-  render(){
-    return
-    <Segment>
-      <Container>
-        <Menu/>
-      </Container>
-      <Container>
-        <div class="four wide column">
-          <VerticalMenu/>
-        </div>
-        <div class="12 wide column">
-        
-        </div>
-
-      </Container>
-
-
-    </Segment>
-  };
->>>>>>> af05ebc... update rebase
 
 export default class Events extends React.Component {
 
@@ -150,31 +119,6 @@ export default class Events extends React.Component {
             }
         };
 
-handleFormSubmit = event => {
-    const queryURL = {
-        search: {
-            type: UrlQueryParamTypes.string,
-            queryParam: this.state.search.search
-        },
-        'ex-category': {
-            type: UrlQueryParamTypes.string,
-            queryParam: 'attractions,comedy,community,family_fun_kids,movies_film,performing_arts,schools' +
-                    '_alumni,support,technology'
-        },
-        location: {
-            type: UrlQueryParamTypes.string,
-            queryParam: this.state.search.location
-        },
-        distance: {
-            type: UrlQueryParamTypes.string,
-            queryParam: this.state.search.distance
-        },
-        category: {
-            type: UrlQueryParamTypes.string,
-            queryParam:join(Object.value(this.state.search))
-    }
-};
-
     event.preventDefault();
     this.searchEvents(queryURL);
 };
@@ -195,54 +139,4 @@ render() {
         </Segment>
     );
 };
-
-        event.preventDefault();
-        this.searchEvents(queryURL);
-    };
-
-    render() {
-        return (
-            <Segment >
-                <Container>
-                    <Menu/>
-                </Container>
-                < Container >
-                    <div class="four wide column">
-                        <VerticalMenu/>
-                    </div>
-                    < div class="12 wide column">
-                        {this
-                            .state
-                            .result
-                            .events
-                            .event
-                            .map(events => (
-                                <EventList>
-                                    <Event>
-                                        <div class="image">
-                                            <img src={event.image.medium.url}/>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="header">{events.title}</h3>
-                                            <div class="meta">
-                                                <span class="date">{events.start_date}</span>
-                                                <span class="location">{events.city_name}, {events.region_name}</span>
-                                            </div>
-                                            <div class="description">
-                                                <p>{events.description}</p>
-                                            </div>
-                                            <div class="extra">
-                                                <a href={events.url} target="_blank">Additional Details</a>
-                                                <div class="ui label category">Pending</div>
-                                            </div>
-                                        </div>
-                                    </Event>
-                                </EventList>
-                            ))}
-                    </div>
-                </Container >
-            </Segment>
-        );
-    };
-}
-
+export default event;
