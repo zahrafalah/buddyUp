@@ -19,15 +19,17 @@ import {
   Image,
   List,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   Menu,
 >>>>>>> 8ea45be... update api
+=======
+>>>>>>> c36e161... update events
   Responsive,
   Segment,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-<<<<<<< HEAD
 
 class event extends React.Component {
 
@@ -54,6 +56,7 @@ class event extends React.Component {
 };
 
 export default event;
+<<<<<<< HEAD
 =======
 import Navbar from '../components/Navbar.js';
 
@@ -61,3 +64,5 @@ import Navbar from '../components/Navbar.js';
 
 
 >>>>>>> 8ea45be... update api
+=======
+>>>>>>> c36e161... update events
