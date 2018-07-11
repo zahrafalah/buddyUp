@@ -20,6 +20,28 @@ import {
     Sidebar,
     Visibility
 } from "semantic-ui-react";
+=======
+// top level layout: will include things like navbar, button placement, areas of text 
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import Menu from '../components/Menu'
+import VerticalMenu from '../components/VerticalMenu';
+
+import {
+  Button,
+  Divider,
+  Grid,
+  Container,
+  Header,
+  Icon,
+  Image,
+  List,
+  Responsive,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
+
 
 class event extends React.Component {
 
