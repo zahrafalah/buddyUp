@@ -1,3 +1,4 @@
+import {Meteor} from 'meteor/meteor';
 import {Profiles} from './profiles.js';
 import {Collection2} from 'meteor/aldeed:collection2'
 import {check} from 'meteor/check';
