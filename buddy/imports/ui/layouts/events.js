@@ -40,8 +40,8 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility,
-} from 'semantic-ui-react'
+  Visibility
+} from "semantic-ui-react";
 
 class event extends React.Component {
 
