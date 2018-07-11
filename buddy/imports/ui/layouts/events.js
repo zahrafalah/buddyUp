@@ -38,13 +38,12 @@ import {
   Icon,
   Image,
   List,
+  Menu,
   Responsive,
   Segment,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-<<<<<<< HEAD
->>>>>>> af05ebc... update rebase
 
 class event extends React.Component {
 
@@ -175,8 +174,9 @@ class event extends React.Component {
 
         );
     };
+=======
+export default event;
 
 };*/
 
-   
-
+ 
