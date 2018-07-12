@@ -31,33 +31,29 @@ class event extends React.Component {
     };
   }
 
-  var query = '&q=' + this.search.search + 
-   
+  // var query = '&q=' + this.search.search + 
+// event: if isChecked === true
+//then this.setState({name: this.name})
+searchEvents = query => {
+  
+     Meteor.call('geoJsonForIp', query, function (err, res) {
+      // The method call sets the Session variable to the callback value
+      if (err) { 
+        Session.set('search', {error: err});
+      } else {
+        Session.set('search', res);
+        return res;
+      }
+    });
+  }
 
-    constructor(props) {
-
-        super(props);
-        this.state.search = {
-            search: '',
-            animals: '',
-            art: '',
-            books: '',
-            festivals_parades: '',
-            food: '',
-            fundraisers: '',
-            holiday: '',
-            music: '',
-            outdoors_recreation: '',
-            science: '',
-            singles_social: '',
-            sports: '',
-            location: '',
-            distance: ''
-        };
-
-        this.handleChange = this
-            .handleChange
-            .bind(this);
+  handleInputChange = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      q: event.target
+    });
+  };
 
     };
 }
