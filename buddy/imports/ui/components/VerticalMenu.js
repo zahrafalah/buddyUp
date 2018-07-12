@@ -82,11 +82,11 @@ export const VerticalMenu = props => (render() {
                         <label>Concerts</label>
                     </div>
                     <div class="ui checkbox">
-                        <input
-                            checked={this.state.checked}
-                            onChange={this.handleInputChange}
-                            type="checkbox"
-                            name="pets"/>
+                        <input 
+                        checked={this.state.checked}
+                        onChange={this.handleInputChange}
+                        type="checkbox" 
+                        name="pets"/>
                         <label>Pets</label>
                     </div>
                     <div class="ui checkbox">
@@ -121,25 +121,46 @@ export const VerticalMenu = props => (render() {
                             name="holiday"/>
                         <label>Holiday</label>
                     </div>
-                </div>
+
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Health & Wellness</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Pets</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Books & Related</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Science & Related</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Sports</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Volunteer</label>
+                        </div>
                 <div class="item">
                     Other:
                     <div class="ui input">
                         <label>Zip Code</label>
-                        <input
-                            onChange={props.handleInputChange}
-                            value={props.value}
-                            type="text"
-                            placeholder="Search for Anything..."
-                            name="zipCode"
-                            type="text"
-                            className="form-control"/>
-                        <div class="ui selection dropdown">
-                            <input
-                                type="hidden"
-                                name="distance"
-                                onChange={props.handleInputChange}
-                                value={this.props.value}/>
+                        <input 
+                        onChange={props.handleInputChange}
+                        value={props.value}
+                        type="text" 
+                        placeholder="Search for Anything..." 
+                        name="zipCode"
+                        type="text"
+                        className="form-control"
+                        />
+                     <div class="ui selection dropdown">
+                        <input type="hidden" name="distance" onChange={props.handleInputChange} value={this.props.value}/>
                             <i class="dropdown icon"></i>
                             <div class="default text">Distance</div>
                             <div class="menu">
@@ -151,10 +172,17 @@ export const VerticalMenu = props => (render() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> 
+                         
+
+            
         </div>
     );
 
+  
+ 
+    };
+    
 };
-}
+
+export default VerticalMenu;
