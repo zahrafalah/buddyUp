@@ -4,6 +4,11 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 import {
   Button,
   Divider,
@@ -21,6 +26,7 @@ import {
 } from 'semantic-ui-react'
 import events from '../layouts/events';
 
+<<<<<<< Updated upstream
 class buddiesandevents extends Component {
 render() {
 return (
@@ -31,3 +37,12 @@ return (
 };
 }
 export default buddiesandevents;
+=======
+
+render() {
+return
+    
+<events/>
+
+};
+>>>>>>> Stashed changes
