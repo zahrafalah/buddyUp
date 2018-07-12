@@ -21,7 +21,7 @@ import {
   Visibility
 } from "semantic-ui-react";
 
-class event extends React.Component {
+export default class event extends React.Component {
 
     state = {
         result: {},
@@ -120,4 +120,4 @@ class event extends React.Component {
         );
     };
 
-    export default event;
+};
