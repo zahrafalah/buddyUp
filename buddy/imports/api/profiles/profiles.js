@@ -29,7 +29,7 @@ Schemas.Profile = new SimpleSchema({
         optional: false,
         defaultValue: false
     },
-    coffee: {
+    outdoors_recreation: {
         type: Boolean, 
         optional: false,
         defaultValue: false
@@ -39,12 +39,12 @@ Schemas.Profile = new SimpleSchema({
         optional: false,
         defaultValue: false
     },
-    reading: {
+    books: {
         type: Boolean,
         optional: false,
         defaultValue: false
     }, 
-    sport: {
+    sports: {
         type: Boolean,
         optional: false,
         defaultValue: false
@@ -54,27 +54,27 @@ Schemas.Profile = new SimpleSchema({
         optional: false,
         defaultValue: false
     },
-    concert: {
+    music: {
         type: Boolean,
         optional: false,
         defaultValue: false
     },
-    pet: {
+    animals: {
         type: Boolean,
         optional: false,
         defaultValue: false
     },
-    festival: {
+    festivals_parades: {
         type: Boolean,
         optional: false,
         defaultValue: false
     },
-    happyhour: {
+    singles_social: {
         type: Boolean,
         optional: false,
         defaultValue: false
     },
-    volunteer: {
+    fundraisers: {
         type: Boolean,
         optional: false,
         defaultValue: false
