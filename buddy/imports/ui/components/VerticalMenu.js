@@ -180,7 +180,7 @@ export const VerticalMenu = props => (
             </div>
         </div>
                 
-                
+        </div>        
 
 
     </div>
