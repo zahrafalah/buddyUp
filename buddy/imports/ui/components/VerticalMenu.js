@@ -3,6 +3,11 @@ import React, {Component} from "react";
 export const VerticalMenu = props => (render() {
     return (
 
+class VerticalMenu extends Component {
+
+    render(){
+        
+        return(
         <div class="ui vertical menu categorieSearch">
             <div>
                 <button onClick={props.handleFormSubmit} class="ui basic button" name='refresh'>Refresh</button>
@@ -22,6 +27,9 @@ export const VerticalMenu = props => (render() {
 
                 </div>
 
+                    </div>
+                    </div>
+            
                 <div class="item">
                     Categories
 
@@ -146,6 +154,7 @@ export const VerticalMenu = props => (render() {
                         <input type="checkbox" name="example"/>
                         <label>Volunteer</label>
                         </div>
+                </div>
                 <div class="item">
                     Other:
                     <div class="ui input">
@@ -177,7 +186,9 @@ export const VerticalMenu = props => (render() {
 
             
         </div>
-    );
+                
+        </div>        
+
 
     };
     
