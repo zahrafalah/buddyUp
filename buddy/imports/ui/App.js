@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import WelcomePage from "./pages/WelcomePage";
 import ProfilePage from './pages/ProfilePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import BuddiesAndEventsPage from'.pages/BuddiesAndEventsPage';
 
 const styles = {
 
@@ -26,6 +27,7 @@ export default class App extends Component {
 					<Route exact path="/profile" component={ProfilePage} />
 					<Route exact path="/welcome" component={WelcomePage} />
 
+					<Route exact path="/buddies-events" component={BuddiesAndEventsPage} />
 				</div>
 			</Router>
 		);
