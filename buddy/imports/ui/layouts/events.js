@@ -124,6 +124,5 @@ render() {
     );
 };
 
-};
 
 export default event;
