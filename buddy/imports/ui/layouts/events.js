@@ -1,11 +1,14 @@
-// top level layout: will include things like navbar, button placement, areas of
-// text
+// top level layout: will include things like navbar, button placement, areas of text
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
 import Event from "../components/Event";
+<<<<<<< Updated upstream
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
+=======
+
+>>>>>>> Stashed changes
 import {
     Button,
     Divider,
@@ -23,10 +26,37 @@ import {
 
 class event extends React.Component {
 
-    state = {
-        result: {},
-        search: []
+  state = {
+    result: {},
+    search: {}
+}
+  constructor () {
+    super();
+    this.state.search = {
+      search: '',
+      arts:'',
+      coffee: '',
+      food:'',
+      reading:'',
+      sports:'',
+      science:'',
+      concert:'',
+      pets:'',
+      festivals:'',
+      happyHour:'',
+      volunteer:'',
+      holiday:'',
+      zipCode:'',
+      distance:''|| 50,
+     
     };
+  }
+
+  var query = '&q=' + this.search.search + 
+   
+
+  var query = '&q=' + this.search.search + 
+   
 
     constructor(props) {
 
