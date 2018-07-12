@@ -16,7 +16,6 @@ import {
     Icon,
     Image,
     List,
-
     Responsive,
     Segment,
     Sidebar,
