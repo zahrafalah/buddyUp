@@ -2,8 +2,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
-
-
 import {
   Button,
   Divider,
@@ -21,10 +19,13 @@ import {
 } from 'semantic-ui-react'
 import events from '../layouts/events';
 
-
+class buddiesandevents extends Component {
 render() {
-return
+return (
     
 <events/>
+)
 
 };
+}
+export default buddiesandevents;
