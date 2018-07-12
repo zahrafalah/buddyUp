@@ -5,7 +5,8 @@ import AccountsUIWrapper from AccountsUIWrapper;
 class VerticalMenu extends Component {
 
     render(){
-        return
+        
+        return(
         <div class="ui vertical menu categorieSearch">
             <div>
             <button onClick={props.handleFormSubmit} class="ui basic button" name='refresh'>Refresh</button>
@@ -24,6 +25,7 @@ class VerticalMenu extends Component {
                         />
                          
 
+                    </div>
                     </div>
             
                 <div class="item">
@@ -149,6 +151,7 @@ class VerticalMenu extends Component {
                         <input type="checkbox" name="example"/>
                         <label>Volunteer</label>
                         </div>
+                </div>
                 <div class="item">
                 Other:
                     <div class="ui input">
@@ -180,11 +183,11 @@ class VerticalMenu extends Component {
             
         </div>
                 
-                
+        </div>        
 
 
   
- 
+        ); 
     };
     
 };
