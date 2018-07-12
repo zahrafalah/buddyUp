@@ -16,7 +16,7 @@ import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMenu";
+import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
 
 
@@ -67,6 +67,10 @@ export default class Events extends React.Component {
             .handleChange
             .bind(this);
     };
+  }
+
+  var query = '&q=' + this.search.search + 
+   
 
     handleChange = event => {
         this
