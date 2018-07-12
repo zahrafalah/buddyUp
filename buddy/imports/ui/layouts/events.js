@@ -18,12 +18,8 @@ import React, {Component} from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
 import Event from "../components/Event";
-<<<<<<< HEAD
 
 
-=======
-import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
->>>>>>> 00d7f53... prop, constructor & api query url
 import {
     Button,
     Divider,
@@ -95,6 +91,7 @@ export default class Events extends React.Component {
             });
     }
 
+<<<<<<< HEAD
     handleFormSubmit = event => {
         const queryURL = {
             search: {
@@ -117,14 +114,52 @@ export default class Events extends React.Component {
             category: {
                 type: UrlQueryParamTypes.string,
                 queryParam: join(Object.value(this.state.search))
+=======
+    Meteor
+        .call('geoJsonForIp', query, function (err, res) {
+            // The method call sets the Session variable to the callback value
+            if (err) {
+                Session.set(this.state.result, {error: err});
+            } else {
+                Session.set(this.state.result, res);
+                return res;
+>>>>>>> 60912a5... layout/events.js
             }
         };
 
+<<<<<<< HEAD
         event.preventDefault();
         this.searchEvents(queryURL);
     };
     event.preventDefault();
+=======
+handleFormSubmit = event => {
+    const queryURL = {
+        search: {
+            type: UrlQueryParamTypes.string,
+            queryParam: this.state.search.search
+        },
+        'ex-category': {
+            type: UrlQueryParamTypes.string,
+            queryParam: 'attractions,comedy,community,family_fun_kids,movies_film,performing_arts,schools' +
+                    '_alumni,support,technology'
+        },
+        location: {
+            type: UrlQueryParamTypes.string,
+            queryParam: this.state.search.location
+        },
+        distance: {
+            type: UrlQueryParamTypes.string,
+            queryParam: this.state.search.distance
+        },
+        category: {
+            type: UrlQueryParamTypes.string,
+            queryParam:join(Object.value(this.state.search))
+    }
+};
+>>>>>>> 60912a5... layout/events.js
 
+    event.preventDefault();
     this.searchEvents(queryURL);
 };
 
