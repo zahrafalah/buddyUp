@@ -104,35 +104,51 @@ export default class Events extends React.Component {
             }
         };
 
-        event.preventDefault();
-        this.searchEvents(queryURL);
-    };
-    event.preventDefault();
+handleFormSubmit = event => {
+    const queryURL = {
+        search: {
+            type: UrlQueryParamTypes.string,
+            queryParam: this.state.search.search
+        },
+        'ex-category': {
+            type: UrlQueryParamTypes.string,
+            queryParam: 'attractions,comedy,community,family_fun_kids,movies_film,performing_arts,schools' +
+                    '_alumni,support,technology'
+        },
+        location: {
+            type: UrlQueryParamTypes.string,
+            queryParam: this.state.search.location
+        },
+        distance: {
+            type: UrlQueryParamTypes.string,
+            queryParam: this.state.search.distance
+        },
+        category: {
+            type: UrlQueryParamTypes.string,
+            queryParam:join(Object.value(this.state.search))
+    }
+};
 
-    handleFormSubmit = event => {
-        const queryURL = {
-            search: {
-                type: UrlQueryParamTypes.string,
-                queryParam: this.state.search.search
-            },
-            'ex-category': {
-                type: UrlQueryParamTypes.string,
-                queryParam: 'attractions,comedy,community,family_fun_kids,movies_film,performing_arts,schools' +
-                        '_alumni,support,technology'
-            },
-            location: {
-                type: UrlQueryParamTypes.string,
-                queryParam: this.state.search.location
-            },
-            distance: {
-                type: UrlQueryParamTypes.string,
-                queryParam: this.state.search.distance
-            },
-            category: {
-                type: UrlQueryParamTypes.string,
-                queryParam: join(Object.value(this.state.search))
-            }
-        };
+    event.preventDefault();
+    this.searchEvents(queryURL);
+};
+
+render() {
+    return (
+        <Segment >
+            <Container>
+                <Menu/>
+            </Container>
+            < Container >
+                <div class="four wide column">
+                    <VerticalMenu/>
+                </div>
+                < div class="12 wide column">
+                    <Event/>{children}</div>
+            </Container >
+        </Segment>
+    );
+};
 
         event.preventDefault();
         this.searchEvents(queryURL);
