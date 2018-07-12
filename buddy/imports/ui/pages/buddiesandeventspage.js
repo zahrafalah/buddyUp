@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 import events from '../layouts/EventsLayout'
 
+
+
 import {
     Button,
     Divider,
@@ -21,6 +23,7 @@ import {
 import EventsLayout from '../layouts/EventsLayout';
 
 
+
 class buddiesandevents extends Component {
 
     render() {
@@ -30,4 +33,4 @@ class buddiesandevents extends Component {
 
     };
 }
-export default buddiesandevents;*/
+export default buddiesandevents;

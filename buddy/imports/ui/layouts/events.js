@@ -1,13 +1,11 @@
-// top level layout: will include things like navbar, button placement, areas of text 
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-//import Container from '../components/Container'
 // top level layout: will include things like navbar, button placement, areas of text
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
+
+import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
   Button,
   Divider,
@@ -25,11 +23,32 @@ import {
 
 class event extends React.Component {
 
-    state = {
-        result: {},
-        search: []
+  state = {
+    result: {},
+    search: {}
+}
+  constructor () {
+    super();
+    this.state.search = {
+      search: '',
+      arts:'',
+      coffee: '',
+      food:'',
+      reading:'',
+      sports:'',
+      science:'',
+      concert:'',
+      pets:'',
+      festivals:'',
+      happyHour:'',
+      volunteer:'',
+      holiday:'',
+      zipCode:'',
+      distance:''|| 50,
+     
     };
   }
+
 
   // var query = '&q=' + this.search.search + 
 // event: if isChecked === true
