@@ -16,6 +16,7 @@ import {
 
   Visibility,
 } from 'semantic-ui-react'
+import '../../api/profiles/profiles';
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -201,286 +202,307 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const ProfilePageLayout = () => (
-  <ResponsiveContainer>
+class ProfilePageLayout extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    <Segment style={{ padding: '5em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
-        <Grid.Row>
-          <Grid.Column width={8}>
+  handleClick(type) {
+    // make request to server
+    setTimeout(() => {
+      this.setState({
+        [type]:  {defaultValue: true}
+      })
+    }, 1000)
+  }
+  
+  render() {
+    console.log(this.state)
+    return (
+      <ResponsiveContainer>
+    
+        <Segment style={{ padding: '5em 0em' }} vertical>
+          <Grid container stackable verticalAlign='middle'>
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  Name
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>
+                  We can give your company superpowers to do things that they never thought possible.
+                  Let us delight your customers and empower your needs... through pure data analytics.
+                </p>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  Bio
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>
+                  Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+                  bioengineered.
+                </p>
+              </Grid.Column>
+    
+              <Grid.Column floated='right' width={6}>
+                <Image bordered circular size='medium' src='./images/Categories/coffee.jpg' />
+              </Grid.Column>
+            </Grid.Row>
+    
+          </Grid>
+        </Segment>
+    
+    
+        <Segment style={{ padding: '8em 0em' }} vertical>
+          <Grid container stackable verticalAlign='middle'>
+            <Grid.Row>
+              <Grid.Column width={14}>
+                <div className="ui four stackable link cards">
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('art')}></i>
+                      <div className="header">Art</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/Arts.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('coffee')}></i>
+                      <div className="header">Coffee</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/coffee.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('food')}></i>
+                      <div className="header">Food</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/food.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('reading')}></i>
+                      <div className="header">Reading</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/reading.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('sport')}></i>
+                      <div className="header">Sport</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/Sports.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('science')}></i>
+                      <div className="header">Science</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/Science.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('concert')}></i>
+                      <div className="header">Concert</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/concerts.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('pet')}></i>
+                      <div className="header">Pet</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/Pets.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('festival')}></i>
+                      <div className="header">Festival</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/festivals.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('happyhour')}></i>
+                      <div className="header">Happy-hour</div>
+                    </div>
+    
+                    <div className="image">
+                      <img src="./images/Categories/happy-hour.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('volunteer')}></i>
+                      <div className="header">Volunteer</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/volunteer.jpg" />
+                    </div>
+                  </div>
+    
+                  <div className="card">
+                    <div className="content">
+                      <i className="right floated like icon"  onClick={(event) => this.handleClick('holiday')}></i>
+                      <div className="header">Holiday</div>
+                    </div>
+                    <div className="image">
+                      <img src="./images/Categories/holidays.jpg" />
+                    </div>
+                  </div>
+    
+                </div>
+    
+    
+                {/* <Header as='h3' style={{ fontSize: '2em' }}>
+                  We Help Companies and Companions
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>
+                  We can give your company superpowers to do things that they never thought possible.
+                  Let us delight your customers and empower your needs... through pure data analytics.
+                </p>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  We Make Bananas That Can Dance
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>
+                  Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+                  bioengineered.
+                </p> */}
+              </Grid.Column>
+              {/* <Grid.Column floated='right' width={6}>
+                <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+              </Grid.Column> */}
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column textAlign='center'>
+    
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+    
+        {/* <Segment style={{ padding: '0em' }} vertical>
+          <Grid celled='internally' columns='equal' stackable>
+            <Grid.Row textAlign='center'>
+              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  "What a Company"
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+              </Grid.Column>
+              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  "I shouldn't have gone with their competitor."
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>
+                  <Image avatar src='/images/avatar/large/nan.jpg' />
+                  <b>Nan</b> Chief Fun Officer Acme Toys
+                </p>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment> */}
+    
+        {/* <Segment style={{ padding: '8em 0em' }} vertical>
+          <Container text>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              Name
+              Breaking The Grid, Grabs Your Attention
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
+              Instead of focusing on content creation and hard work, we have learned how to master the
+              art of doing nothing by providing massive amounts of whitespace and generic content that
+              can seem massive, monolithic and worth your attention.
             </p>
+            <Button as='a' size='large'>
+              Read More
+            </Button>
+            <Divider
+              as='h4'
+              className='header'
+              horizontal
+              style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+            >
+              <a href='#'>Case Studies</a>
+            </Divider>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              Bio
+              Did We Tell You About Our Bananas?
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
+              Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
+              it's really true. It took years of gene splicing and combinatory DNA research, but our
+              bananas can really dance.
             </p>
-          </Grid.Column>
+            <Button as='a' size='large'>
+              I'm Still Quite Interested
+            </Button>
+          </Container>
+        </Segment> */}
+    
+        <Segment inverted vertical style={{ padding: '5em 0em' }}>
+          <Container>
+            <Grid divided inverted stackable>
+              <Grid.Row>
+                <Grid.Column width={3}>
+                  <Header inverted as='h4' content='About' />
+                  <List link inverted>
+                    <List.Item as='a'>Sitemap</List.Item>
+                    <List.Item as='a'>Contact Us</List.Item>
+                    <List.Item as='a'>Religious Ceremonies</List.Item>
+                    <List.Item as='a'>Gazebo Plans</List.Item>
+                  </List>
+                </Grid.Column>
+                <Grid.Column width={3}>
+                  <Header inverted as='h4' content='Services' />
+                  <List link inverted>
+                    <List.Item as='a'>Banana Pre-Order</List.Item>
+                    <List.Item as='a'>DNA FAQ</List.Item>
+                    <List.Item as='a'>How To Access</List.Item>
+                    <List.Item as='a'>Favorite X-Men</List.Item>
+                  </List>
+                </Grid.Column>
+                <Grid.Column width={7}>
+                  <Header as='h4' inverted>
+                    Footer Header
+                  </Header>
+                  <p>
+                    Extra space for a call to action inside the footer that could help re-engage users.
+                  </p>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Container>
+        </Segment>
+      </ResponsiveContainer>
+    )
+  }
+}
 
-          <Grid.Column floated='right' width={6}>
-            <Image bordered circular size='medium' src='./images/Categories/coffee.jpg' />
-          </Grid.Column>
-        </Grid.Row>
-
-      </Grid>
-    </Segment>
-
-
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
-        <Grid.Row>
-          <Grid.Column width={14}>
-            <div className="ui four stackable link cards">
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Art</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/Arts.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Coffee</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/coffee.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Food</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/food.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Reading</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/reading.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Sport</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/Sports.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Science</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/Science.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Concert</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/concerts.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Pet</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/Pets.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Festival</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/festivals.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Happy-hour</div>
-                </div>
-
-                <div className="image">
-                  <img src="./images/Categories/happy-hour.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Volunteer</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/volunteer.jpg" />
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="content">
-                  <i className="right floated like icon"></i>
-                  <div className="header">Holiday</div>
-                </div>
-                <div className="image">
-                  <img src="./images/Categories/holidays.jpg" />
-                </div>
-              </div>
-
-            </div>
-
-
-            {/* <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
-            </p>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              We Make Bananas That Can Dance
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
-            </p> */}
-          </Grid.Column>
-          {/* <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
-          </Grid.Column> */}
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign='center'>
-
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
-
-    {/* <Segment style={{ padding: '0em' }} vertical>
-      <Grid celled='internally' columns='equal' stackable>
-        <Grid.Row textAlign='center'>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "What a Company"
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              "I shouldn't have gone with their competitor."
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment> */}
-
-    {/* <Segment style={{ padding: '8em 0em' }} vertical>
-      <Container text>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Instead of focusing on content creation and hard work, we have learned how to master the
-          art of doing nothing by providing massive amounts of whitespace and generic content that
-          can seem massive, monolithic and worth your attention.
-        </p>
-        <Button as='a' size='large'>
-          Read More
-        </Button>
-        <Divider
-          as='h4'
-          className='header'
-          horizontal
-          style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-        >
-          <a href='#'>Case Studies</a>
-        </Divider>
-        <Header as='h3' style={{ fontSize: '2em' }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
-        </p>
-        <Button as='a' size='large'>
-          I'm Still Quite Interested
-        </Button>
-      </Container>
-    </Segment> */}
-
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
-                <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
-              <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
-                <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as='h4' inverted>
-                Footer Header
-              </Header>
-              <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
-  </ResponsiveContainer>
-)
 export default ProfilePageLayout
