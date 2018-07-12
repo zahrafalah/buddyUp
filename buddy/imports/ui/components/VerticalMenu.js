@@ -91,7 +91,7 @@ class VerticalMenu extends Component {
                         checked={this.state.checked}
                         onChange={this.handleInputChange}
                         type="checkbox" 
-                        name="Pets"/>
+                        name="pets"/>
                         <label>Pets</label>
                     </div>
                     <div class="ui checkbox">
@@ -124,7 +124,31 @@ class VerticalMenu extends Component {
                         name="holiday"/>
                         <label>Holiday</label>
                     </div>
-                </div>
+
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Health & Wellness</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Pets</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Books & Related</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Science & Related</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Sports</label>
+                    </div>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example"/>
+                        <label>Volunteer</label>
+                        </div>
                 <div class="item">
                 Other:
                     <div class="ui input">
@@ -139,7 +163,7 @@ class VerticalMenu extends Component {
                         className="form-control"
                         />
                      <div class="ui selection dropdown">
-                        <input type="hidden" name="distance"/>
+                        <input type="hidden" name="distance" onChange={props.handleInputChange} value={this.props.value}/>
                             <i class="dropdown icon"></i>
                             <div class="default text">Distance</div>
                                 <div class="menu">
@@ -153,16 +177,16 @@ class VerticalMenu extends Component {
                 </div> 
                          
 
-            </div>
+            
         </div>
                 
                 
 
 
-    </div>
+  
  
     };
     
 };
 
-export default VerticalMenu
+export default VerticalMenu;
