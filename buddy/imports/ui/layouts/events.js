@@ -1,3 +1,4 @@
+
 // top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
@@ -20,6 +21,28 @@ import {
     Sidebar,
     Visibility
 } from "semantic-ui-react";
+
+// top level layout: will include things like navbar, button placement, areas of text 
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+//import Container from '../components/Container'
+
+
+import {
+  Button,
+  Divider,
+  Grid,
+  Container,
+  Header,
+  Icon,
+  Image,
+  List,
+  Responsive,
+  Segment,
+  Sidebar,
+  Visibility,
+} from 'semantic-ui-react'
+
 
 class event extends React.Component {
 
@@ -122,3 +145,10 @@ class event extends React.Component {
 }
 
 export default event;
+
+import Navbar from '../components/Navbar.js';
+
+<Navbar/>
+
+
+>>>>>>> 8ea45be... update api
