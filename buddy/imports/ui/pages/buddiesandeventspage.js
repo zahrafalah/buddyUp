@@ -10,9 +10,12 @@ import events from '../layouts/EventsLayout'
 import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 
+<<<<<<< HEAD
 import events from '../layouts/EventsLayout'
 
 
+=======
+>>>>>>> 3e902ea... Refactor code to call out to layouts/events
 import {
     Button,
     Divider,
