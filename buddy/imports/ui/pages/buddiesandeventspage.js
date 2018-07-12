@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 import events from '../layouts/EventsLayout'
 
-
-
 import {
     Button,
     Divider,
