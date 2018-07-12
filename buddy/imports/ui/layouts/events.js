@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 // top level layout: will include things like navbar, button placement, areas of text
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMenu";
+import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
-=======
-// top level layout: will include things like navbar, button placement, areas of text 
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import Menu from '../components/Menu'
-import VerticalMenu from '../components/VerticalMenu';
->>>>>>> 4d84344d6d08d82cb884e095471483373327b3f6
 
 import {
   Button,
@@ -30,11 +22,34 @@ import {
 
 class event extends React.Component {
 
-
-state = {
+  state = {
     result: {},
-    search: 
+    search: {}
+}
+  constructor () {
+    super();
+    this.state.search = {
+      search: '',
+      arts:'',
+      coffee: '',
+      food:'',
+      reading:'',
+      sports:'',
+      science:'',
+      concert:'',
+      pets:'',
+      festivals:'',
+      happyHour:'',
+      volunteer:'',
+      holiday:'',
+      zipCode:'',
+      distance:''|| 50,
+     
     };
+  }
+
+  var query = '&q=' + this.search.search + 
+   
 
 
 
@@ -51,10 +66,10 @@ searchEvents = query => {
   }
 
   handleInputChange = event => {
-    const q = $(.)
     const name = event.target.name;
+    const value = event.target.value;
     this.setState({
-      [name]: value
+      q: event.target.
     });
   };
 
