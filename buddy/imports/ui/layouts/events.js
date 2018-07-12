@@ -48,12 +48,11 @@ class event extends React.Component {
     };
   }
 
-  var query = '&q=' + this.search.search + 
-   
-
-
-
+  // var query = '&q=' + this.search.search + 
+// event: if isChecked === true
+//then this.setState({name: this.name})
 searchEvents = query => {
+  
      Meteor.call('geoJsonForIp', query, function (err, res) {
       // The method call sets the Session variable to the callback value
       if (err) { 
@@ -69,7 +68,7 @@ searchEvents = query => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
-      q: event.target.
+      q: event.target
     });
   };
 
