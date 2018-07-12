@@ -2,9 +2,9 @@
 /*// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMenu";
+import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
 
 import {
@@ -55,6 +55,7 @@ export default class Events extends React.Component {
             .bind(this);
 
     };
+}
 
     handleChange(event) {
         this
