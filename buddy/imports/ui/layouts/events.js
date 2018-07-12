@@ -70,9 +70,9 @@ searchEvents = query => {
         .call('geoJsonForIp', query, function (err, res) {
             // The method call sets the Session variable to the callback value
             if (err) {
-                Session.set('search', {error: err});
+                Session.set(this.state.result, {error: err});
             } else {
-                Session.set('search', res);
+                Session.set(this.state.result, res);
                 return res;
             }
         });
@@ -96,10 +96,14 @@ handleFormSubmit = event => {
         distance: {
             type: UrlQueryParamTypes.string,
             queryParam: this.state.search.distance
-        }
-    };
-    event.preventDefault();
+        },
+        category: {
+            type: UrlQueryParamTypes.string,
+            queryParam:join(Object.value(this.state.search))
+    }
+};
 
+    event.preventDefault();
     this.searchEvents(queryURL);
 };
 
