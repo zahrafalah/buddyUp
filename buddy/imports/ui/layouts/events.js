@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 /*// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
@@ -10,6 +11,8 @@ import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 
 // top level layout: will include things like navbar, button placement, areas of text
 
+=======
+>>>>>>> 4e187d3... done
 // top level layout: will include things like navbar, button placement, areas of
 // text
 
@@ -196,4 +199,4 @@ export default class Events extends React.Component {
         );
     };
 
-};*/
+

@@ -27,13 +27,10 @@ aldeed:collection2@3.0.0
 check
 accounts-ui
 accounts-password
-
-
 mdg:validated-method
 cultofcoders:grapher
 johanbrook:publication-collector
-
 simple:rest
 http
-mdg:validated-method
+
 
