@@ -31,4 +31,6 @@ class buddiesandevents extends Component {
 
     };
 }
+
 export default buddiesandevents;*/
+
