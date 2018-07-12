@@ -5,8 +5,9 @@ import { Wave, Random } from "react-animated-text";
 
 const exampleStyle = {
     display: "inline-block",
+    color: "white",
     textAlign:"center",
-    backgroundColor:"#fafa84",   
+    backgroundColor:"black",   
     margin: "0 auto",
     paddingTop:"2.7em",    
     width:"100%",
@@ -16,6 +17,7 @@ const exampleStyle = {
     left:"0px",
     // zindex:"1000",
     fontSize: "8rem",
+    fontFamily:"Chela One', cursive"
     // fontWeigh:700    
   };
 const skipStyle = {
