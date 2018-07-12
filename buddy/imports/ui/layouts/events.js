@@ -1,13 +1,13 @@
 // top level layout: will include things like navbar, button placement, areas of text 
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-<<<<<<< HEAD
 //import Container from '../components/Container'
-=======
-import Menu from '../components/Menu'
-import VerticalMenu from '../components/VerticalMenu';
->>>>>>> 4d84344... update event api setup
-
+// top level layout: will include things like navbar, button placement, areas of text
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Menu from "../components/Menu";
+import VerticalMenu from "../components/VerticalMgit enu";
+import Event from "../components/Event";
 import {
   Button,
   Divider,
@@ -29,6 +29,10 @@ class event extends React.Component {
         result: {},
         search: []
     };
+  }
+
+  var query = '&q=' + this.search.search + 
+   
 
     constructor(props) {
 
