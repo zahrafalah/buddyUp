@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
@@ -9,27 +9,31 @@ import Event from "../components/Event";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 =======
 // top level layout: will include things like navbar, button placement, areas of text
+=======
+// top level layout: will include things like navbar, button placement, areas of
+// text
+>>>>>>> 60d5257... API pre-set up with constructors for testing
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMenu";
+import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
 
->>>>>>> 2dbd4c2... update rebase
-import {
-  Button,
-  Divider,
-  Grid,
-  Container,
-  Header,
-  Icon,
-  Image,
-  List,
 
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility
+import {
+    Button,
+    Divider,
+    Grid,
+    Container,
+    Header,
+    Icon,
+    Image,
+    List,
+
+    Responsive,
+    Segment,
+    Sidebar,
+    Visibility
 } from "semantic-ui-react";
 import {EventList} from "../components/EventList";
 
@@ -64,6 +68,7 @@ export default class Events extends React.Component {
             .handleChange
             .bind(this);
     };
+}
 
     handleChange = event => {
         this
@@ -115,25 +120,28 @@ export default class Events extends React.Component {
         event.preventDefault();
         this.searchEvents(queryURL);
     };
+    event.preventDefault();
 
-    render() {
-        return (
-            <Segment >
-                <Container>
-                    <Menu/>
-                </Container>
-                < Container >
-                    <div class="four wide column">
-                        <VerticalMenu/>
-                    </div>
-                    < div class="12 wide column">
-                        <Event/>{children}</div>
-                </Container >
-            </Segment>
-        )
-    }
-}
+    this.searchEvents(queryURL);
+};
+
+render() {
+    return (
+        <Segment >
+            <Container>
+                <Menu/>
+            </Container>
+            < Container >
+                <div class="four wide column">
+                    <VerticalMenu/>
+                </div>
+                < div class="12 wide column">
+                    <Event/>{children}</div>
+            </Container >
+        </Segment>
+    );
+};
+
+};
 
 export default event;
-
-

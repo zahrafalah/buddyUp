@@ -7,7 +7,11 @@ import HomePage from './pages/HomePage';
 import WelcomePage from "./pages/WelcomePage";
 import ProfilePage from './pages/ProfilePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+<<<<<<< HEAD
 import EventsPage from'./pages/EventsPage';
+=======
+import BuddiesAndEventsPage from'.pages/BuddiesAndEventsPage';
+>>>>>>> 60d5257... API pre-set up with constructors for testing
 
 const styles = {
 
@@ -26,6 +30,8 @@ export default class App extends Component {
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/profile" component={ProfilePage} />
 					<Route exact path="/events" component={EventsPage} />
+					<Route exact path="/welcome" component={WelcomePage} />
+
 				</div>
 			</Router>
 		);
