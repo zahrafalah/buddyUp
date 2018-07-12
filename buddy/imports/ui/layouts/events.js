@@ -3,7 +3,7 @@
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMenu";
+import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
