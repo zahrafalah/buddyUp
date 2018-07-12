@@ -158,5 +158,14 @@ export const VerticalMenu = props => (render() {
                 </div>
             </div>
         </div>
-    );)
-}
+                
+        </div>        
+
+
+  
+        ); 
+    };
+    
+};
+
+export default VerticalMenu;
