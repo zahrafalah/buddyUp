@@ -27,5 +27,10 @@ aldeed:collection2@3.0.0
 check
 accounts-ui
 accounts-password
+<<<<<<< HEAD
 mdg:validated-method
+=======
+simple:rest
+http
+>>>>>>> af05ebc... update rebase
 
