@@ -3,9 +3,9 @@
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMgit enu";
+import VerticalMenu from "../components/VerticalMenu";
 import Event from "../components/Event";
-
+import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
     Button,
     Divider,
@@ -15,7 +15,6 @@ import {
     Icon,
     Image,
     List,
-
     Responsive,
     Segment,
     Sidebar,
@@ -32,7 +31,6 @@ class event extends React.Component {
     constructor(props) {
 
         super(props);
-
         this.state.search = {
             search: '',
             animals: '',
