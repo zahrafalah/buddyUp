@@ -1,11 +1,8 @@
 import React, {Component} from "react";
-import AccountsUIWrapper from AccountsUIWrapper;
 
-class VerticalMenu extends Component {
+export const VerticalMenu = props => (render() {
+    return (
 
-    render() {
-        return( 
-        
         <div class="ui vertical menu categorieSearch">
             <div>
                 <button onClick={props.handleFormSubmit} class="ui basic button" name='refresh'>Refresh</button>
@@ -156,8 +153,8 @@ class VerticalMenu extends Component {
                     </div>
                 </div>
             </div>
-            </div>
-        );
+        </div>
+    );
 
-    };
+};
 }
