@@ -16,10 +16,14 @@ import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMgit enu";
+import VerticalMenu from "../components/VerticalMenu";
 import Event from "../components/Event";
+<<<<<<< HEAD
 
 
+=======
+import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
+>>>>>>> 00d7f53... prop, constructor & api query url
 import {
     Button,
     Divider,
@@ -29,7 +33,6 @@ import {
     Icon,
     Image,
     List,
-
     Responsive,
     Segment,
     Sidebar,
