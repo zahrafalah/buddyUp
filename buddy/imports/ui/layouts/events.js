@@ -102,6 +102,26 @@ export default class Events extends React.Component {
                 queryParam: join(Object.value(this.state.search))
             }
         };
-    );
+
+        event.preventDefault();
+        this.searchEvents(queryURL);
+    };
+
+    render() {
+        return (
+            <Segment >
+                <Container>
+                    <Menu/>
+                </Container>
+                < Container >
+                    <div class="four wide column">
+                        <VerticalMenu/>
+                    </div>
+                    < div class="12 wide column">
+                        <Event/>{children}</div>
+                </Container >
+            </Segment>
+        );
+    };
+
 };
-export default event;
