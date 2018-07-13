@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import AccountsUIWrapper from AccountsUIWrapper;
+
 
 
 class Menu extends Component {

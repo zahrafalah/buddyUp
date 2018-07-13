@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import AccountsUIWrapper from AccountsUIWrapper;
+
 
 export const VerticalMenu = props => (
 

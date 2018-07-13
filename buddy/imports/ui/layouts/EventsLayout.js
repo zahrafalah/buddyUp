@@ -3,7 +3,7 @@
 import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
-import VerticalMenu from "../components/VerticalMenu";
+import {VerticalMenu} from "../components/VerticalMenu";
 import {Event} from "../components/Event";
 import {EventList} from "../components/EventList"
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
@@ -21,7 +21,6 @@ import {
     Sidebar,
     Visibility
 } from "semantic-ui-react";
-
 
 export default class EventsLayout extends React.Component {
 
@@ -61,6 +60,14 @@ export default class EventsLayout extends React.Component {
             .setState({
                 [event.target.name]: event.target.value
             });
+
+        console.log(this.search);
+    };
+
+    loadEvents = () => {
+        searchEvents()
+            .then(res => this.setState({result: res.data.events.event}))
+            .catch(err => console.log(err));
     };
 
     searchEvents = query => {
@@ -69,9 +76,9 @@ export default class EventsLayout extends React.Component {
             .call('geoJsonForIp', query, function (err, res) {
                 // The method call sets the Session variable to the callback value
                 if (err) {
-                    Session.set(this.state.result, {error: err});
+                    Session.set('result', {error: err});
                 } else {
-                    Session.set(this.state.result, res);
+                    Session.set('result', res);
                     return res;
                 }
             });
@@ -102,8 +109,10 @@ export default class EventsLayout extends React.Component {
             }
         };
 
+        console.log(queryURL);
+
         event.preventDefault();
-        this.searchEvents(queryURL);
+        this.loadEvents(queryURL);
     };
 
     render() {
@@ -116,39 +125,44 @@ export default class EventsLayout extends React.Component {
                     <div class="four wide column">
                         <VerticalMenu/>
                     </div>
-                    < div class="12 wide column">
-                        {this
-                            .state
-                            .result
-                            .events
-                            .event
-                            .map(events => (
+                    {this.state.result.length
+                        ? (
+                            <div class="12 wide column">
                                 <EventList>
-                                    <Event>
-                                        <div class="image">
-                                            <img src={event.image.medium.url}/>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="header">{events.title}</h3>
-                                            <div class="meta">
-                                                <span class="date">{events.start_date}</span>
-                                                <span class="location">{events.city_name}, {events.region_name}</span>
-                                            </div>
-                                            <div class="description">
-                                                <p>{events.description}</p>
-                                            </div>
-                                            <div class="extra">
-                                                <a href={events.url} target="_blank">Additional Details</a>
-                                                <div class="ui label category">Pending</div>
-                                            </div>
-                                        </div>
-                                    </Event>
+                                    {this
+                                        .state
+                                        .result
+                                        .map(events => (
+                                            <Event>
+                                                <div class="image">
+                                                    <img src={events.image.medium.url}/>
+                                                </div>
+                                                <div class="content">
+                                                    <h3 class="header">{events.title}</h3>
+                                                    <div class="meta">
+                                                        <span class="date">{events.start_date}</span>
+                                                        <span class="location">{events.city_name}, {events.region_name}</span>
+                                                    </div>
+                                                    <div class="description">
+                                                        <p>{events.description}</p>
+                                                    </div>
+                                                    <div class="extra">
+                                                        <a href={events.url} target="_blank">Additional Details</a>
+                                                        <div class="ui label category">Pending</div>
+                                                    </div>
+                                                </div>
+                                            </Event>
+                                        ))}
                                 </EventList>
-                            ))}
-                    </div>
+                            </div>
+                        )
+                        : (
+                            <div class="ui red message">There is no Events Available with this Criteria</div>
+                        )}
                 </Container >
-            </Segment>
-        );
-    };
 
-};
+            </Segment>
+
+        )
+    }
+}
