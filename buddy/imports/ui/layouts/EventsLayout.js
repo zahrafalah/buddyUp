@@ -122,33 +122,33 @@ export default class EventsLayout extends React.Component {
                     <Menu/>
                 </Container>
                 < Container >
-                    <div class="four wide column">
+                    <div className="four wide column">
                         <VerticalMenu/>
                     </div>
                     {this.state.result.length
                         ? (
-                            <div class="12 wide column">
+                            <div className="12 wide column">
                                 <EventList>
                                     {this
                                         .state
                                         .result
                                         .map(events => (
                                             <Event>
-                                                <div class="image">
+                                                <div className="image">
                                                     <img src={events.image.medium.url}/>
                                                 </div>
-                                                <div class="content">
-                                                    <h3 class="header">{events.title}</h3>
-                                                    <div class="meta">
-                                                        <span class="date">{events.start_date}</span>
-                                                        <span class="location">{events.city_name}, {events.region_name}</span>
+                                                <div className="content">
+                                                    <h3 className="header">{events.title}</h3>
+                                                    <div className="meta">
+                                                        <span className="date">{events.start_date}</span>
+                                                        <span className="location">{events.city_name}, {events.region_name}</span>
                                                     </div>
-                                                    <div class="description">
+                                                    <div className="description">
                                                         <p>{events.description}</p>
                                                     </div>
-                                                    <div class="extra">
+                                                    <div className="extra">
                                                         <a href={events.url} target="_blank">Additional Details</a>
-                                                        <div class="ui label category">Pending</div>
+                                                        <div className="ui label category">Pending</div>
                                                     </div>
                                                 </div>
                                             </Event>
@@ -157,7 +157,7 @@ export default class EventsLayout extends React.Component {
                             </div>
                         )
                         : (
-                            <div class="ui red message">There is no Events Available with this Criteria</div>
+                            <div className="ui red message">There is no Events Available with this Criteria</div>
                         )}
                 </Container >
 
