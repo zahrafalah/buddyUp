@@ -7,7 +7,7 @@ import HomePage from './pages/HomePage';
 import { Random1 } from "./pages/welcomepage";
 import ProfilePage from './pages/ProfilePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import BuddiesAndEventsPage from'.pages/BuddiesAndEventsPage';
+import EventPage from'.pages/EventPage';
 
 const styles = {
 
