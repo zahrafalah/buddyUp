@@ -13,7 +13,6 @@ class Menu extends Component {
                 <a className="item">Company</a>
                 <a className="item">Careers</a>
             </div>
-                <AccountsUIWrapper/>
                     <div className="item">
                         <div className="ui inverted primary button">Login</div>
                     </div>
