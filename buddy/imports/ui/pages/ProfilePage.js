@@ -229,7 +229,7 @@ class ProfilePageLayout extends React.Component {
     this.setState({
       [name]: value
     });
-    // this.setState({value: event.target.value});
+   
   }
 
 
