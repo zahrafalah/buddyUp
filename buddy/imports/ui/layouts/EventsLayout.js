@@ -77,6 +77,8 @@ export default class EventsLayout extends React.Component {
 
         console.log(queryURL);
 
+        console.log(queryURL);
+
         event.preventDefault();
         this.loadEvents(queryURL);
     };
