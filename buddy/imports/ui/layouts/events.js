@@ -164,7 +164,35 @@ export default class Events extends React.Component {
                         <VerticalMenu/>
                     </div>
                     < div class="12 wide column">
-                        <Event/>{children}</div>
+                        {this
+                            .state
+                            .result
+                            .events
+                            .event
+                            .map(events => (
+                                <EventList>
+                                    <Event>
+                                        <div class="image">
+                                            <img src={event.image.medium.url}/>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="header">{events.title}</h3>
+                                            <div class="meta">
+                                                <span class="date">{events.start_date}</span>
+                                                <span class="location">{events.city_name}, {events.region_name}</span>
+                                            </div>
+                                            <div class="description">
+                                                <p>{events.description}</p>
+                                            </div>
+                                            <div class="extra">
+                                                <a href={events.url} target="_blank">Additional Details</a>
+                                                <div class="ui label category">Pending</div>
+                                            </div>
+                                        </div>
+                                    </Event>
+                                </EventList>
+                            ))}
+                    </div>
                 </Container >
             </Segment>
         );
