@@ -94,9 +94,9 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a' active>
                   Home
                 </Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
+                <Menu.Item as='a' active>Event</Menu.Item>
+                <Menu.Item as='a'></Menu.Item>
+                <Menu.Item as='a'></Menu.Item>
                 {/* <Menu.Item position='right'> */}
                 {/* <Button as='a' inverted={!fixed}>
                     Log in
@@ -209,7 +209,6 @@ class ProfilePageLayout extends React.Component {
       firstName: '',
       lastName: '',
       bio: '',
-      // art:false,
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
