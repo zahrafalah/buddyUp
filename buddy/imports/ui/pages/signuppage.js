@@ -1,6 +1,6 @@
 //top-level page, will call layout inside of here and I'm thinking logic will happen here?
-import React from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import React from 'react';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 
 const LoginForm = () => (
   <div className='login-form'>
