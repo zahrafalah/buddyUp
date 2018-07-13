@@ -1,4 +1,4 @@
-/*// top level layout: will include things like navbar, button placement, areas of
+// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
 import React, {Component} from "react";
@@ -23,7 +23,7 @@ import {
 } from "semantic-ui-react";
 import {EventList} from "../components/EventList";
 
-export default class Events extends React.Component {
+export default class EventsLayout extends React.Component {
 
     state = {
         result: {},
@@ -151,4 +151,4 @@ export default class Events extends React.Component {
         );
     };
 
-};*/
+};
