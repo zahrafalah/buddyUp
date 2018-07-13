@@ -8,7 +8,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 export const addProfile = new ValidatedMethod({
 	name: 'profiles.addProfile',
 	validate(firstName, lastName, bio) {
-			check(firstName, LastName, bio, {
+			check(firstName, lastName, bio, {
 				firstName: String,
 				lastName: String,
 				bio: String
@@ -23,9 +23,8 @@ export const addProfile = new ValidatedMethod({
       throw new Meteor.Error('not-authorized');
 	}
 	const user = Profiles.findOne(this.userId);
-	if(user === null){
 
-		Profiles.simpleSchema().insert({
+		Profiles.insert({
 			userId: this.userId,
 			firstName: firstName,
 			lastName: lastName,
@@ -50,13 +49,8 @@ export const addProfile = new ValidatedMethod({
 				// success
 				console.log("inserted" + result);
 			}
-		})
-
-	}
-	else {
-		throw new Meteor.Error('insert-not-allowed');
-	}
-	}
+	})
+		}
 	});
 	
 export const removeProfile = new ValidatedMethod({
