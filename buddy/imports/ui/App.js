@@ -24,7 +24,7 @@ export default class App extends Component {
 				<div>
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/profile" component={ProfilePage} />
-					<Route exact path="/buddies-events" component={BuddiesAndEventsPage} />
+					<Route exact path="/buddies-events" component={EventsPage} />
 				</div>
 			</Router>
 		);
