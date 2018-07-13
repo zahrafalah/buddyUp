@@ -1,7 +1,7 @@
-import React from 'react'
+import React from React
 
 export const EventList = ({children}) => {
     return (
-        <div className="ui items">{children}</div>
+        <div class="ui items">{children}</div>
     );
 };
