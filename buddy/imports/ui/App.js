@@ -9,7 +9,6 @@ import ProfilePage from './pages/ProfilePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import EventsPage from'./pages/EventsPage';
 
-
 const styles = {
 
 	fontFamily: "sans-serif",
