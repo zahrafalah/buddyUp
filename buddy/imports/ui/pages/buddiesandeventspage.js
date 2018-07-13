@@ -1,21 +1,12 @@
-<<<<<<< HEAD
 /*// top-level page, will call layout inside of here and I'm thinking logic will
 // happen here?
 import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 import events from '../layouts/EventsLayout'
-
-// top-level page, will call layout inside of here and I'm thinking logic will
-// happen here?
-import PropTypes from 'prop-types'
-import React, {Component} from 'react'
-=======
-// top-level page, will call layout inside of here and I'm thinking logic will
-// happen here?
-import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 import events from '../layouts/events.js'
->>>>>>> fcee5d7... events layout
+
+
 
 import {
     Button,
