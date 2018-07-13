@@ -155,7 +155,7 @@ export const VerticalMenu = props => (
         <div class="ui selection dropdown">
             <input
                 type="hidden"
-                name="distance"
+                name="within"
                 onChange={props.handleInputChange}
                 value={props.value}/>
             <i class="dropdown icon"></i>
@@ -166,6 +166,22 @@ export const VerticalMenu = props => (
                 <div class="item" data-value="25">25 miles</div>
                 <div class="item" data-value="50">50 miles</div>
                 <div class="item" data-value="100">100 miles</div>
+            </div>
+        </div>
+        <div class="ui selection dropdown">
+            <input
+                type="hidden"
+                name="date"
+                onChange={props.handleInputChange}
+                value={props.value}/>
+            <i class="dropdown icon"></i>
+            <div class="default text">When</div>
+            <div class="menu">
+                <div class="item" data-value="today">Today</div>
+                <div class="item" data-value="This Week">This Week</div>
+                <div class="item" data-value="Next Week">Last Week</div>
+                <div class="item" data-value="All">See All</div>
+             
             </div>
         </div>
     </div>
