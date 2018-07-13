@@ -1,8 +1,8 @@
-import React from 'react'
+import React from React
 
 export const Event = props => (
 
-    <div className="item">
+    <div class="item">
         {props.children}
 
     </div>
