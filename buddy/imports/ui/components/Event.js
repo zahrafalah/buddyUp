@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Event = props => (
 
-    <div class="item">
+    <div className="item">
         {props.children}
 
     </div>
