@@ -1,4 +1,4 @@
-/*// top level layout: will include things like navbar, button placement, areas of
+// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
 import React, {Component} from "react";
@@ -8,22 +8,22 @@ import {Event} from "../components/Event";
 import {EventList} from "../components/EventList"
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
-  Button,
-  Divider,
-  Grid,
-  Container,
-  Header,
-  Icon,
-  Image,
-  List,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility
+    Button,
+    Divider,
+    Grid,
+    Container,
+    Header,
+    Icon,
+    Image,
+    List,
+    Responsive,
+    Segment,
+    Sidebar,
+    Visibility
 } from "semantic-ui-react";
 import {EventList} from "../components/EventList";
 
-export default class Events extends React.Component {
+export default class EventsLayout extends React.Component {
 
     state = {
         result: {},
@@ -151,4 +151,4 @@ export default class Events extends React.Component {
         );
     };
 
-};*/
+};
