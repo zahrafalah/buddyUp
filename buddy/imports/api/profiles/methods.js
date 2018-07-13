@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {Profiles} from './profiles.js';
 import {Collection2} from 'meteor/aldeed:collection2'
 import {check} from 'meteor/check';
+import {SimpleSchema} from 'simpl-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 //methods check that there is a user context before making any changes to the database. This is one of Meteor's ways of doing security. They keys for validated method are: name, validate, run. 
 export const addProfile = new ValidatedMethod({
@@ -24,7 +25,7 @@ export const addProfile = new ValidatedMethod({
 	const user = Profiles.findOne(this.userId);
 	if(user === null){
 
-		Profiles.insert({
+		Profiles.simpleSchema().insert({
 			userId: this.userId,
 			firstName: firstName,
 			lastName: lastName,
