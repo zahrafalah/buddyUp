@@ -1,11 +1,6 @@
 import React, {Component} from "react";
 
-<<<<<<< HEAD
-export const VerticalMenu = props => (render() {
-    return (
-=======
 export const VerticalMenu = props => (
->>>>>>> 568b431... update Vertical Menu
 
     <div class="ui vertical menu categorieSearch">
     <div>
