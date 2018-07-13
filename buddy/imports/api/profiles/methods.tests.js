@@ -4,8 +4,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import{assert} from 'chai';
 import { Random } from 'meteor/random'
 import {addProfile} from './methods.js';
-// import './methods.js';
-//this file attempts to test methods by passing in a user context in a beforeEach hook, then deleting the created user in an afterEach hook after running the test. Validated-method package was added because it allows a user context to be passed in using the _execute method. something is going really wrong here, though. 
+
 //Use TEST_WATCH=1 meteor test --driver-package meteortesting:mocha
 //to run tests and see the outcomes. 
 describe('Profile methods', function(){
@@ -33,18 +32,7 @@ describe('Profile methods', function(){
 		isDefined(userId);
 		
 		console.log(userId, "userId generated");
-        // mock the Meteor.user() function, so that it
-        // always returns our new created user
-        // Meteor.user = function () {
-        //     console.log("finding user id");
-		// 	const users = 
-		// 	console.log("creating user");
-        //     if (!users || users.length > 1)
-        //         throw new Error("Meteor.user() mock cannot find user by userId.");
-        //     return users[0];
-		// };
-		const context = userId;
-		console.log("context " + context);
+ 		console.log("context " + context);
 	});
     //------------------------------------------//
 
@@ -61,21 +49,14 @@ describe('Profile methods', function(){
 		it('inserts given data', function() {
 			try {
 				console.log("try block");
-				console.log(context + "context for execution");
-				addProfile._execute(context, 
-					('Briana', 'Johnson', 'A busy person'), (err, res)=>{console.log(res)});
+				console.log("userId" + userId);
+				addProfile.run.call({userId: userId},
+					{firstName:'Briana', lastName:'Johnson', bio:'A busy person', art: false, outdoors_recreation: true, food: true, books: false, sports: false, science: true, music: false, animals: true, festivals_parades: true, singles_social: false, fundraisers: true, holiday: false});
 				
-				
-			}
+		}
 			catch(err){
 				throw new Error(err);
 			}
-			 done(); 
-			// const args = ['10', 'Briana'];
-			// assert.doesNotThrow(() => {
-			// 	addProfile._execute(context, args);
-			//   }, Error);
-			
 		});
 	});
 })
