@@ -22,7 +22,6 @@ import {
 } from "semantic-ui-react";
 import {EventList} from "../components/EventList";
 
-
 export default class Events extends React.Component {
 
     state = {
@@ -152,4 +151,4 @@ export default class Events extends React.Component {
         );
     };
 
-};
+};*/
