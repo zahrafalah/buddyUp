@@ -135,4 +135,4 @@ export default class EventsLayout extends React.Component {
 
         )
     }
-}
+    }*/
