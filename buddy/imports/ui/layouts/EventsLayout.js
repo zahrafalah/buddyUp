@@ -21,7 +21,7 @@ import {
     Sidebar,
     Visibility
 } from "semantic-ui-react";
-import {EventList} from "../components/EventList";
+
 
 export default class EventsLayout extends React.Component {
 
