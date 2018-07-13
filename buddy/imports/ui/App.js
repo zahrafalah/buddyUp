@@ -7,11 +7,9 @@ import HomePage from './pages/HomePage';
 import WelcomePage from "./pages/WelcomePage";
 import ProfilePage from './pages/ProfilePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-<<<<<<< HEAD
-import EventsPage from'./pages/EventsPage';
-=======
 import BuddiesAndEventsPage from'.pages/BuddiesAndEventsPage';
->>>>>>> 60d5257... API pre-set up with constructors for testing
+import EventPage from'.pages/EventPage';
+
 
 const styles = {
 
