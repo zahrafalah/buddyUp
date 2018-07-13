@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
-import Event from "../components/Event";
+import {Event} from "../components/Event";
+import {Event} from "../components/EventList"
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
     Button,
@@ -20,8 +21,9 @@ import {
     Sidebar,
     Visibility
 } from "semantic-ui-react";
+import {EventList} from "../components/EventList";
 
-export default class event extends React.Component {
+export default class events extends React.Component {
 
     state = {
         result: {},
@@ -44,7 +46,8 @@ export default class event extends React.Component {
             volunteer: '',
             holiday: '',
             zipCode: '',
-            distance: '' || 50
+            distance: '' || 50,
+            date: ''
         };
 
         this.handleChange = this
@@ -114,7 +117,35 @@ export default class event extends React.Component {
                         <VerticalMenu/>
                     </div>
                     < div class="12 wide column">
-                        <Event/>{children}</div>
+                        {this
+                            .state
+                            .result
+                            .events
+                            .event
+                            .map(events => (
+                                <EventList>
+                                    <Event>
+                                        <div class="image">
+                                            <img src={event.image.medium.url}/>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="header">{events.title}</h3>
+                                            <div class="meta">
+                                                <span class="date">{events.start_date}</span>
+                                                <span class="location">{events.city_name}, {events.region_name}</span>
+                                            </div>
+                                            <div class="description">
+                                                <p>{events.description}</p>
+                                            </div>
+                                            <div class="extra">
+                                                <a href={events.url} target="_blank">Additional Details</a>
+                                                <div class="ui label category">Pending</div>
+                                            </div>
+                                        </div>
+                                    </Event>
+                                </EventList>
+                            ))}
+                    </div>
                 </Container >
             </Segment>
         );
