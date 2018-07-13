@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import React, {Component} from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMenu";
-import Event from "../components/Event";
+import {Event} from "../components/Event";
+import {Event} from "../components/EventList"
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
   Button,
@@ -20,8 +21,9 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
+import {EventList} from "../components/EventList";
 
-export default class event extends React.Component {
+export default class events extends React.Component {
 
     state = {
         result: {},
