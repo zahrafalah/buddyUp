@@ -2,12 +2,12 @@ import React, {Component} from "react";
 
 export const VerticalMenu = props => (
 
-    <div class="ui vertical menu categorieSearch">
+    <div className="ui vertical menu categorieSearch">
     <div>
-        <button onClick={props.handleFormSubmit} class="ui basic button" name='refresh'>Refresh</button>
+        <button onClick={props.handleFormSubmit} className="ui basic button" name='refresh'>Refresh</button>
     </div>
-    <div class="item">
-        <div class="ui input">
+    <div className="item">
+        <div className="ui input">
             <label>Search
             </label>
             <input
@@ -22,10 +22,10 @@ export const VerticalMenu = props => (
         </div>
     </div>
 
-    <div class="item">
+    <div className="item">
         Categories
 
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -34,7 +34,7 @@ export const VerticalMenu = props => (
                 value="art"/>
             <label>Art Galleries & Exhibits</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -43,7 +43,7 @@ export const VerticalMenu = props => (
                 value="outdoors-recreation"/>
             <label>Outdoors & Recreation</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 type="checkbox"
                 name="food"
@@ -52,7 +52,7 @@ export const VerticalMenu = props => (
                 onChange={props.handleInputChange}/>
             <label>Food & Wine</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -61,7 +61,7 @@ export const VerticalMenu = props => (
                 value="books"/>
             <label>Reading & Books</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -70,7 +70,7 @@ export const VerticalMenu = props => (
                 value="sports"/>
             <label>Sports</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 type="checkbox"
                 name="science"
@@ -79,7 +79,7 @@ export const VerticalMenu = props => (
                 onChange={props.handleInputChange}/>
             <label>Science</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -88,7 +88,7 @@ export const VerticalMenu = props => (
                 value="music"/>
             <label>Concerts & Tour Dates</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -97,7 +97,7 @@ export const VerticalMenu = props => (
                 value="animals"/>
             <label>Pets</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -106,7 +106,7 @@ export const VerticalMenu = props => (
                 value="festivals_parades"/>
             <label>Festivals</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -115,7 +115,7 @@ export const VerticalMenu = props => (
                 value="singles_social"/>
             <label>Nightlife</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -124,7 +124,7 @@ export const VerticalMenu = props => (
                 value="fundraisers"/>
             <label>Volunteering</label>
         </div>
-        <div class="ui checkbox">
+        <div className="ui checkbox">
             <input
                 checked={props.checked}
                 onChange={props.handleInputChange}
@@ -134,9 +134,9 @@ export const VerticalMenu = props => (
             <label>Holiday</label>
         </div>
     </div>
-    <div class="item">
+    <div className="item">
         Other:
-        <div class="ui input">
+        <div className="ui input">
             <label>Zip Code</label>
             <input
                 onChange={props.handleInputChange}
@@ -147,35 +147,35 @@ export const VerticalMenu = props => (
                 type="text"
                 className="form-control"/>
         </div>
-        <div class="ui selection dropdown">
+        <div className="ui selection dropdown">
             <input
                 type="hidden"
                 name="within"
                 onChange={props.handleInputChange}
                 value={props.value}/>
-            <i class="dropdown icon"></i>
-            <div class="default text">Distance</div>
-            <div class="menu">
-                <div class="item" data-value="5">5 miles</div>
-                <div class="item" data-value="10">10 miles</div>
-                <div class="item" data-value="25">25 miles</div>
-                <div class="item" data-value="50">50 miles</div>
-                <div class="item" data-value="100">100 miles</div>
+            <i className="dropdown icon"></i>
+            <div className="default text">Distance</div>
+            <div className="menu">
+                <div className="item" data-value="5">5 miles</div>
+                <div className="item" data-value="10">10 miles</div>
+                <div className="item" data-value="25">25 miles</div>
+                <div className="item" data-value="50">50 miles</div>
+                <div className="item" data-value="100">100 miles</div>
             </div>
         </div>
-        <div class="ui selection dropdown">
+        <div className="ui selection dropdown">
             <input
                 type="hidden"
                 name="date"
                 onChange={props.handleInputChange}
                 value={props.value}/>
-            <i class="dropdown icon"></i>
-            <div class="default text">When</div>
-            <div class="menu">
-                <div class="item" data-value="today">Today</div>
-                <div class="item" data-value="This Week">This Week</div>
-                <div class="item" data-value="Next Week">Last Week</div>
-                <div class="item" data-value="All">See All</div>
+            <i className="dropdown icon"></i>
+            <div className="default text">When</div>
+            <div className="menu">
+                <div className="item" data-value="today">Today</div>
+                <div className="item" data-value="This Week">This Week</div>
+                <div className="item" data-value="Next Week">Last Week</div>
+                <div className="item" data-value="All">See All</div>
              
             </div>
         </div>

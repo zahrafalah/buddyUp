@@ -21,6 +21,8 @@ import AppLayout from '../../ui/layouts/AppLayout.js';
 import HomePage from '../../ui/pages/HomepageLayout.js';
 import ProfilePage from '../../ui/pages/ProfilePage.js';
 import WelcomePage from '../../ui/pages/WelcomePage.js';
+import EventPage from '../../ui/pages/ProfilePage.js';
+import EventsPage from '../../ui/pages/EventsPage.js'
 
 
 // Release the meeeettteeeoooor!
@@ -41,6 +43,8 @@ Meteor.startup( () => {
             {/* welcome Page */}
             <Route path="/welcome" component={ WelcomePage } onEnter={ redirectUnlessSignedIn } onChange={ redirectUnlessSignedIn } />
 
+             {/* Events Page */}
+            <Route path="/events" component={ EventsPage } onEnter={ redirectUnlessSignedIn } onChange={ redirectUnlessSignedIn } />
          </Route>
 
     </Router>,
