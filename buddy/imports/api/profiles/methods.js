@@ -16,7 +16,7 @@ export const addProfile = new ValidatedMethod({
 	applyOptions: {
 			returnStubValue: true,
 		},
-	run(firstName, lastName, bio, art, coffee, food, reading, sport, science, concert, pet, festival, happyhour, volunteer, holiday){
+	run(firstName, lastName, bio, art, outdoors_recreation, food, books, sports, science, music, animals, festivals_parades, singles_social, fundraisers, holiday){
     // Make sure the user is logged in before inserting a profile
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
@@ -30,16 +30,16 @@ export const addProfile = new ValidatedMethod({
 			lastName: lastName,
 			bio: bio,
 			art: art,
-			coffee: coffee,
+			outdoors_recreation: outdoors_recreation,
 			food: food,
-			reading: reading,
-			sport: sport,
+			books: books,
+			sports: sports,
 			science: science,
-			concert: concert,
-			pet: pet,
-			festival: festival,
-			happyhour: happyhour,
-			volunteer: volunteer,
+			music: music,
+			animals: animals,
+			festivals_parades: festivals_parades,
+			singles_social: singles_social,
+			fundraisers: fundraisers,
 			holiday: holiday
     }, (error, result) => {
 			if (error){
