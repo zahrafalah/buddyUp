@@ -43,7 +43,7 @@ describe('Profile methods', function(){
         //         throw new Error("Meteor.user() mock cannot find user by userId.");
         //     return users[0];
 		// };
-		const context = userId;
+		
 		console.log("context " + context);
 	});
     //------------------------------------------//
@@ -61,21 +61,14 @@ describe('Profile methods', function(){
 		it('inserts given data', function() {
 			try {
 				console.log("try block");
-				console.log(context + "context for execution");
-				addProfile._execute(context, 
-					('Briana', 'Johnson', 'A busy person'), (err, res)=>{console.log(res)});
+				console.log("userId" + userId);
+				addProfile.run.call({userId: userId},
+					{firstName:'Briana', lastName:'Johnson', bio:'A busy person', art: false, outdoors_recreation: true, food: true, books: false, sports: false, science: true, music: false, animals: true, festivals_parades: true, singles_social: false, fundraisers: true, holiday: false});
 				
-				
-			}
+		}
 			catch(err){
 				throw new Error(err);
 			}
-			 done(); 
-			// const args = ['10', 'Briana'];
-			// assert.doesNotThrow(() => {
-			// 	addProfile._execute(context, args);
-			//   }, Error);
-			
 		});
 	});
 })
