@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import HomePage from './pages/HomePage';
 // import EventPage from '';
-import { Random1 } from "./pages/welcomepage";
+import { Random1 } from "./pages/WelcomePage";
 import ProfilePage from './pages/ProfilePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -21,8 +21,11 @@ export default class App extends Component {
 		return (
 			<Router>
 				<div>
+
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/profile" component={ProfilePage} />
+					<Route exact path="/welcome" component={Random1} />
+
 				</div>
 			</Router>
 		);
