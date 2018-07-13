@@ -24,7 +24,6 @@ import {
 import EventsLayout from '../layouts/EventsLayout';
 
 
-
 class buddiesandevents extends Component {
 
     render() {
