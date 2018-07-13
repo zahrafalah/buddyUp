@@ -3,7 +3,7 @@ Password: Q1w2e3r4t5!
 
 Eventful account API: Pn3g5RvNgRnxzTxp
 
-http://api.eventful.com/json/events/search?...&location=Phoenix&app_key=Pn3g5RvNgRnxzTxp
+http://api.eventful.com/json/events/search?...&location=Phoenix&app_key=Pn3g5RvNgRnxzTxp&category=music,art,outdoor_activity&include=categories
 
 API call for category:
 http://api.eventful.com/json/categories/list?app_key=Pn3g5RvNgRnxzTxp
