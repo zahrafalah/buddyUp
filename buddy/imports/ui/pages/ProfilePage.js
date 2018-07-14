@@ -303,7 +303,7 @@ class ProfilePageLayout extends React.Component {
                   <div className="card">
                     <div className="content">
                       <i className="right floated like icon" onClick={(event) => this.handleClick('coffee')}></i>
-                      <div className="header">Coffee</div>
+                      <div className="header">Outdoors & Recreation</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/outdoors_recreation.jpg" />
@@ -407,7 +407,7 @@ class ProfilePageLayout extends React.Component {
                       <div className="header">Holiday</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/holidays.jpg" />
+                      <img src="./images/Categories/holiday.jpg" />
                     </div>
                   </div>
 
