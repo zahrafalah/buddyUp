@@ -276,7 +276,7 @@ class ProfilePageLayout extends React.Component {
               </Grid.Column>
 
               <Grid.Column floated='right' width={6}>
-                <Image bordered circular size='medium' src='./images/Categories/coffee.jpg' />
+                <Image bordered circular size='medium' src='./images/Categories/Icons/avatar.png' />
               </Grid.Column>
             </Grid.Row>
 
@@ -296,7 +296,7 @@ class ProfilePageLayout extends React.Component {
                       <div className="header">Art</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/Arts.jpg" />
+                      <img src="./images/Categories/art.jpg" />
                     </div>
                   </div>
 
@@ -306,7 +306,7 @@ class ProfilePageLayout extends React.Component {
                       <div className="header">Coffee</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/coffee.jpg" />
+                      <img src="./images/Categories/outdoors_recreation.jpg" />
                     </div>
                   </div>
 
@@ -322,11 +322,11 @@ class ProfilePageLayout extends React.Component {
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('reading')}></i>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('books')}></i>
                       <div className="header">Reading</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/reading.jpg" />
+                      <img src="./images/Categories/books.jpg" />
                     </div>
                   </div>
 
@@ -336,7 +336,7 @@ class ProfilePageLayout extends React.Component {
                       <div className="header">Sport</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/Sports.jpg" />
+                      <img src="./images/Categories/sports.jpg" />
                     </div>
                   </div>
 
@@ -346,58 +346,58 @@ class ProfilePageLayout extends React.Component {
                       <div className="header">Science</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/Science.jpg" />
+                      <img src="./images/Categories/science.jpg" />
                     </div>
                   </div>
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('concert')}></i>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('music')}></i>
                       <div className="header">Concert</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/concerts.jpg" />
+                      <img src="./images/Categories/music.jpg" />
                     </div>
                   </div>
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('pet')}></i>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('animals')}></i>
                       <div className="header">Pet</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/Pets.jpg" />
+                      <img src="./images/Categories/animals.jpg" />
                     </div>
                   </div>
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('festival')}></i>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('festival_parades')}></i>
                       <div className="header">Festival</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/festivals.jpg" />
+                      <img src="./images/Categories/festival_parades.jpg" />
                     </div>
                   </div>
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('happyhour')}></i>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('nightlife_singles')}></i>
                       <div className="header">Happy-hour</div>
                     </div>
 
                     <div className="image">
-                      <img src="./images/Categories/happy-hour.jpg" />
+                      <img src="./images/Categories/nightlife_singles.jpg" />
                     </div>
                   </div>
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('volunteer')}></i>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('fundraisers')}></i>
                       <div className="header">Volunteer</div>
                     </div>
                     <div className="image">
-                      <img src="./images/Categories/volunteer.jpg" />
+                      <img src="./images/Categories/fundraisers.jpg" />
                     </div>
                   </div>
 
