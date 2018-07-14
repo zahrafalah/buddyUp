@@ -203,53 +203,31 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-class ProfilePageLayout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      firstName: '',
-      lastName: '',
-      bio: '',
+class EventsPageLayout extends React.Component {
+  
+  searchEvents = query => {
+
+    Meteor
+        .call('geoJsonForIp', query, function (err, res) {
+            // The method call sets the Session variable to the callback value
+            if (err) {
+                Session.set('result', {error: err});
+            } else {
+                Session.set('result', res);
+                return res;
+            }
+        })
     }
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleClick(type) {
-    // make request to server
-    setTimeout(() => {
-      this.setState({
-        [type]: !this.state[type]
-      })
-    }, 1000)
-  }
-
-  handleChange(event) {
-
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-
-
-      console.log(event, value),	
-      
-		Meteor.call("addProfile", value, (err, res) => {
-      console.log(res)
-			// this.setState({value: value, : res});	
-			console.log(this.state)
-
-		});
-
-   
-  }
-
 
   render() {
-    console.log(this.state)
+
+    
+ 
+
+    // console.log(this.state)
     return (
       <ResponsiveContainer>
-
+{/* 
         <Segment style={{ padding: '5em 0em' }} vertical>
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
@@ -292,16 +270,17 @@ class ProfilePageLayout extends React.Component {
             </Grid.Row>
 
           </Grid>
-        </Segment>
+        </Segment> */}
 
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={14}>
-                <div className="ui four stackable link cards">
 
-                  <div className="card">
+                {/* <div className="ui four stackable link cards"> */}
+
+                  {/* <div className="card">
                     <div className="content">
                       <i className="right floated like icon" onClick={(event) => this.handleClick('art')}></i>
                       <div className="header">Art</div>
@@ -420,9 +399,9 @@ class ProfilePageLayout extends React.Component {
                     <div className="image">
                       <img src="./images/Categories/holidays.jpg" />
                     </div>
-                  </div>
+                  </div> */}
 
-                </div>
+                {/* </div> */}
 
 
                 {/* <Header as='h3' style={{ fontSize: '2em' }}>
@@ -548,4 +527,4 @@ class ProfilePageLayout extends React.Component {
   }
 }
 
-export default ProfilePageLayout
+export default EventsPageLayout
