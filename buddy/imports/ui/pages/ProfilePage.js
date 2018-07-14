@@ -246,7 +246,7 @@ class ProfilePageLayout extends React.Component {
 
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <ResponsiveContainer>
 
@@ -261,17 +261,34 @@ class ProfilePageLayout extends React.Component {
                 <div className="ui segment success">
                   <div className="ui form">
                     <div className="two fields">
+
                       <div className="field ">
                         <label>First Name</label>
                         <input placeholder="First Name" type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
                       </div>
+
                       <div className="field">
                         <label>Last Name</label>
                         <input placeholder="Last Name" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
                       </div>
+
+{/*                      
+  <div class="field">
+    <label>Text</label>
+    <textarea></textarea>
+  </div> */}
+  <div class="field">
+    <label>Short Text</label>
+    <textarea rows="2"></textarea>
+  </div>
+
+
                     </div>
+
                     <div className="ui submit button">Submit</div>
+
                   </div>
+
                 </div>
                 <p style={{ fontSize: '1.33em' }}>
                   We can give your company superpowers to do things that they never thought possible.
