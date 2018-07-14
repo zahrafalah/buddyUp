@@ -39,10 +39,6 @@ Meteor.startup( () => {
 
             {/* Profile Page */}
             <Route path="/profile" component={ ProfilePage } onEnter={ redirectUnlessSignedIn } onChange={ redirectUnlessSignedIn } />
-
-            {/* welcome Page */}
-            <Route path="/welcome" component={ WelcomePage } onEnter={ redirectUnlessSignedIn } onChange={ redirectUnlessSignedIn } />
-
              {/* Events Page */}
             <Route path="/events" component={ EventsPage } onEnter={ redirectUnlessSignedIn } onChange={ redirectUnlessSignedIn } />
          </Route>
