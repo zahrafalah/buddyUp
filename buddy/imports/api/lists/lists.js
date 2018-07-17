@@ -5,13 +5,15 @@ Events.addLinks({
     'profiles': {
         type: 'many',
         collection: Profiles,
-        field: 'profileIds',
+		field: 'profileIds',
+		index: true
     }
 });
 
 Profiles.addLinks({
     'events': {
         collection: Events,
-        inversedBy: 'profiles'
+		inversedBy: 'profiles', 
+		index: true
     }
 });
