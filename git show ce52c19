@@ -1,0 +1,142 @@
+[33mc65c569[m[33m ([m[1;36mHEAD -> [m[1;32msepidprofilecallmethods[m[33m, [m[1;31morigin/sepidprofilecallmethods[m[33m)[m inserting profile info to db & modifiying the handle submit and methods.js
+[33mce52c19[m profilepage handlesubmit and methods calling
+[33m8289993[m adding method call and about me dashboard
+[33ma3d6827[m first method call & text area added
+[33m72e2fc2[m[33m ([m[1;31morigin/sepidehEventspage[m[33m, [m[1;32msepidehEventspage[m[33m)[m eventspage err fixed, routes added
+[33m3d2df0b[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m welcomepage functionality, routing & Modal added
+[33m91b2281[m Merge pull request #12 from Boursler/brianaprofilePublications2
+[33m601f1ca[m Update profiles test to account for userId requirement
+[33m7993fb5[m Pass user context into Method and generate passing updateProfile test
+[33m868b481[m Fix typo in lastName and remove unnecessary call to simpleSchema
+[33m92d1ca9[m Add import of api client-side
+[33m1dad14f[m Add draft of profile publication
+[33m648765a[m Add call to simpleschema on insert
+[33m389c934[m Remove autopublish package
+[33m86bd4ca[m Merge pull request #11 from Boursler/briananewProfile
+[33mc1e0e32[m[33m ([m[1;31morigin/briananewProfile[m[33m)[m Update insert method to new category titles
+[33mcbafe7a[m Update Profile schema test to new category titles
+[33m6b8f183[m Update Profile schema to new category titles
+[33md964566[m Fix import statement for react in signup.js
+[33meea9ff0[m Pascal case filename
+[33mfebc65b[m Add welcome page routing
+[33mc985fb0[m styled font and color
+[33mf72ee1f[m slyled
+[33m70f492a[m addin skip button
+[33mdc23952[m styled
+[33m73faf68[m Merge pull request #10 from Boursler/sepidProFunction
+[33m898a28b[m[33m ([m[1;31morigin/sepidProFunction[m[33m, [m[1;32msepidProFunction[m[33m)[m Adding forum&func
+[33m8f7bbab[m adding onclickfunc to icons to change the boolean in db
+[33ma514b78[m Merge pull request #9 from Boursler/brianaMergeProfile
+[33m99e48e7[m[33m ([m[1;31morigin/brianaMergeProfile[m[33m)[m Fix merge issues
+[33m99f9960[m Add package validator for methods
+[33meb5ce3f[m Add updateCategory method and add category insertion to insert method
+[33m1566de2[m Add new required values to test
+[33mb9c0591[m Add categories to profiles schema
+[33md861761[m Draft categories in profile schema
+[33m6bebc39[m Add import of meteor
+[33mc848eb9[m Source of error is context is passed in as a function
+[33mea513a8[m Add userId field to profiles
+[33meaa7a84[m Make several attempts to refactor, see commented out code for history
+[33m4fed8da[m Refactor methods to use Validated Methods
+[33m58418a7[m Add validator for methods
+[33m831d961[m Run test on secondary db node
+[33m4b607c8[m Debugging profiles tests and profiles methods
+[33m1cba142[m Add user mocking
+[33mdaabb9d[m Test insert method for profile
+[33m2662d60[m Change insert method name to avoid naming conflict
+[33m324bd61[m Add check package for methods
+[33m9232b17[m Add success message to insert
+[33mf7979b5[m Update remove and insert methods
+[33m8fb91a9[m Improve update draft to account for bio
+[33m430d43e[m Draft update method
+[33m77eb720[m Remove insecure
+[33m16b6cf0[m[33m ([m[1;32msepidprofilefunc[m[33m)[m TermsandConditions
+[33m1fc5df3[m Categories addes& cards fixed
+[33md3d7044[m Rename profilepage.js to ProfilePage.js
+[33m239664b[m[33m ([m[1;32msepidehrouts[m[33m)[m Merge pull request #8 from Boursler/brianaAmendSepideh
+[33m843d60d[m[33m ([m[1;31morigin/brianaAmendSepideh[m[33m)[m Category cards commented out
+[33m07095cc[m profilePage added, routes.js & App.js fixed,react-router-dom added
+[33m1f84429[m Add user accounts and configuration
+[33m6d92e12[m Merge pull request #7 from Boursler/brianaMergeMiriam
+[33m137cfec[m[33m ([m[1;31morigin/brianaMergeMiriam[m[33m)[m working random mosaic
+[33mbee127f[m update to Background Image
+[33me60a18c[m update container/render
+[33mfb58acb[m update container & Images.js
+[33m638e5d6[m add BackgroundImage Component
+[33mce883ec[m updated js for mosaic, needs more work on code
+[33mda45509[m update container & Images.js
+[33mbb6e558[m update versions
+[33m0eee62e[m update json file with images as a property
+[33m97c1fe3[m images edited
+[33m307bb12[m update
+[33mb67c1f9[m images
+[33mad88a71[m update
+[33m0fbd156[m update
+[33mcf3afa8[m update
+[33m1bb9ddf[m images
+[33m0613df4[m images mosaic
+[33medc3794[m images
+[33m95a9de6[m update
+[33m406d8f3[m update
+[33mc575c99[m update
+[33m9e84bd7[m images
+[33mafd78b3[m api info
+[33m4bd8f57[m add
+[33me348276[m images edited
+[33me953007[m images
+[33mf3d88a8[m rebase 070618
+[33ma60f9b3[m update deleted images, directory updates
+[33m9255c67[m update images chages
+[33m4545836[m update
+[33m154e30b[m update to final images 070618 0827pm
+[33m59fe5a9[m final update to images
+[33m99fa55f[m images mosaic
+[33m0fa5bf6[m images
+[33m7349296[m update
+[33m1bfb42b[m update
+[33m277e348[m update
+[33md3889f6[m imaes
+[33me40699f[m Additional documentation
+[33mdbfbffd[m Remove example code and categories -> results, first draft of profile schema
+[33mc47e1ba[m Add import statment for meteor/aldeed:collection2
+[33m2e2145b[m Fix import statements, delete commented code and fix tests to actually validate schema
+[33m40c1ccf[m[33m ([m[1;32mbrianaprofiles2[m[33m, [m[1;32mSepidehTesting[m[33m)[m Make working insert test
+[33md108fbf[m Fix export of Profiles
+[33m8b04940[m Initial commit of schema
+[33m0673f80[m Add aldeed//meteor-collection2 to handle schemas and collections
+[33m8c80255[m Add testing:meteormocha
+[33m3668919[m Remove mainModule:Tests and tests scripts -- now tests run
+[33mb0f85a7[m Basic test to fix bug where tests don't run
+[33ma133f00[m A place to store issues with meteor
+[33mddb6aaf[m getting homepage to show in the browser using app&routs.js
+[33m09ff859[m Initial commit of layout code and client routes
+[33m5cf654f[m Merge pull request #6 from Boursler/Sepidehwelcome
+[33mac9d142[m[33m ([m[1;31morigin/Sepidehwelcome[m[33m, [m[1;32mSepidehwelcome[m[33m)[m add animated-text for the welcoming page!
+[33mdc4fa98[m[33m ([m[1;32msepidehlogin[m[33m)[m Merge branch 'master' of https://github.com/Boursler/buddyUp
+[33m2a71328[m Merge pull request #5 from Boursler/BrianaStarterLayouts
+[33m43e144f[m Add starter files for layouts and pages
+[33m7e1f246[m Add style.js
+[33mdda7e07[m[33m ([m[1;32mtmp_master[m[33m, [m[1;32mdelete[m[33m)[m Merge pull request #4 from Boursler/brianaConfig2
+[33m31c2958[m[33m ([m[1;31morigin/brianaConfig2[m[33m)[m Card example
+[33m0a280c0[m Set up import statements for api methods and startup
+[33m0df862b[m Update gitignore to include client-side libraries
+[33mfddba9e[m Add public directory for static image files.
+[33m12c9a1c[m Delete incorrect configuration for files
+[33mbb58f95[m Begin main server imports from startup
+[33ma92b99a[m Begin server startup files
+[33meb08e89[m Add client startup files
+[33mdb246e2[m Merge pull request #3 from Boursler/BrianaSemantic2
+[33m1070712[m Replace boilerplate with specific render-target, import React and provide example of semantic-ui-react usage in top-level App.js
+[33m5b8e2db[m Merge pull request #2 from Boursler/SemanticTest
+[33m8b37157[m Add missing semantic-ui-react package
+[33m83c59ad[m git documentation
+[33m27d5f61[m Merge branch 'master' of https://github.com/Boursler/buddyUp
+[33m35fd678[m Meteor documentation
+[33m03c417b[m Merge pull request #1 from Boursler/brianaComponents
+[33m6b86181[m[33m ([m[1;31morigin/brianaComponents[m[33m)[m Create Semantic-Ui component files
+[33mb9d39b9[m Initialize Semantic-UI React
+[33mb15e860[m Application structure draft
+[33m85da9cd[m Create documentation folder
+[33m49f6b32[m Mock up folder
+[33mcc89512[m Initial commit of Meteor files with React packages
+[33mbfd840e[m Initial commit
