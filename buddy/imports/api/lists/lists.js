@@ -1,6 +1,7 @@
 import Events from '../events/events.js';
 import Profiles from '../profiles/profiles.js';
 
+
 Events.addLinks({
     'profiles': {
         type: 'many',
