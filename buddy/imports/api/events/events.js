@@ -16,7 +16,7 @@ Schemas.Event = new SimpleSchema({
 	}, 
 	
 	postalCode: {
-		type: Integer,
+		type: SimpleSchema.Integer,
 		optional: true
 	},
 	title: {
@@ -34,6 +34,10 @@ Schemas.Event = new SimpleSchema({
 	address: {
 		type: String,
 		optional: true
+	},
+	category: {
+		type: String,
+		optional: false
 	}
 
   
