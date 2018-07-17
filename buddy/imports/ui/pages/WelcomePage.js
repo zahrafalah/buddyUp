@@ -20,7 +20,6 @@ const exampleStyle = {
   height: "100%",
   top: "0px",
   left: "0px",
-  // zindex:"1000",
   fontSize: "8rem",
   fontFamily: "'Chela One', cursive"
 };

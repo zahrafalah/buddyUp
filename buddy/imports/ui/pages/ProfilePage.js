@@ -232,16 +232,16 @@ class ProfilePageLayout extends React.Component {
     });
 
 
-      console.log(event, value),	
-      
-		Meteor.call("addProfile", value, (err, res) => {
-      console.log(res)
-			// this.setState({value: value, : res});	
-			console.log(this.state)
+    // console.log(event, value),
 
-		});
+      Meteor.call("addProfile", value, (err, res) => {
+        console.log(JSON.stringify('res'))
+        // this.setState({value: value, : res});	
+        // console.log(this.state)
 
-   
+      });
+
+
   }
 
 
@@ -255,10 +255,10 @@ class ProfilePageLayout extends React.Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <Header as='h3' style={{ fontSize: '2em' }}>
-                  Name
+                  
                 </Header>
 
-                <div className="ui segment success">
+                {/* <div className="ui segment success">
                   <div className="ui form">
                     <div className="two fields">
 
@@ -272,177 +272,266 @@ class ProfilePageLayout extends React.Component {
                         <input placeholder="Last Name" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
                       </div>
 
-{/*                      
-  <div class="field">
-    <label>Text</label>
-    <textarea></textarea>
-  </div> */}
-  <div class="field">
-    <label>Short Text</label>
-    <textarea rows="2"></textarea>
-  </div>
-
+                      <div className="field">
+                        <label>Short Text</label>
+                        <textarea rows="2"></textarea>
+                      </div>
 
                     </div>
-
                     <div className="ui submit button">Submit</div>
+                  </div>
+                </div> */}
 
+
+                <div className="ui segment success">
+                  <form class="ui form" >
+                  <h4 class="ui dividing header">Personal Information</h4>
+
+                  <div class="field">
+                    <label>Name</label>
+                    <div class="two fields">
+                      <div class="field">
+                        <input type="text" name="shipping[first-name]" placeholder="First Name" />
+                      </div>
+                      <div class="field">
+                        <input type="text" name="shipping[last-name]" placeholder="Last Name" />
+                      </div>
+                    </div>
                   </div>
 
-                </div>
-                <p style={{ fontSize: '1.33em' }}>
-                  We can give your company superpowers to do things that they never thought possible.
+                  <div class="field">
+                        <label>Bio</label>
+                        <textarea rows="2"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label>Billing Address</label>
+                    <div class="fields">
+                      <div class="twelve wide field">
+                        <input type="text" name="shipping[address]" placeholder="Street Address" />
+                      </div>
+                      <div class="four wide field">
+                        <input type="text" name="shipping[address-2]" placeholder="Apt #" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="two fields">
+                    <div class="field">
+                      <label>State</label>
+                      <select class="ui fluid dropdown">
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label>Country</label>
+                      <div class="ui fluid search selection dropdown">
+                        <input type="hidden" name="country" />
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Select Country</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h4 class="ui dividing header">Billing Information</h4>
+                  <div class="field">
+                    <label>Card Type</label>
+                    <div class="ui selection dropdown">
+                      <input type="hidden" name="card[type]" />
+                      <div class="default text">Type</div>
+                      <i class="dropdown icon"></i>
+                      <div class="menu">
+                        <div class="item" data-value="visa">
+                          <i class="visa icon"></i>
+                          Visa
+                        </div>
+                        <div class="item" data-value="amex">
+                          <i class="amex icon"></i>
+                          American Express
+                        </div>
+                        <div class="item" data-value="discover">
+                          <i class="discover icon"></i>
+                          Discover
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="fields">
+                    <div class="seven wide field">
+                      <label>Card Number</label>
+                      <input type="text" name="card[number]" maxlength="16" placeholder="Card #" />
+                    </div>
+                    <div class="three wide field">
+                      <label>CVC</label>
+                      <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC" />
+                    </div>
+                    <div class="six wide field">
+                      <label>Expiration</label>
+                    </div>
+                  </div>
+               {/* </div> */}
+                <div class="ui button" tabindex="0">Submit Order</div>
+</form>
+
+ </div>
+
+
+
+
+
+            <p style={{ fontSize: '1.33em' }}>
+              We can give your company superpowers to do things that they never thought possible.
                   Let us delight your customers and empower your needs... through pure data analytics.
                 </p>
-                <Header as='h3' style={{ fontSize: '2em' }}>
-                  Bio
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Bio
                 </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  Yes that's right, you thought it was the stuff of dreams, but even bananas can be
+            <p style={{ fontSize: '1.33em' }}>
+              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
                   bioengineered.
                 </p>
               </Grid.Column>
 
-              <Grid.Column floated='right' width={6}>
-                <Image bordered circular size='medium' src='./images/Categories/coffee.jpg' />
-              </Grid.Column>
+          <Grid.Column floated='right' width={6}>
+            <Image bordered circular size='medium' src='./images/Categories/coffee.jpg' />
+          </Grid.Column>
             </Grid.Row>
 
           </Grid>
-        </Segment>
+        </Segment >
 
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
-          <Grid container stackable verticalAlign='middle'>
-            <Grid.Row>
-              <Grid.Column width={14}>
-                <div className="ui four stackable link cards">
+      <Segment style={{ padding: '8em 0em' }} vertical>
+        <Grid container stackable verticalAlign='middle'>
+          <Grid.Row>
+            <Grid.Column width={14}>
+              <div className="ui four stackable link cards">
 
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('art')}></i>
-                      <div className="header">Art</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/Arts.jpg" />
-                    </div>
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('art')}></i>
+                    <div className="header">Art</div>
                   </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('coffee')}></i>
-                      <div className="header">Coffee</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/coffee.jpg" />
-                    </div>
+                  <div className="image">
+                    <img src="./images/Categories/Arts.jpg" />
                   </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('food')}></i>
-                      <div className="header">Food</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/food.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('reading')}></i>
-                      <div className="header">Reading</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/reading.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('sport')}></i>
-                      <div className="header">Sport</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/Sports.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('science')}></i>
-                      <div className="header">Science</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/Science.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('concert')}></i>
-                      <div className="header">Concert</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/concerts.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('pet')}></i>
-                      <div className="header">Pet</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/Pets.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('festival')}></i>
-                      <div className="header">Festival</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/festivals.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('happyhour')}></i>
-                      <div className="header">Happy-hour</div>
-                    </div>
-
-                    <div className="image">
-                      <img src="./images/Categories/happy-hour.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('volunteer')}></i>
-                      <div className="header">Volunteer</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/volunteer.jpg" />
-                    </div>
-                  </div>
-
-                  <div className="card">
-                    <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('holiday')}></i>
-                      <div className="header">Holiday</div>
-                    </div>
-                    <div className="image">
-                      <img src="./images/Categories/holidays.jpg" />
-                    </div>
-                  </div>
-
                 </div>
 
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('coffee')}></i>
+                    <div className="header">Coffee</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/coffee.jpg" />
+                  </div>
+                </div>
 
-                {/* <Header as='h3' style={{ fontSize: '2em' }}>
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('food')}></i>
+                    <div className="header">Food</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/food.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('reading')}></i>
+                    <div className="header">Reading</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/reading.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('sport')}></i>
+                    <div className="header">Sport</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/Sports.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('science')}></i>
+                    <div className="header">Science</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/Science.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('concert')}></i>
+                    <div className="header">Concert</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/concerts.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('pet')}></i>
+                    <div className="header">Pet</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/Pets.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('festival')}></i>
+                    <div className="header">Festival</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/festivals.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('happyhour')}></i>
+                    <div className="header">Happy-hour</div>
+                  </div>
+
+                  <div className="image">
+                    <img src="./images/Categories/happy-hour.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('volunteer')}></i>
+                    <div className="header">Volunteer</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/volunteer.jpg" />
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="content">
+                    <i className="right floated like icon" onClick={(event) => this.handleClick('holiday')}></i>
+                    <div className="header">Holiday</div>
+                  </div>
+                  <div className="image">
+                    <img src="./images/Categories/holidays.jpg" />
+                  </div>
+                </div>
+
+              </div>
+
+
+              {/* <Header as='h3' style={{ fontSize: '2em' }}>
                   We Help Companies and Companions
                 </Header>
                 <p style={{ fontSize: '1.33em' }}>
@@ -456,20 +545,20 @@ class ProfilePageLayout extends React.Component {
                   Yes that's right, you thought it was the stuff of dreams, but even bananas can be
                   bioengineered.
                 </p> */}
-              </Grid.Column>
-              {/* <Grid.Column floated='right' width={6}>
+            </Grid.Column>
+            {/* <Grid.Column floated='right' width={6}>
                 <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
               </Grid.Column> */}
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column textAlign='center'>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column textAlign='center'>
 
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Segment>
 
-        {/* <Segment style={{ padding: '0em' }} vertical>
+    {/* <Segment style={{ padding: '0em' }} vertical>
           <Grid celled='internally' columns='equal' stackable>
             <Grid.Row textAlign='center'>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
@@ -491,7 +580,7 @@ class ProfilePageLayout extends React.Component {
           </Grid>
         </Segment> */}
 
-        {/* <Segment style={{ padding: '8em 0em' }} vertical>
+    {/* <Segment style={{ padding: '8em 0em' }} vertical>
           <Container text>
             <Header as='h3' style={{ fontSize: '2em' }}>
               Breaking The Grid, Grabs Your Attention
@@ -526,41 +615,41 @@ class ProfilePageLayout extends React.Component {
           </Container>
         </Segment> */}
 
-        <Segment inverted vertical style={{ padding: '5em 0em' }}>
-          <Container>
-            <Grid divided inverted stackable>
-              <Grid.Row>
-                <Grid.Column width={3}>
-                  <Header inverted as='h4' content='About' />
-                  <List link inverted>
-                    <List.Item as='a'>Sitemap</List.Item>
-                    <List.Item as='a'>Contact Us</List.Item>
-                    <List.Item as='a'>Religious Ceremonies</List.Item>
-                    <List.Item as='a'>Gazebo Plans</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column width={3}>
-                  <Header inverted as='h4' content='Services' />
-                  <List link inverted>
-                    <List.Item as='a'>Banana Pre-Order</List.Item>
-                    <List.Item as='a'>DNA FAQ</List.Item>
-                    <List.Item as='a'>How To Access</List.Item>
-                    <List.Item as='a'>Favorite X-Men</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column width={7}>
-                  <Header as='h4' inverted>
-                    Footer Header
+    <Segment inverted vertical style={{ padding: '5em 0em' }}>
+      <Container>
+        <Grid divided inverted stackable>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Header inverted as='h4' content='About' />
+              <List link inverted>
+                <List.Item as='a'>Sitemap</List.Item>
+                <List.Item as='a'>Contact Us</List.Item>
+                <List.Item as='a'>Religious Ceremonies</List.Item>
+                <List.Item as='a'>Gazebo Plans</List.Item>
+              </List>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <Header inverted as='h4' content='Services' />
+              <List link inverted>
+                <List.Item as='a'>Banana Pre-Order</List.Item>
+                <List.Item as='a'>DNA FAQ</List.Item>
+                <List.Item as='a'>How To Access</List.Item>
+                <List.Item as='a'>Favorite X-Men</List.Item>
+              </List>
+            </Grid.Column>
+            <Grid.Column width={7}>
+              <Header as='h4' inverted>
+                Footer Header
                   </Header>
-                  <p>
-                    Extra space for a call to action inside the footer that could help re-engage users.
+              <p>
+                Extra space for a call to action inside the footer that could help re-engage users.
                   </p>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </Container>
-        </Segment>
-      </ResponsiveContainer>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </Segment>
+      </ResponsiveContainer >
     )
   }
 }
