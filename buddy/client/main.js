@@ -11,3 +11,4 @@ import '../imports/startup/client/useraccounts-configuration';
 Meteor.startup(() => {
   render(<App />, document.getElementById('render-target'));
 });
+
