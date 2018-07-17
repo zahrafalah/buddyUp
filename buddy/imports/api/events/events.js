@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import {Collection2} from 'meteor/aldeed:collection2'
 import SimpleSchema from 'simpl-schema';
 // import SimpleSchema from 'meteor/aldeed:collection2'
-export const Profiles = new Mongo.Collection('events');
+export const Events = new Mongo.Collection('events');
 
 const Schemas = {};
 
@@ -30,9 +30,13 @@ Schemas.Event = new SimpleSchema({
 	date: {
 		type: Date,
 		optional: true
+	}, 
+	address: {
+		type: String,
+		optional: true
 	}
 
   
 });
 
-Profiles.attachSchema(Schemas.Profile);
+Events.attachSchema(Schemas.Event);
