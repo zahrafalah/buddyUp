@@ -1,9 +1,13 @@
 import React from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
-import { Component } from 'react';
-import {render} from 'react-dom';
-import { Session } from 'meteor/session'
 import { Meteor } from 'meteor/meteor';
+
+import { Component } from 'react';
+import { Session } from 'meteor/session';
+
+import {render} from 'react-dom';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+
+
 
 
 class aboutMe extends Component {
@@ -16,7 +20,7 @@ class aboutMe extends Component {
   
       render(){
         return(
-         
+         <Button></Button>
         )
       }
     }

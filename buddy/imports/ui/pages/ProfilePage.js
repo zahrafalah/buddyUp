@@ -16,10 +16,10 @@ import {
 
   Visibility,
 } from 'semantic-ui-react'
-import '../../api/profiles/profiles';
-import addProfile from '../../api/profiles/methods'
+// import '../../api/profiles/profiles';
+import {addProfile} from '../../api/profiles/methods'
+// import Profiles from '../../api/profiles/profiles'
 
-/* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.
  */
@@ -96,7 +96,7 @@ class DesktopContainer extends Component {
                   Home
                 </Menu.Item>
                 <Menu.Item as='a' active>Event</Menu.Item>
-                <Menu.Item as='a'></Menu.Item>
+                <Menu.Item as='a' active>My Profile</Menu.Item>
                 <Menu.Item as='a'></Menu.Item>
                 {/* <Menu.Item position='right'> */}
                 {/* <Button as='a' inverted={!fixed}>
@@ -213,6 +213,7 @@ class ProfilePageLayout extends React.Component {
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(type) {
@@ -225,28 +226,65 @@ class ProfilePageLayout extends React.Component {
   }
 
   handleChange(event) {
-
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+    console.log(this.state)
+  }
+
+  // handleSubmit(event) {
+  //   alert('Your favorite flavor is: ' + this.state.value);
+  //   event.preventDefault();
+  //   addProfile.call() 
+  // }
+
+  handleSubmit(event) {
+    event.preventDefault();
+ 
+    // Find the text field via the React ref
+    // const text =this.state.bio.trim();
+    // let firstName = this.state.firstName
+    // let lastName = this.state.lastName
+    // let bio = this.state.bio
+
+const data = {
+firstName : firstName,
+lastName : lastName,
+bio : bio
+}
+console.log(data + "just defined data") 				
+ addProfile.call( data, (err, res) => {
+        // console.log(JSON.stringify(text))
+        if(err)
+        console.log(err);
+
+        console.log(res)
+        // this.setState({value: value, : res});	
+        // console.log(this.state)
+      })
+    // meteor.call({
+      // text,
+      // createdAt: new Date(), // current time
+    // });
+ 
+    // // Clear form
+    // ReactDOM.findDOMNode(this.refs.textInput).value = '';
+  }
 
 
     // console.log(event, value),
 
-      Meteor.call("addProfile", value, (err, res) => {
-        console.log(JSON.stringify('res'))
-        // this.setState({value: value, : res});	
-        // console.log(this.state)
+      // Meteor.call("addProfile", value, (err, res) => {
+      //   console.log(JSON.stringify(res))
+      //   // this.setState({value: value, : res});	
+      //   // console.log(this.state)
 
-      });
-
-
-  }
+      // })
 
 
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     return (
       <ResponsiveContainer>
 
@@ -281,96 +319,33 @@ class ProfilePageLayout extends React.Component {
                     <div className="ui submit button">Submit</div>
                   </div>
                 </div> */}
-
+<div className="ui checkbox">
+  <input type="checkbox" name="example"/>
+  <label>Make my profile visible</label>
+</div>
 
                 <div className="ui segment success">
-                  <form class="ui form" >
-                  <h4 class="ui dividing header">Personal Information</h4>
+                  <form className="ui form" >
+                  <h4 className="ui dividing header">Personal Information</h4>
 
-                  <div class="field">
+                  <div className="field">
                     <label>Name</label>
-                    <div class="two fields">
-                      <div class="field">
-                        <input type="text" name="shipping[first-name]" placeholder="First Name" />
+                    <div className="two fields">
+                      <div className="field">
+                      <input placeholder="First Name" className="firstName" type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
                       </div>
-                      <div class="field">
-                        <input type="text" name="shipping[last-name]" placeholder="Last Name" />
+                      <div className="field">
+                      <input placeholder="Last Name" className="lastName" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
                       </div>
                     </div>
                   </div>
 
-                  <div class="field">
+                  <div className="field">                  
                         <label>Bio</label>
-                        <textarea rows="2"></textarea>
-                  </div>
-
-                  <div class="field">
-                    <label>Billing Address</label>
-                    <div class="fields">
-                      <div class="twelve wide field">
-                        <input type="text" name="shipping[address]" placeholder="Street Address" />
-                      </div>
-                      <div class="four wide field">
-                        <input type="text" name="shipping[address-2]" placeholder="Apt #" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="two fields">
-                    <div class="field">
-                      <label>State</label>
-                      <select class="ui fluid dropdown">
-                      </select>
-                    </div>
-                    <div class="field">
-                      <label>Country</label>
-                      <div class="ui fluid search selection dropdown">
-                        <input type="hidden" name="country" />
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Select Country</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h4 class="ui dividing header">Billing Information</h4>
-                  <div class="field">
-                    <label>Card Type</label>
-                    <div class="ui selection dropdown">
-                      <input type="hidden" name="card[type]" />
-                      <div class="default text">Type</div>
-                      <i class="dropdown icon"></i>
-                      <div class="menu">
-                        <div class="item" data-value="visa">
-                          <i class="visa icon"></i>
-                          Visa
-                        </div>
-                        <div class="item" data-value="amex">
-                          <i class="amex icon"></i>
-                          American Express
-                        </div>
-                        <div class="item" data-value="discover">
-                          <i class="discover icon"></i>
-                          Discover
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="fields">
-                    <div class="seven wide field">
-                      <label>Card Number</label>
-                      <input type="text" name="card[number]" maxlength="16" placeholder="Card #" />
-                    </div>
-                    <div class="three wide field">
-                      <label>CVC</label>
-                      <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC" />
-                    </div>
-                    <div class="six wide field">
-                      <label>Expiration</label>
-                    </div>
-                  </div>
-               {/* </div> */}
-                <div class="ui button" tabindex="0">Submit Order</div>
+                        <textarea rows="2" type="text" className="bio" name="bio" placeholder="Type here" value={this.state.bio} onChange={this.handleChange}></textarea>
+                  </div>             
+                              
+                <div className="ui button" tabIndex="0" onClick={this.handleSubmit}>Submit</div>
 </form>
 
  </div>
@@ -379,17 +354,17 @@ class ProfilePageLayout extends React.Component {
 
 
 
-            <p style={{ fontSize: '1.33em' }}>
+            {/* <p style={{ fontSize: '1.33em' }}>
               We can give your company superpowers to do things that they never thought possible.
                   Let us delight your customers and empower your needs... through pure data analytics.
-                </p>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+                </p> */}
+            {/* <Header as='h3' style={{ fontSize: '2em' }}>
               Bio
-                </Header>
-            <p style={{ fontSize: '1.33em' }}>
+                </Header> */}
+            {/* <p style={{ fontSize: '1.33em' }}>
               Yes that's right, you thought it was the stuff of dreams, but even bananas can be
                   bioengineered.
-                </p>
+                </p> */}
               </Grid.Column>
 
           <Grid.Column floated='right' width={6}>
