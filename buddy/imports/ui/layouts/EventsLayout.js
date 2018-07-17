@@ -6,7 +6,11 @@ import Menu from "../components/Menu";
 import {VerticalMenu} from "../components/VerticalMenu";
 import {Event} from "../components/Event";
 import {EventList} from "../components/EventList"
+<<<<<<< HEAD
 //import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
+=======
+import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
+>>>>>>> 7a976683ca5099cc038fc9785a47ff11d24f1435
 import {
     Button,
     Divider,
@@ -83,7 +87,7 @@ export default class EventsLayout extends React.Component {
 
     render() {
         return (
-            <Segment  classname='inverted'>
+            <Segment >
                 <Container>
                     <Menu/>
                 </Container>

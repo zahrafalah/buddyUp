@@ -22,7 +22,7 @@ export const VerticalMenu = props => (
     <div className="ui vertical menu large categorieSearch">
         <div className='item'>
             <button
-                onClick={props.handleFormSubmit}
+                onClick={this.props.handleFormSubmit}
                 className="ui basic button item olive"
                 name='refresh'>AnyBuddyUp?</button>
         </div>
@@ -31,8 +31,8 @@ export const VerticalMenu = props => (
                 <label>Search
                 </label>
                 <input
-                    onChange={props.handleInputChange}
-                    value={props.value}
+                    onChange={this.props.handleInputChange}
+                    value={this.props.value}
                     type="text"
                     placeholder="Search for an Event..."
                     name="search"
@@ -47,8 +47,8 @@ export const VerticalMenu = props => (
             <div className="menu">
                 <div className="ui checkbox item ">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="art"
                         value="art"/>
@@ -56,8 +56,8 @@ export const VerticalMenu = props => (
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="outdoors_recreation"
                         value="outdoors-recreation"/>
@@ -68,14 +68,14 @@ export const VerticalMenu = props => (
                         type="checkbox"
                         name="food"
                         value="food"
-                        checked={props.checked}
-                        onChange={props.handleInputChange}/>
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}/>
                     <label>Food & Wine</label>
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="books"
                         value="books"/>
@@ -83,8 +83,8 @@ export const VerticalMenu = props => (
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="sports"
                         value="sports"/>
@@ -95,14 +95,14 @@ export const VerticalMenu = props => (
                         type="checkbox"
                         name="science"
                         value="science"
-                        checked={props.checked}
-                        onChange={props.handleInputChange}/>
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}/>
                     <label>Science</label>
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="music"
                         value="music"/>
@@ -110,8 +110,8 @@ export const VerticalMenu = props => (
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="animals"
                         value="animals"/>
@@ -119,8 +119,8 @@ export const VerticalMenu = props => (
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="festivals_parades"
                         value="festivals_parades"/>
@@ -128,8 +128,8 @@ export const VerticalMenu = props => (
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="singles_social"
                         value="singles_social"/>
@@ -137,8 +137,8 @@ export const VerticalMenu = props => (
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="fundraisers"
                         value="fundraisers"/>
@@ -146,8 +146,8 @@ export const VerticalMenu = props => (
                 </div>
                 <div className="ui checkbox item">
                     <input
-                        checked={props.checked}
-                        onChange={props.handleInputChange}
+                        checked={this.props.checked}
+                        onChange={this.props.handleInputChange}
                         type="checkbox"
                         name="holiday"
                         value="holiday"/>
@@ -160,8 +160,8 @@ export const VerticalMenu = props => (
             <div className="ui input item">
                 <label>Zip Code</label>
                 <input
-                    onChange={props.handleInputChange}
-                    value={props.value}
+                    onChange={this.props.handleInputChange}
+                    value={this.props.value}
                     type="text"
                     placeholder="Search for Anything..."
                     name="zipCode"
@@ -172,8 +172,8 @@ export const VerticalMenu = props => (
                 <input
                     type="hidden"
                     name="within"
-                    onChange={props.handleInputChange}
-                    value={props.value}/>
+                    onChange={this.props.handleInputChange}
+                    value={this.props.value}/>
                 <i className="dropdown icon"></i>
                 <div className="default text item">Distance</div>
                 <select className="menu">
@@ -188,8 +188,8 @@ export const VerticalMenu = props => (
                 <input
                     type="hidden"
                     name="date"
-                    onChange={props.handleInputChange}
-                    value={props.value}/>
+                    onChange={this.props.handleInputChange}
+                    value={this.props.value}/>
                 <i className="dropdown icon"></i>
                 <div className="default text">When</div>
                 <div className="menu">

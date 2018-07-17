@@ -1,10 +1,18 @@
 /*// top level layout: will include things like navbar, button placement, areas of
 // text
 import PropTypes from "prop-types";
+<<<<<<< HEAD
 import React, { Component } from "react";
 import Menu from "../components/Menu";
 import VerticalMenu from "../components/VerticalMgit enu";
 import Event from "../components/Event";
+=======
+import React, {Component} from "react";
+import Menu from "../components/Menu";
+import VerticalMenu from "../components/VerticalMenu";
+import {Event} from "../components/Event";
+import {EventList} from "../components/EventList"
+>>>>>>> 7a976683ca5099cc038fc9785a47ff11d24f1435
 import {addUrlProps, UrlQueryParamTypes} from 'react-url-query';
 import {
   Button,

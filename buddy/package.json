@@ -31,7 +31,10 @@
     "react-photo-feed": "^1.0.13",
     "react-router-dom": "^4.3.1",
     "react-url-query": "^1.4.0",
+<<<<<<< HEAD
     "semantic-ui-dropdown": "^2.3.2",
+=======
+>>>>>>> 7a976683ca5099cc038fc9785a47ff11d24f1435
     "semantic-ui-react": "^0.81.3",
     "simpl-schema": "^1.5.0",
     "styled-components": "^3.3.3"
