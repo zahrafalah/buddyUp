@@ -269,6 +269,12 @@ class ProfilePageLayout extends React.Component {
                         <label>Last Name</label>
                         <input placeholder="Last Name" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
                       </div>
+
+  <div class="field">
+    <label>Short Text</label>
+    <textarea rows="2"></textarea>
+  </div>
+
                     </div>
                     <div className="ui submit button">Submit</div>
                   </div>
