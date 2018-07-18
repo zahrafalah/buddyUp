@@ -234,32 +234,7 @@ class ProfilePageLayout extends React.Component {
     console.log(this.state)
   }
 
-  // handleSubmit(event) {
-  //   alert('Your favorite flavor is: ' + this.state.value);
-  //   event.preventDefault();
-  //   addProfile.call() 
-  // }
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
- 
-    // Find the text field via the React ref
-    // const text =this.state.bio.trim();
-    // let firstName = this.state.firstName
-    // let lastName = this.state.lastName
-    // let bio = this.state.bio
-
-// const data = {
-// firstName : firstName,
-// lastName : lastName,
-// bio : bio
-// }
-// console.log(data + "just defined data") 				
-//  addProfile.call( data, (err, res) => {
-//         // console.log(JSON.stringify(text))
-//         if(err)
-//         console.log(err);
- 
   handleSubmit(event) {
     event.preventDefault();
 
@@ -291,9 +266,8 @@ class ProfilePageLayout extends React.Component {
         }
         console.log(res);
       }
-    )
+    );
   }
-
   render() {
     console.log(this.state)
     return (
@@ -304,81 +278,36 @@ class ProfilePageLayout extends React.Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <Header as='h3' style={{ fontSize: '2em' }}>
-                  
+
                 </Header>
-
-                {/* <div className="ui segment success">
-                  <div className="ui form">
-                    <div className="two fields">
-
-                      <div className="field ">
-                        <label>First Name</label>
-                        <input placeholder="First Name" type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
-                      </div>
-
-                      <div className="field">
-                        <label>Last Name</label>
-                        <input placeholder="Last Name" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
-                      </div>
-
-                      <div className="field">
-                        <label>Short Text</label>
-                        <textarea rows="2"></textarea>
-                      </div>
-
-                    </div>
-                    <div className="ui submit button">Submit</div>
-                  </div>
-                </div> */}
-{/* <div className="ui checkbox">
-  <input type="checkbox" name="example"/>
-  <label>Make my profile visible</label>
-</div> */}
 
                 <div className="ui segment success">
                   <form className="ui form" >
-                  <h4 className="ui dividing header">Personal Information</h4>
+                    <h4 className="ui dividing header">Personal Information</h4>
 
-                  <div className="field">
-                    <label>Name</label>
-                    <div className="two fields">
-                      <div className="field">
-                      <input placeholder="First Name" className="firstName" type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
-                      </div>
-                      <div className="field">
-                      <input placeholder="Last Name" className="lastName" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
+                    <div className="field">
+                      <label>Name</label>
+                      <div className="two fields">
+                        <div className="field">
+                          <input placeholder="First Name" className="firstName" type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
+                        </div>
+                        <div className="field">
+                          <input placeholder="Last Name" className="lastName" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="field">                  
-                        <label>Bio</label>
-                        <textarea rows="2" type="text" className="bio" name="bio" placeholder="Type here" value={this.state.bio} onChange={this.handleChange}></textarea>
-                  </div>             
-                              
-                <div className="ui button" tabIndex="0" onClick={this.handleSubmit}>Submit</div>
-</form>
+                    <div className="field">
+                      <label>Bio</label>
+                      <textarea rows="2" type="text" className="bio" name="bio" placeholder="Type here" value={this.state.bio} onChange={this.handleChange}></textarea>
+                    </div>
 
- </div>
-
-
-                    {/* <div className="ui button" tabIndex="0" onClick={this.handleSubmit}>Submit</div>
+                    <div className="ui button" tabIndex="0" onClick={this.handleSubmit}>Submit</div>
                   </form>
 
-                </div> */}
+                </div>
 
 
-            {/* <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-                  Let us delight your customers and empower your needs... through pure data analytics.
-                </p> */}
-            {/* <Header as='h3' style={{ fontSize: '2em' }}>
-              Bio
-                </Header> */}
-            {/* <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-                  bioengineered.
-                </p> */}
               </Grid.Column>
 
               <Grid.Column floated='right' width={6}>
