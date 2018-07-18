@@ -229,7 +229,10 @@ class ProfilePageLayout extends React.Component {
     this.setState({
       [name]: value
     });
-   
+
+    Meteor.call("addProfile", value, (err, res) => {
+      console.log(JSON.stringify('res'))
+    });
   }
 
 
@@ -243,33 +246,102 @@ class ProfilePageLayout extends React.Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <Header as='h3' style={{ fontSize: '2em' }}>
-                  Name
                 </Header>
 
                 <div className="ui segment success">
-                  <div className="ui form">
-                    <div className="two fields">
-                      <div className="field ">
-                        <label>First Name</label>
-                        <input placeholder="First Name" type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
-                      </div>
-                      <div className="field">
-                        <label>Last Name</label>
-                        <input placeholder="Last Name" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
-                      </div>
+                  <form class="ui form" >
+                  <h4 class="ui dividing header">Personal Information</h4>
 
-  <div class="field">
-    <label>Short Text</label>
-    <textarea rows="2"></textarea>
-  </div>
-
+                  <div class="field">
+                    <label>Name</label>
+                    <div class="two fields">
+                      <div class="field">
+                        <input type="text" name="shipping[first-name]" placeholder="First Name" />
+                      </div>
+                      <div class="field">
+                        <input type="text" name="shipping[last-name]" placeholder="Last Name" />
+                      </div>
                     </div>
-                    <div className="ui submit button">Submit</div>
                   </div>
-                </div>
 
-                <p style={{ fontSize: '1.33em' }}>
-                  We can give your company superpowers to do things that they never thought possible.
+                  <div class="field">
+                        <label>Bio</label>
+                        <textarea rows="2"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label>Billing Address</label>
+                    <div class="fields">
+                      <div class="twelve wide field">
+                        <input type="text" name="shipping[address]" placeholder="Street Address" />
+                      </div>
+                      <div class="four wide field">
+                        <input type="text" name="shipping[address-2]" placeholder="Apt #" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="two fields">
+                    <div class="field">
+                      <label>State</label>
+                      <select class="ui fluid dropdown">
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label>Country</label>
+                      <div class="ui fluid search selection dropdown">
+                        <input type="hidden" name="country" />
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Select Country</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h4 class="ui dividing header">Billing Information</h4>
+                  <div class="field">
+                    <label>Card Type</label>
+                    <div class="ui selection dropdown">
+                      <input type="hidden" name="card[type]" />
+                      <div class="default text">Type</div>
+                      <i class="dropdown icon"></i>
+                      <div class="menu">
+                        <div class="item" data-value="visa">
+                          <i class="visa icon"></i>
+                          Visa
+                        </div>
+                        <div class="item" data-value="amex">
+                          <i class="amex icon"></i>
+                          American Express
+                        </div>
+                        <div class="item" data-value="discover">
+                          <i class="discover icon"></i>
+                          Discover
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="fields">
+                    <div class="seven wide field">
+                      <label>Card Number</label>
+                      <input type="text" name="card[number]" maxlength="16" placeholder="Card #" />
+                    </div>
+                    <div class="three wide field">
+                      <label>CVC</label>
+                      <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC" />
+                    </div>
+                    <div class="six wide field">
+                      <label>Expiration</label>
+                    </div>
+                  </div>
+               {/* </div> */}
+                <div class="ui button" tabindex="0">Submit Order</div>
+</form>
+
+ </div>
+
+            <p style={{ fontSize: '1.33em' }}>
+              We can give your company superpowers to do things that they never thought possible.
                   Let us delight your customers and empower your needs... through pure data analytics.
                 </p>
                 <Header as='h3' style={{ fontSize: '2em' }}>
@@ -419,25 +491,7 @@ class ProfilePageLayout extends React.Component {
 
                 </div>
 
-
-                {/* <Header as='h3' style={{ fontSize: '2em' }}>
-                  We Help Companies and Companions
-                </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  We can give your company superpowers to do things that they never thought possible.
-                  Let us delight your customers and empower your needs... through pure data analytics.
-                </p>
-                <Header as='h3' style={{ fontSize: '2em' }}>
-                  We Make Bananas That Can Dance
-                </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-                  bioengineered.
-                </p> */}
               </Grid.Column>
-              {/* <Grid.Column floated='right' width={6}>
-                <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
-              </Grid.Column> */}
             </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign='center'>
@@ -446,63 +500,6 @@ class ProfilePageLayout extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-
-        {/* <Segment style={{ padding: '0em' }} vertical>
-          <Grid celled='internally' columns='equal' stackable>
-            <Grid.Row textAlign='center'>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>
-                  "What a Company"
-                </Header>
-                <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
-              </Grid.Column>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>
-                  "I shouldn't have gone with their competitor."
-                </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  <Image avatar src='/images/avatar/large/nan.jpg' />
-                  <b>Nan</b> Chief Fun Officer Acme Toys
-                </p>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment> */}
-
-        {/* <Segment style={{ padding: '8em 0em' }} vertical>
-          <Container text>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              Breaking The Grid, Grabs Your Attention
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Instead of focusing on content creation and hard work, we have learned how to master the
-              art of doing nothing by providing massive amounts of whitespace and generic content that
-              can seem massive, monolithic and worth your attention.
-            </p>
-            <Button as='a' size='large'>
-              Read More
-            </Button>
-            <Divider
-              as='h4'
-              className='header'
-              horizontal
-              style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-            >
-              <a href='#'>Case Studies</a>
-            </Divider>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              Did We Tell You About Our Bananas?
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-              it's really true. It took years of gene splicing and combinatory DNA research, but our
-              bananas can really dance.
-            </p>
-            <Button as='a' size='large'>
-              I'm Still Quite Interested
-            </Button>
-          </Container>
-        </Segment> */}
 
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
           <Container>
