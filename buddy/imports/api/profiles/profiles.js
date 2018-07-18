@@ -14,74 +14,77 @@ Schemas.Profile = new SimpleSchema({
     },
 	firstName: {
         type: String,
-        optional: true
+        optional: true,
+        defaultValue: ""
     },
     lastName: {
         type: String,
-        optional: true
+        optional: true,
+        defaultValue: ""
     },
     bio: {
         type: String,
-        optional: true
+        optional: true,
+        defaultValue: ""
     }, 
     art: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     outdoors_recreation: {
         type: Boolean, 
-        optional: false,
+        optional: true,
         defaultValue: false
     }, 
     food: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     books: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     }, 
     sports: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     }, 
     science: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     music: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     animals: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     festivals_parades: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     singles_social: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     fundraisers: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     },
     holiday: {
         type: Boolean,
-        optional: false,
+        optional: true,
         defaultValue: false
     } 
 });
