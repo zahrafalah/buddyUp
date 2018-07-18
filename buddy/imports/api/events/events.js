@@ -1,6 +1,5 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
-import {Collection2} from 'meteor/aldeed:collection2'
 import SimpleSchema from 'simpl-schema';
 // import SimpleSchema from 'meteor/aldeed:collection2'
 export const Events = new Mongo.Collection('events');
