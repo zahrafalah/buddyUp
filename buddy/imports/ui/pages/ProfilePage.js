@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Meteor } from 'meteor/meteor'
 import React, { Component } from 'react'
 import {
   Button,
@@ -235,19 +236,35 @@ class ProfilePageLayout extends React.Component {
     event.preventDefault();
 
     const data = {
-      firstName : firstName,
-      lastName : lastName,
-      bio : bio
+
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      bio: this.state.bio,
+      sports: this.state.sports,
+      books: this.state.books,
+      food: this.state.food,
+      art: this.state.art,
+      outdoors_recreation: this.state.outdoors_recreation,
+      science: this.state.science,
+      animals: this.state.animals,
+      music: this.state.music,
+      holiday: this.state.holiday,
+      fundraisers: this.state.fundraisers,
+      festivals_parades: this.state.festivals_parades,
+      singles_social: this.state.singles_social
+
     }
-    console.log(data + "just defined data")
-    addProfile.call( data, (err, res) => {
-      if(err)
-        console.log(err);
-
-      console.log(res)
-      })
+    console.log(JSON.stringify(data) + "just defined data");
+    addProfile.call(
+      data, (err, res) => {
+        if (err) {
+          console.log("WHY!????!???!?!?!?!?");
+          console.log(err);
+        }
+        console.log(res);
+      }
+    );
   }
-
   render() {
     console.log(this.state)
     return (
@@ -258,12 +275,8 @@ class ProfilePageLayout extends React.Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <Header as='h3' style={{ fontSize: '2em' }}>
-                </Header>
 
- <div className="ui checkbox">
-  <input type="checkbox" name="example"/>
-  <label>Make my profile visible</label>
-</div>
+                </Header>
 
                 <div className="ui segment success">
                   <form className="ui form" >
@@ -320,8 +333,8 @@ class ProfilePageLayout extends React.Component {
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('coffee')}></i>
-                      <div className="header">Outdoors & Recreation</div>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('outdoors_recreation')}></i>
+                      <div className="header">Outdoors_recreation</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/outdoors_recreation.jpg" />
@@ -341,7 +354,7 @@ class ProfilePageLayout extends React.Component {
                   <div className="card">
                     <div className="content">
                       <i className="right floated like icon" onClick={(event) => this.handleClick('books')}></i>
-                      <div className="header">Reading</div>
+                      <div className="header">Books</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/books.jpg" />
@@ -350,8 +363,8 @@ class ProfilePageLayout extends React.Component {
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('sport')}></i>
-                      <div className="header">Sport</div>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('sports')}></i>
+                      <div className="header">Sports</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/sports.jpg" />
@@ -371,7 +384,7 @@ class ProfilePageLayout extends React.Component {
                   <div className="card">
                     <div className="content">
                       <i className="right floated like icon" onClick={(event) => this.handleClick('music')}></i>
-                      <div className="header">Concert</div>
+                      <div className="header">Music</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/music.jpg" />
@@ -381,7 +394,7 @@ class ProfilePageLayout extends React.Component {
                   <div className="card">
                     <div className="content">
                       <i className="right floated like icon" onClick={(event) => this.handleClick('animals')}></i>
-                      <div className="header">Pet</div>
+                      <div className="header">Animals</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/animals.jpg" />
@@ -390,8 +403,8 @@ class ProfilePageLayout extends React.Component {
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('festival_parades')}></i>
-                      <div className="header">Festival</div>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('festivals_parades')}></i>
+                      <div className="header">Festivals_parades</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/festival_parades.jpg" />
@@ -400,8 +413,8 @@ class ProfilePageLayout extends React.Component {
 
                   <div className="card">
                     <div className="content">
-                      <i className="right floated like icon" onClick={(event) => this.handleClick('nightlife_singles')}></i>
-                      <div className="header">Happy-hour</div>
+                      <i className="right floated like icon" onClick={(event) => this.handleClick('singles_social')}></i>
+                      <div className="header">Singles_social</div>
                     </div>
 
                     <div className="image">
@@ -412,7 +425,7 @@ class ProfilePageLayout extends React.Component {
                   <div className="card">
                     <div className="content">
                       <i className="right floated like icon" onClick={(event) => this.handleClick('fundraisers')}></i>
-                      <div className="header">Volunteer</div>
+                      <div className="header">Fundraisers</div>
                     </div>
                     <div className="image">
                       <img src="./images/Categories/fundraisers.jpg" />

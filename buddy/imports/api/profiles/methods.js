@@ -7,48 +7,49 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 //methods check that there is a user context before making any changes to the database. This is one of Meteor's ways of doing security. They keys for validated method are: name, validate, run. 
 export const addProfile = new ValidatedMethod({
 	name: 'profiles.addProfile',
-	validate(firstName, lastName, bio) {
-			check(firstName, lastName, bio, {
-				firstName: String,
-				lastName: String,
-				bio: String
+	validate(profile) {
+		console.log("Profile: "  + JSON.stringify(profile));
+			check(profile, {
+				firstName: Match.Optional(Match.OneOf(String, undefined)),
+				lastName: Match.Optional(Match.OneOf(String, undefined)),
+				bio: Match.Optional(Match.OneOf(String, undefined)),
+				sports: Match.Optional(Match.OneOf(Boolean, undefined)),
+				books: Match.Optional(Match.OneOf(Boolean, undefined)),
+				food: Match.Optional(Match.OneOf(Boolean, undefined)),
+				science: Match.Optional(Match.OneOf(Boolean, undefined)),
+				music: Match.Optional(Match.OneOf(Boolean, undefined)),
+				outdoors_recreation: Match.Optional(Match.OneOf(Boolean, undefined)),
+				animals: Match.Optional(Match.OneOf(Boolean, undefined)),
+				festivals_parades: Match.Optional(Match.OneOf(Boolean, undefined)),
+				singles_social: Match.Optional(Match.OneOf(Boolean, undefined)),
+				fundraisers: Match.Optional(Match.OneOf(Boolean, undefined)),
+				holiday: Match.Optional(Match.OneOf(Boolean, undefined)),
+				art: Match.Optional(Match.OneOf(Boolean, undefined)),
 			});
 		},
 	applyOptions: {
 			returnStubValue: true,
 		},
-	run(firstName, lastName, bio, art, outdoors_recreation, food, books, sports, science, music, animals, festivals_parades, singles_social, fundraisers, holiday){
-    // Make sure the user is logged in before inserting a profile
+	run(profile){
+		console.log("I am here with input " + JSON.stringify(profile));
+		// Make sure the user is logged in before inserting a profile
     if (!this.userId) {
+		console.log("NOT AUTHORIZED!!! :(");
       throw new Meteor.Error('not-authorized');
 	}
-	const user = Profiles.findOne(this.userId);
 
-		Profiles.insert({
-			userId: this.userId,
-			firstName: firstName,
-			lastName: lastName,
-			bio: bio,
-			art: art,
-			outdoors_recreation: outdoors_recreation,
-			food: food,
-			books: books,
-			sports: sports,
-			science: science,
-			music: music,
-			animals: animals,
-			festivals_parades: festivals_parades,
-			singles_social: singles_social,
-			fundraisers: fundraisers,
-			holiday: holiday
-    }, (error, result) => {
-			if (error){
-				throw new Meteor.Error('insert-failed');
-			}
-			else {
-				// success
-				console.log("inserted" + result);
-			}
+	profile["userId"] = this.userId;
+
+	Profiles.insert(profile, (error, result) => {
+		if (error){
+			console.log("Failed to insert" + error);
+			throw new Meteor.Error('insert-failed');
+		}
+		else {
+			// success
+			console.log("Success??");
+			console.log("inserted" + result);
+		}
 	})
 		}
 	});
@@ -70,17 +71,7 @@ export const removeProfile = new ValidatedMethod({
 		Profiles.remove(_id);
 	}
  });
- // export const insert = new ValidatedMethod({
-//   name: 'lists.insert',
-//   validate: new SimpleSchema({
-//     language: {
-//       type: String,
-//     },
-//   }).validator(),
-//   run({ language }) {
-//     return Lists.insert({}, null, language);
-//   },
-// });
+
 export const updateBio = new ValidatedMethod({
 	name: 'profiles.updateBio',
 	validate(newBio){
