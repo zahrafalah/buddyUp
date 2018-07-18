@@ -6,6 +6,7 @@ import {SimpleSchema} from 'simpl-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 //methods check that there is a user context before making any changes to the database. This is one of Meteor's ways of doing security. They keys for validated method are: name, validate, run. 
 export const addEvent = new ValidatedMethod({
+	//starting to suspect this should be an upsert: we want to insert once and then update buddies after
 	name: 'events.addEvent',
 	validate(eventfulID, postalCode, title, url, date, address, category) {
 			check(eventfulID, postalCode, title, url, date, address, category, {
@@ -25,9 +26,8 @@ export const addEvent = new ValidatedMethod({
     	if (!this.userId) {
       throw new Meteor.Error('not-authorized');
 	}
-		const user = Profiles.findOne(this.userId);
 //in future add if ! user
-		Profiles.insert({
+		Events.insert({
 			eventfulID: eventfulID,
 			postalCode: postalCode,
 			title: title,
