@@ -1,6 +1,5 @@
 import {Meteor} from 'meteor/meteor';
 import {Events} from './events.js';
-import {Collection2} from 'meteor/aldeed:collection2'
 import {check} from 'meteor/check';
 import {SimpleSchema} from 'simpl-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
