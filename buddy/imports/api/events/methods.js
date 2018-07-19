@@ -8,43 +8,41 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 export const addEvent = new ValidatedMethod({
 	//starting to suspect this should be an upsert: we want to insert once and then update buddies after
 	name: 'events.addEvent',
-	validate(eventfulID, postalCode, title, url, date, address, category) {
-			check(eventfulID, postalCode, title, url, date, address, category, {
-				eventfulID: String,
-				postalCode: SimpleSchema.Integer,
-				title: String,
-				url: String,
-				date: Date,
-				address: String
-			});
-		},
-	applyOptions: {
-			returnStubValue: true,
-		},
-	run(eventfulID, postalCode, title, url, date, address, category){
-    // Make sure the user is logged in before inserting a profile
-    	if (!this.userId) {
-      throw new Meteor.Error('not-authorized');
-	}
-//in future add if ! user
-		Events.insert({
-			eventfulID: eventfulID,
-			postalCode: postalCode,
-			title: title,
-			url: url,
-			date: date,
-			address: address,
-			category: category}, (error, result) => {
-				if (error){
-					throw new Meteor.Error('insert-event-failed');
-				}
-				else {
-				// success
-					console.log("inserted" + result);
-				}
+validate(event) {
+	console.log("Event: "  + JSON.stringify(event));
+		check(event, {
+			eventfulID: Match.OneOf(String, undefined),
+			postalCode: Match.Optional(Match.OneOf(SimpleSchema.Integer, undefined)),
+			title: Match.Optional(Match.OneOf(String, undefined)),
+			url: Match.Optional(Match.OneOf(Boolean, undefined)),
+			date: Match.Optional(Match.OneOf(Date, undefined)),
+			address: Match.Optional(Match.OneOf(String, undefined)),
+			category: Match.Optional(Match.OneOf(String, undefined)),
 		});
+	},
+applyOptions: {
+		returnStubValue: true,
+	},
+run(event){
+	console.log("I am here with input " + JSON.stringify(event));
+	// Make sure the user is logged in before inserting a profile
+if (!this.userId) {
+	console.log("NOT AUTHORIZED!!! :(");
+  throw new Meteor.Error('not-authorized');
+}
+
+
+Profiles.insert(profile, (error, result) => {
+	if (error){
+		console.log("Failed to insert" + error);
+		throw new Meteor.Error('insert-failed');
+	}
+	else {
+		// success
+		console.log("Success??");
+		console.log("inserted" + result);
+	}
+})
 	}
 });
-
- 
 
