@@ -2,10 +2,9 @@
 // happen here?
 import PropTypes from "prop-types";
 import React, {Component} from "react";
-import {DistanceOptions} from '../../ui/components/DistanceOptions';
 import {Event} from "../components/Event";
 import {EventList} from "../components/EventList"
-
+import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 import {
     Button,
     Form,
@@ -22,8 +21,8 @@ import {
     Segment,
     Sidebar,
     Visibility,
-    Checkbox,
-    Dropdown
+    Select,
+    Label
 } from "semantic-ui-react";
 
 const HomepageHeading = ({mobile}) => (
@@ -222,21 +221,11 @@ export default class EventsPage extends React.Component {
     state = {
         results: [],
         search: '',
-        art: '',
-        outdoors_recreation: '',
-        food: '',
-        books: '',
-        sports: '',
-        science: '',
-        music: '',
-        animals: '',
-        festivals_parades: '',
-        singles_social: '',
-        fundraisers: '',
-        holiday: '',
+        categories: [],
         zipCode: '',
         distance: '',
-        date: ''
+        date: '',
+        activeItem: ''
     };
 
     /*handleClick(type) {
@@ -254,16 +243,22 @@ export default class EventsPage extends React.Component {
         this.setState({[name]: value});
     };
 
-   
+    categoriesChanged = (value) => {
+        this.setState({categories: value});
+    };
+
+    handleItemClick = (e, {name}) => this.setState({activeItem: name})
 
     render() {
-        console.log(this.state)
+        console.log(this.state);
+
+        const {activeItem} = this.state;
 
         return (
             <ResponsiveContainer>
                 <Segment
                     style={{
-                    padding: '5em 0em'
+                    padding: '3em 0em'
                 }}
                     vertical>
                     <Grid container verticalAlign='middle'>
@@ -271,7 +266,16 @@ export default class EventsPage extends React.Component {
 
                             <Form>
 
-                                <Button attached='bottom' content='Search Events' onClick={this.handleClick}/>
+                                <Button
+                                    attached='top'
+                                    style={{
+                                    padding: '.5em 3em',
+                                    verticalAlign: 'center'
+                                }}
+                                    size='large'
+                                    color='black'
+                                    content='Search Events'
+                                    onClick={this.handleClick}/>
 
                                 <Form.Field
                                     placeholder='Search...'
@@ -280,24 +284,42 @@ export default class EventsPage extends React.Component {
                                     value={this.state.search}
                                     onChange={this.handleChange}/>
 
-                                <Form.Field>
-                                    <Checkbox   
-                                      
-                                        label="Art"
-                                        type="checkbox"
-                                        name="art"
-                                        value="art"
-                                        
-                                        onChange={this.handleChange}/>
+                                <Form.Group>
+                                    Categories
+                                    <CheckboxGroup
+                                    style={{margin:'.5em'}}
+                                    checkboxDepth={3}
+                                    name="categories"
+                                    value={this.state.categories}
+                                    onChange={this.categoriesChanged}>
+                                    <br/><span/>
+                                    <label><Checkbox value="animals"/>Pets</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="art"/>
+                                        Arts</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="books"/>Books & Literature</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="festivals_parades"/>Festivals</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="food"/>Food & Wine</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="fundraisers"/>Fundraising & Charity</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="holiday"/>Holidays</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="music"/>Concerts & Tour Dates</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="outdoors_recreation"/>Outdoors & Recreations</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="science"/>Science</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="single_social"/>Night life</label>
+                                    <br/><span/>
+                                    <label><Checkbox value="sports"/>Sports</label>
+                                </CheckboxGroup>
+                                </Form.Group>
 
-                                </Form.Field>
-
-                                <Form.Field/>
-                                <Form.Field/>
-                                <Form.Field/>
-                                <Form.Field/>
-                                <Form.Field/>
-                                <Form.Field/>
                                 <Form.Field
                                     placeholder='Zipcode...'
                                     control='input'
@@ -332,10 +354,27 @@ export default class EventsPage extends React.Component {
                                 </Form.Field>
                             </Form>
                         </Grid.Column>
-                        <Grid.Column width={10}></Grid.Column>
+                        <Grid.Column width={10}>
+                            <Menu pointing secondary>
+                                <Menu.Item
+                                    name='Events'
+                                    active={activeItem === 'Events'}
+                                    onClick={this.handleItemClick}/>
+
+                                <Menu.Item
+                                    name='My Saved Events'
+                                    active={activeItem === 'My Saved Events'}
+                                    onClick={this.handleItemClick}/>
+                            </Menu>
+                            <Segment>
+                                <EventList>
+                                    <Event/>
+                                </EventList>
+                            </Segment>
+                        </Grid.Column>
                     </Grid>
                 </Segment>
             </ResponsiveContainer>
-        )
+        );
     }
 }
