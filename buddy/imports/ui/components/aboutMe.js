@@ -6,18 +6,42 @@ import { Session } from 'meteor/session'
 import { Meteor } from 'meteor/meteor';
 
 
-class aboutMe extends Component {
+class AboutMe extends Component {
   constructor(props) {
     super(props);
-    this.state = { lastName: '', bio: '', userId: '', firstName: '' }
+    this.state = {firstName: '',  lastName: '', bio: '' }
   }
 
   render(){
     return(
-      <Button> </Button>
+      <div className="ui segment success">
+        <form className="ui form" >
+          <h4 className="ui dividing header">Personal Information</h4>
+
+          <div className="field">
+            <label>Name</label>
+            <div className="two fields">
+              <div className="field">
+                <h1>{this.state.firstName}</h1>
+              </div>
+              <div className="field">
+                <h2>{this.state.lastName}</h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="field">
+                <label>Bio</label>
+                <h3>{}</h3>
+          </div>
+
+          <div className="ui button" tabIndex="0" onClick={this.handleEdit}>Edit</div>
+        </form>
+
+      </div>
     )
   }
 }
 
-export default aboutMe;
+export default AboutMe;
 

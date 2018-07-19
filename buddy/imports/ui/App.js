@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import WelcomePage from "./pages/WelcomePage";
 import ProfilePage from './pages/ProfilePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import AboutMe from './components/AboutMe';
 
 const styles = {
 
@@ -19,15 +20,16 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<Router>
-				<div>
+			<AboutMe/>
+			// <Router>
+			// 	<div>
 
-					<Route exact path="/" component={HomePage} />
-					<Route exact path="/profile" component={ProfilePage} />
-					<Route exact path="/welcome" component={WelcomePage} />
+			// 		<Route exact path="/" component={HomePage} />
+			// 		<Route exact path="/profile" component={ProfilePage} />
+			// 		<Route exact path="/welcome" component={WelcomePage} />
 
-				</div>
-			</Router>
+			// 	</div>
+			// </Router>
 		);
 	}
 }
