@@ -265,6 +265,12 @@ class ProfilePageLayout extends React.Component {
       }
     );
   }
+
+  handleToggle(){
+
+  }
+
+  
   render() {
     console.log(this.state)
     return (
@@ -299,7 +305,7 @@ class ProfilePageLayout extends React.Component {
                         <textarea rows="2" type="text" className="bio" name="bio" placeholder="Type here" value={this.state.bio} onChange={this.handleChange}></textarea>
                   </div>
 
-                <div className="ui button" tabIndex="0" onClick={this.handleSubmit}>Submit</div>
+                <div className="ui button" tabIndex="0" onClick={this.handleSubmit} onClick={this.handleToggle}>Submit</div>
 </form>
 
  </div>
