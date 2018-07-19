@@ -32,7 +32,7 @@ if (!this.userId) {
 }
 
 
-Profiles.insert(profile, (error, result) => {
+Events.update({eventfulID: event.eventfulID}, {$set: event},{upsert: true}, (error, result) => {
 	if (error){
 		console.log("Failed to insert" + error);
 		throw new Meteor.Error('insert-failed');
