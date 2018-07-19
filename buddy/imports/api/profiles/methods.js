@@ -72,52 +72,52 @@ export const removeProfile = new ValidatedMethod({
 	}
  });
 
-export const updateBio = new ValidatedMethod({
-	name: 'profiles.updateBio',
-	validate(newBio){
-		check(newBio,{
-			newBio: String
-		});
-	},
-	applyOptions: {
-			returnStubValue: true
+ export const updateProfile = new ValidatedMethod({
+	name: 'profiles.updateProfile',
+	validate(profile) {
+		console.log("Profile: "  + JSON.stringify(profile));
+			check(profile, {
+				firstName: Match.Optional(Match.OneOf(String, undefined)),
+				lastName: Match.Optional(Match.OneOf(String, undefined)),
+				bio: Match.Optional(Match.OneOf(String, undefined)),
+				sports: Match.Optional(Match.OneOf(Boolean, undefined)),
+				books: Match.Optional(Match.OneOf(Boolean, undefined)),
+				food: Match.Optional(Match.OneOf(Boolean, undefined)),
+				science: Match.Optional(Match.OneOf(Boolean, undefined)),
+				music: Match.Optional(Match.OneOf(Boolean, undefined)),
+				outdoors_recreation: Match.Optional(Match.OneOf(Boolean, undefined)),
+				animals: Match.Optional(Match.OneOf(Boolean, undefined)),
+				festivals_parades: Match.Optional(Match.OneOf(Boolean, undefined)),
+				singles_social: Match.Optional(Match.OneOf(Boolean, undefined)),
+				fundraisers: Match.Optional(Match.OneOf(Boolean, undefined)),
+				holiday: Match.Optional(Match.OneOf(Boolean, undefined)),
+				art: Match.Optional(Match.OneOf(Boolean, undefined)),
+			});
 		},
-  run(newBio){
-	  const user = Profiles.findOne(this.userId);
-  
-	  if (!this.userId) {
-		throw new Meteor.Error('profiles.update.notAuthorized',
-		  'Cannot edit a profile that is not yours');
-	  }
-  
-	  Profiles.update(user, {
-		$set: { bio: newBio }
-	  });
+	applyOptions: {
+			returnStubValue: true,
+		},
+	run(profile){
+	// Make sure the user is logged in before upserting a profile
+    if (!this.userId) {
+		console.log("NOT AUTHORIZED!!! :(");
+      throw new Meteor.Error('not-authorized');
 	}
-})
 
-export const updateCategory = new ValidatedMethod({
-	name: 'profiles.updateCategory',
-	validate(category){
-		check(category,{
-			category: Object
-		});
-	},
-	applyOptions: {
-			returnStubValue: true
-		},
-  run(category){
-	  const user = Profiles.findOne(this.userId);
-  
-	  if (!this.userId) {
-		throw new Meteor.Error('profiles.update.notAuthorized',
-		  'Cannot edit a profile that is not yours');
-	  }
-  
-	  Profiles.update(user, {
-		$set: { category }
-	  });
-	}
-})
- 
+	profile["userId"] = this.userId;
+
+	Profiles.update({userId: this.userId}, profile, {upsert: true},(error, result) => {
+		if (error){
+			console.log("Failed to update" + error);
+			throw new Meteor.Error('update-failed');
+		}
+		else {
+			// success
+			console.log("Success??");
+			console.log("updated" + result);
+		}
+	})
+		}
+	});
+
 
