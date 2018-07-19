@@ -19,8 +19,7 @@ import {
     Segment,
     Sidebar,
     Visibility
-} from "semantic-ui-react";
-import {EventList} from "../components/EventList";
+
 
 export default class Events extends React.Component {
 
@@ -53,9 +52,8 @@ export default class Events extends React.Component {
             .handleChange
             .bind(this);
     };
-}
 
-    handleChange(event) {
+    handleChange = event => {
         this
             .search
             .setState({

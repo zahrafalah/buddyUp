@@ -25,10 +25,11 @@ jquery
 meteortesting:mocha
 aldeed:collection2@3.0.0
 
-
 check
 accounts-ui
 accounts-password
+simple:rest
+http
 mdg:validated-method
 cultofcoders:grapher
 johanbrook:publication-collector
