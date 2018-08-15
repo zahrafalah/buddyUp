@@ -89,7 +89,7 @@ The user enters this page, which makes API calls and DB calls to render two rout
 ## https://github.com/Boursler/buddyUp
 
 ### Contributors
-#### Sepideh @ https://github.com/zahrafalah
 #### Briana @ https://github.com/Bourler
 #### Miriam @ https://github.com/marmada
+#### Sepideh @ https://github.com/zahrafalah
 #### Kyle @ https://github.com/kabrittan
